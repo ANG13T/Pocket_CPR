@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2951CCD12852F822002C1577 /* CPR_Buddy WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2951CCD02852F822002C1577 /* CPR_Buddy WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2951CCD62852F82A002C1577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2951CCD52852F82A002C1577 /* Assets.xcassets */; };
+		2951CCDC2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2951CCDB2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2951CCE12852F82A002C1577 /* CPR_BuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCE02852F82A002C1577 /* CPR_BuddyApp.swift */; };
+		2951CCE32852F82A002C1577 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCE22852F82A002C1577 /* ContentView.swift */; };
+		2951CCE52852F82A002C1577 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCE42852F82A002C1577 /* NotificationController.swift */; };
+		2951CCE72852F82A002C1577 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCE62852F82A002C1577 /* NotificationView.swift */; };
+		2951CCE92852F82A002C1577 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCE82852F82A002C1577 /* ComplicationController.swift */; };
+		2951CCEB2852F82B002C1577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2951CCEA2852F82B002C1577 /* Assets.xcassets */; };
+		2951CCEE2852F82B002C1577 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2951CCED2852F82B002C1577 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2951CCD22852F822002C1577 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2951CCC62852F821002C1577 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2951CCCF2852F822002C1577;
+			remoteInfo = "CPR_Buddy WatchKit App";
+		};
+		2951CCDD2852F82A002C1577 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2951CCC62852F821002C1577 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2951CCDA2852F82A002C1577;
+			remoteInfo = "CPR_Buddy WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2951CCF62852F82C002C1577 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2951CCDC2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2951CCFA2852F82C002C1577 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2951CCD12852F822002C1577 /* CPR_Buddy WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2951CCCC2852F822002C1577 /* CPR_Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPR_Buddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2951CCD02852F822002C1577 /* CPR_Buddy WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CPR_Buddy WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2951CCD52852F82A002C1577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2951CCDB2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CPR_Buddy WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2951CCE02852F82A002C1577 /* CPR_BuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPR_BuddyApp.swift; sourceTree = "<group>"; };
+		2951CCE22852F82A002C1577 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2951CCE42852F82A002C1577 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		2951CCE62852F82A002C1577 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		2951CCE82852F82A002C1577 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		2951CCEA2852F82B002C1577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2951CCED2852F82B002C1577 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2951CCEF2852F82B002C1577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2951CCF02852F82B002C1577 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2951CCD82852F82A002C1577 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2951CCC52852F821002C1577 = {
+			isa = PBXGroup;
+			children = (
+				2951CCD42852F822002C1577 /* CPR_Buddy WatchKit App */,
+				2951CCDF2852F82A002C1577 /* CPR_Buddy WatchKit Extension */,
+				2951CCCD2852F822002C1577 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2951CCCD2852F822002C1577 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2951CCCC2852F822002C1577 /* CPR_Buddy.app */,
+				2951CCD02852F822002C1577 /* CPR_Buddy WatchKit App.app */,
+				2951CCDB2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2951CCD42852F822002C1577 /* CPR_Buddy WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				2951CCD52852F82A002C1577 /* Assets.xcassets */,
+			);
+			path = "CPR_Buddy WatchKit App";
+			sourceTree = "<group>";
+		};
+		2951CCDF2852F82A002C1577 /* CPR_Buddy WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2951CCE02852F82A002C1577 /* CPR_BuddyApp.swift */,
+				2951CCE22852F82A002C1577 /* ContentView.swift */,
+				2951CCE42852F82A002C1577 /* NotificationController.swift */,
+				2951CCE62852F82A002C1577 /* NotificationView.swift */,
+				2951CCE82852F82A002C1577 /* ComplicationController.swift */,
+				2951CCEA2852F82B002C1577 /* Assets.xcassets */,
+				2951CCEF2852F82B002C1577 /* Info.plist */,
+				2951CCF02852F82B002C1577 /* PushNotificationPayload.apns */,
+				2951CCEC2852F82B002C1577 /* Preview Content */,
+			);
+			path = "CPR_Buddy WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		2951CCEC2852F82B002C1577 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2951CCED2852F82B002C1577 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2951CCCB2852F822002C1577 /* CPR_Buddy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2951CCFB2852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy" */;
+			buildPhases = (
+				2951CCCA2852F822002C1577 /* Resources */,
+				2951CCFA2852F82C002C1577 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2951CCD32852F822002C1577 /* PBXTargetDependency */,
+			);
+			name = CPR_Buddy;
+			productName = CPR_Buddy;
+			productReference = 2951CCCC2852F822002C1577 /* CPR_Buddy.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		2951CCCF2852F822002C1577 /* CPR_Buddy WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2951CCF72852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy WatchKit App" */;
+			buildPhases = (
+				2951CCCE2852F822002C1577 /* Resources */,
+				2951CCF62852F82C002C1577 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2951CCDE2852F82A002C1577 /* PBXTargetDependency */,
+			);
+			name = "CPR_Buddy WatchKit App";
+			productName = "CPR_Buddy WatchKit App";
+			productReference = 2951CCD02852F822002C1577 /* CPR_Buddy WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		2951CCDA2852F82A002C1577 /* CPR_Buddy WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2951CCF32852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy WatchKit Extension" */;
+			buildPhases = (
+				2951CCD72852F82A002C1577 /* Sources */,
+				2951CCD82852F82A002C1577 /* Frameworks */,
+				2951CCD92852F82A002C1577 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CPR_Buddy WatchKit Extension";
+			productName = "CPR_Buddy WatchKit Extension";
+			productReference = 2951CCDB2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2951CCC62852F821002C1577 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					2951CCCB2852F822002C1577 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					2951CCCF2852F822002C1577 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					2951CCDA2852F82A002C1577 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 2951CCC92852F822002C1577 /* Build configuration list for PBXProject "CPR_Buddy" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2951CCC52852F821002C1577;
+			productRefGroup = 2951CCCD2852F822002C1577 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2951CCCB2852F822002C1577 /* CPR_Buddy */,
+				2951CCCF2852F822002C1577 /* CPR_Buddy WatchKit App */,
+				2951CCDA2852F82A002C1577 /* CPR_Buddy WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2951CCCA2852F822002C1577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2951CCCE2852F822002C1577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2951CCD62852F82A002C1577 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2951CCD92852F82A002C1577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2951CCEE2852F82B002C1577 /* Preview Assets.xcassets in Resources */,
+				2951CCEB2852F82B002C1577 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2951CCD72852F82A002C1577 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2951CCE52852F82A002C1577 /* NotificationController.swift in Sources */,
+				2951CCE32852F82A002C1577 /* ContentView.swift in Sources */,
+				2951CCE92852F82A002C1577 /* ComplicationController.swift in Sources */,
+				2951CCE12852F82A002C1577 /* CPR_BuddyApp.swift in Sources */,
+				2951CCE72852F82A002C1577 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2951CCD32852F822002C1577 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2951CCCF2852F822002C1577 /* CPR_Buddy WatchKit App */;
+			targetProxy = 2951CCD22852F822002C1577 /* PBXContainerItemProxy */;
+		};
+		2951CCDE2852F82A002C1577 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2951CCDA2852F82A002C1577 /* CPR_Buddy WatchKit Extension */;
+			targetProxy = 2951CCDD2852F82A002C1577 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2951CCF12852F82B002C1577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2951CCF22852F82B002C1577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2951CCF42852F82C002C1577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CPR_Buddy WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CPR_Buddy WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "angelinatsuboi.CPR-Buddy.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		2951CCF52852F82C002C1577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CPR_Buddy WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CPR_Buddy WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "angelinatsuboi.CPR-Buddy.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		2951CCF82852F82C002C1577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = CPR_Buddy_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "angelinatsuboi.CPR-Buddy.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		2951CCF92852F82C002C1577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = CPR_Buddy_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "angelinatsuboi.CPR-Buddy.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		2951CCFC2852F82C002C1577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "angelinatsuboi.CPR-Buddy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2951CCFD2852F82C002C1577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "angelinatsuboi.CPR-Buddy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2951CCC92852F822002C1577 /* Build configuration list for PBXProject "CPR_Buddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2951CCF12852F82B002C1577 /* Debug */,
+				2951CCF22852F82B002C1577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2951CCF32852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2951CCF42852F82C002C1577 /* Debug */,
+				2951CCF52852F82C002C1577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2951CCF72852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2951CCF82852F82C002C1577 /* Debug */,
+				2951CCF92852F82C002C1577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2951CCFB2852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2951CCFC2852F82C002C1577 /* Debug */,
+				2951CCFD2852F82C002C1577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2951CCC62852F821002C1577 /* Project object */;
+}
