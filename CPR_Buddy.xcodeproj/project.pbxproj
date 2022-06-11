@@ -20,6 +20,7 @@
 		2951CD002855108F002C1577 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCFF2855108F002C1577 /* AboutView.swift */; };
 		2951CD0228551B11002C1577 /* HandsOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CD0128551B11002C1577 /* HandsOnlyView.swift */; };
 		2951CD0428551B1B002C1577 /* TraditionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CD0328551B1B002C1577 /* TraditionalView.swift */; };
+		2951CD062855337D002C1577 /* Slideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CD052855337D002C1577 /* Slideshow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		2951CCFF2855108F002C1577 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		2951CD0128551B11002C1577 /* HandsOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandsOnlyView.swift; sourceTree = "<group>"; };
 		2951CD0328551B1B002C1577 /* TraditionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalView.swift; sourceTree = "<group>"; };
+		2951CD052855337D002C1577 /* Slideshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slideshow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		2951CCDF2852F82A002C1577 /* CPR_Buddy WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2951CD0728553382002C1577 /* Components */,
 				2951CCFE28551071002C1577 /* Views */,
 				2951CCE02852F82A002C1577 /* CPR_BuddyApp.swift */,
 				2951CCE22852F82A002C1577 /* ContentView.swift */,
@@ -154,6 +157,14 @@
 				2951CD0328551B1B002C1577 /* TraditionalView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2951CD0728553382002C1577 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2951CD052855337D002C1577 /* Slideshow.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 				2951CCE92852F82A002C1577 /* ComplicationController.swift in Sources */,
 				2951CCE12852F82A002C1577 /* CPR_BuddyApp.swift in Sources */,
 				2951CD002855108F002C1577 /* AboutView.swift in Sources */,
+				2951CD062855337D002C1577 /* Slideshow.swift in Sources */,
 				2951CD0428551B1B002C1577 /* TraditionalView.swift in Sources */,
 				2951CCE72852F82A002C1577 /* NotificationView.swift in Sources */,
 			);

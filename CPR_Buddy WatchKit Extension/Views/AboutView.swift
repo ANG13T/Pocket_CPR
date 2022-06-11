@@ -12,7 +12,7 @@ struct AboutView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "headphones")
+            Image(systemName: "heart")
                 .font(.system(size: 30))
 
             Text("To play audio, connect Bluetooth headphones to your Apple Watch.")
