@@ -9,8 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        VStack(spacing: 20) {
+            Button("Hands-Only CPR") {
+                print("Button tapped!")
+            }
+            Button("Traditional CPR") {
+                print("Button tapped!")
+            }
+            Button("About CPR") {
+                print("Button tapped!")
+            }
+        }
     }
 }
 
