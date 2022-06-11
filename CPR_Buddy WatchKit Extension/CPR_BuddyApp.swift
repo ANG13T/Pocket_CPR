@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct CPR_BuddyApp: App {
+    
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {

@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var presentAboutView = false
+    
     var body: some View {
+        NavigationView {
         VStack(spacing: 20) {
             Button("Hands-Only CPR") {
                 print("Button tapped!")
@@ -17,9 +20,13 @@ struct ContentView: View {
                 print("Button tapped!")
             }.buttonStyle(BorderedButtonStyle(tint: .pink))
             Button("About CPR") {
-                print("Button tapped!")
+                presentAboutView.toggle()
             }.buttonStyle(BorderedButtonStyle(tint: .orange))
+                .fullScreenCover(isPresented: $presentAboutView) {
+                    AboutView(isPresented: $presentAboutView)
+                }
         }
+      }
     }
 }
 

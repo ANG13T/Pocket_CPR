@@ -17,6 +17,7 @@
 		2951CCE92852F82A002C1577 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCE82852F82A002C1577 /* ComplicationController.swift */; };
 		2951CCEB2852F82B002C1577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2951CCEA2852F82B002C1577 /* Assets.xcassets */; };
 		2951CCEE2852F82B002C1577 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2951CCED2852F82B002C1577 /* Preview Assets.xcassets */; };
+		2951CD002855108F002C1577 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCFF2855108F002C1577 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		2951CCED2852F82B002C1577 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2951CCEF2852F82B002C1577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2951CCF02852F82B002C1577 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		2951CCFF2855108F002C1577 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		2951CCDF2852F82A002C1577 /* CPR_Buddy WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2951CCFE28551071002C1577 /* Views */,
 				2951CCE02852F82A002C1577 /* CPR_BuddyApp.swift */,
 				2951CCE22852F82A002C1577 /* ContentView.swift */,
 				2951CCE42852F82A002C1577 /* NotificationController.swift */,
@@ -137,6 +140,14 @@
 				2951CCED2852F82B002C1577 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2951CCFE28551071002C1577 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2951CCFF2855108F002C1577 /* AboutView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +281,7 @@
 				2951CCE32852F82A002C1577 /* ContentView.swift in Sources */,
 				2951CCE92852F82A002C1577 /* ComplicationController.swift in Sources */,
 				2951CCE12852F82A002C1577 /* CPR_BuddyApp.swift in Sources */,
+				2951CD002855108F002C1577 /* AboutView.swift in Sources */,
 				2951CCE72852F82A002C1577 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
