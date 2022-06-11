@@ -9,16 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var presentAboutView = false
+    @State private var presentHandsOnlyView = false
+    @State private var presentTraditionalView = false
     
     var body: some View {
         NavigationView {
         VStack(spacing: 20) {
             Button("Hands-Only CPR") {
-                print("Button tapped!")
+                presentHandsOnlyView.toggle()
             }.buttonStyle(BorderedButtonStyle(tint: .blue))
+            .fullScreenCover(isPresented: $presentHandsOnlyView) {
+                AboutView(isPresented: $presentHandsOnlyView)
+            }
+            
             Button("Traditional CPR") {
-                print("Button tapped!")
+                presentTraditionalView.toggle()
             }.buttonStyle(BorderedButtonStyle(tint: .pink))
+            .fullScreenCover(isPresented: $presentTraditionalView) {
+                AboutView(isPresented: $presentTraditionalView)
+            }
+            
+            
             Button("About CPR") {
                 presentAboutView.toggle()
             }.buttonStyle(BorderedButtonStyle(tint: .orange))
