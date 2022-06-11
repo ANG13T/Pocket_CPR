@@ -12,13 +12,13 @@ struct ContentView: View {
         VStack(spacing: 20) {
             Button("Hands-Only CPR") {
                 print("Button tapped!")
-            }
+            }.buttonStyle(BorderedButtonStyle(tint: .blue))
             Button("Traditional CPR") {
                 print("Button tapped!")
-            }
+            }.buttonStyle(BorderedButtonStyle(tint: .pink))
             Button("About CPR") {
                 print("Button tapped!")
-            }
+            }.buttonStyle(BorderedButtonStyle(tint: .orange))
         }
     }
 }
