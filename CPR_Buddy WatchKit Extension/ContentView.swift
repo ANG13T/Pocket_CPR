@@ -14,30 +14,40 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-        VStack(spacing: 20) {
-            Button("Hands-Only CPR") {
-                presentHandsOnlyView.toggle()
-            }.buttonStyle(BorderedButtonStyle(tint: .blue))
-            .fullScreenCover(isPresented: $presentHandsOnlyView) {
-                AboutView(isPresented: $presentHandsOnlyView)
+            VStack(spacing: 15) {
+                Button("Hands-Only CPR") {
+                    presentHandsOnlyView.toggle()
+                }.buttonStyle(BorderedButtonStyle(tint: .blue))
+                    .fullScreenCover(isPresented: $presentHandsOnlyView) {
+                        AboutView(isPresented: $presentHandsOnlyView)
+                    }
+                
+                Button("Traditional CPR") {
+                    presentTraditionalView.toggle()
+                }.buttonStyle(BorderedButtonStyle(tint: .pink))
+                    .fullScreenCover(isPresented: $presentTraditionalView) {
+                        AboutView(isPresented: $presentTraditionalView)
+                    }
+                
+                
+                Button("About CPR") {
+                    presentAboutView.toggle()
+                }.buttonStyle(BorderedButtonStyle(tint: .orange))
+                    .fullScreenCover(isPresented: $presentAboutView) {
+                        AboutView(isPresented: $presentAboutView).toolbar {
+                            
+                            ToolbarItem(placement: .cancellationAction) {
+                                
+                                Button("Cancel") {
+                                    presentAboutView.toggle()
+                                }
+                                
+                            }
+                            
+                        }
+                    }
             }
-            
-            Button("Traditional CPR") {
-                presentTraditionalView.toggle()
-            }.buttonStyle(BorderedButtonStyle(tint: .pink))
-            .fullScreenCover(isPresented: $presentTraditionalView) {
-                AboutView(isPresented: $presentTraditionalView)
-            }
-            
-            
-            Button("About CPR") {
-                presentAboutView.toggle()
-            }.buttonStyle(BorderedButtonStyle(tint: .orange))
-                .fullScreenCover(isPresented: $presentAboutView) {
-                    AboutView(isPresented: $presentAboutView)
-                }
         }
-      }
     }
 }
 
