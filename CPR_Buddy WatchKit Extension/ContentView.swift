@@ -30,7 +30,7 @@ struct ContentView: View {
                             }
                             
                         }
-                    }
+                    }.padding(.top, 25)
                 
                 Button("Traditional CPR") {
                     presentTraditionalView.toggle()

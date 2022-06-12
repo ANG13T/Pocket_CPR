@@ -60,7 +60,7 @@ struct AboutView: View {
             VStack {
                 VStack {
 
-                    Text("When a person's heart stops beating, CPR can help regulate blood flow around the body. There are two forms of CPR: \n **1) Hands-Only CPR** \n\n **2) Traditional CPR**")
+                    Text("When a person's heart stops beating, CPR can help regulate blood flow around the body. There are two forms of CPR: \n **1) Hands-Only CPR** \n **2) Traditional CPR**")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
                 }
@@ -117,11 +117,12 @@ struct AboutView: View {
                 .padding(10)
 
                 Spacer()
+                Button("Get Started") {
+                    isPresented.toggle()
+                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange))
             }.padding(.top, 15)
 
-        }.foregroundColor(Color.white)
-        .background(Color.yellow)
-        .tabViewStyle(PageTabViewStyle())
+        }.tabViewStyle(PageTabViewStyle())
     }
 }
 
