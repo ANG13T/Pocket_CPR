@@ -76,15 +76,13 @@ struct AboutView: View {
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                     
-                    Text("")
+                    Text("People who have little or no CPR training should use hands-only CPR. It requires you to compress the victim's chest hard for about 100-120 compressions a minute until help arrives.")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                 }
                 .opacity(0.8)
-                .padding(10)
-
-                Spacer()
-            }.padding(.top, 15)
+                .padding(5)
+            }
             
             VStack {
                 VStack {
@@ -93,15 +91,13 @@ struct AboutView: View {
                     .font(.footnote)
                     .multilineTextAlignment(.center)
 
-                    Text("When a person's heart stops beating, CPR can help regulate blood flow around the body. There are two forms of CPR: \n **1) Hands-Only CPR** \n **2) Traditional CPR**")
+                    Text("Traditional CPR is meant for people who have former CPR training. It requires you to perform two rescue breaths for every 30 chest compressions until help arrives.")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
                 }
                 .opacity(0.8)
-                .padding(10)
-
-                Spacer()
-            }.padding(.top, 15)
+                .padding(5)
+            }
             
             VStack {
                 VStack {
@@ -109,18 +105,17 @@ struct AboutView: View {
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                     
-                    Text("")
+                    Text("PocketCPR teaches both Hands-Only and Traditional CPR methods through tutorials and CPR timers.")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                 }
                 .opacity(0.8)
-                .padding(10)
 
                 Spacer()
                 Button("Get Started") {
                     isPresented.toggle()
-                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange))
-            }.padding(.top, 15)
+                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.top, 5)
+            }.padding(.top, 10)
 
         }.tabViewStyle(PageTabViewStyle())
     }
