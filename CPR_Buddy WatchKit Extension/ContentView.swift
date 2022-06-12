@@ -19,14 +19,34 @@ struct ContentView: View {
                     presentHandsOnlyView.toggle()
                 }.buttonStyle(BorderedButtonStyle(tint: .blue))
                     .fullScreenCover(isPresented: $presentHandsOnlyView) {
-                        AboutView(isPresented: $presentHandsOnlyView)
+                        AboutView(isPresented: $presentHandsOnlyView).toolbar {
+                            
+                            ToolbarItem(placement: .cancellationAction) {
+                                
+                                Button("Cancel") {
+                                    presentHandsOnlyView.toggle()
+                                }
+                                
+                            }
+                            
+                        }
                     }
                 
                 Button("Traditional CPR") {
                     presentTraditionalView.toggle()
                 }.buttonStyle(BorderedButtonStyle(tint: .pink))
                     .fullScreenCover(isPresented: $presentTraditionalView) {
-                        AboutView(isPresented: $presentTraditionalView)
+                        AboutView(isPresented: $presentTraditionalView).toolbar {
+                            
+                            ToolbarItem(placement: .cancellationAction) {
+                                
+                                Button("Cancel") {
+                                    presentTraditionalView.toggle()
+                                }
+                                
+                            }
+                            
+                        }
                     }
                 
                 
