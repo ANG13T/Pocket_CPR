@@ -21,7 +21,7 @@ struct HandsOnlyView: View {
                 Button("Start Timer") {
                     isPresented.toggle()
                 }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
-                .padding(.bottom, 5)
+                .padding(.bottom, 10)
                 
                 Button("Tutorial") {
                     isPresented.toggle()
