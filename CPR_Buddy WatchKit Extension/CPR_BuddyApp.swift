@@ -17,7 +17,7 @@ struct CPR_BuddyApp: App {
                     
                     ToolbarItem(placement: .cancellationAction) {
                         
-                        Text("PocketCPR")
+                        Text("CPR Buddy")
                         
                     }
                     

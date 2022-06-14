@@ -19,11 +19,11 @@ struct ContentView: View {
                     presentHandsOnlyView.toggle()
                 }.buttonStyle(BorderedButtonStyle(tint: .blue))
                     .fullScreenCover(isPresented: $presentHandsOnlyView) {
-                        AboutView(isPresented: $presentHandsOnlyView).toolbar {
+                        HandsOnlyView(isPresented: $presentHandsOnlyView).toolbar {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
-                                Button("Cancel") {
+                                Button("Close") {
                                     presentHandsOnlyView.toggle()
                                 }
                                 
@@ -36,11 +36,11 @@ struct ContentView: View {
                     presentTraditionalView.toggle()
                 }.buttonStyle(BorderedButtonStyle(tint: .pink))
                     .fullScreenCover(isPresented: $presentTraditionalView) {
-                        AboutView(isPresented: $presentTraditionalView).toolbar {
+                        TraditionalView(isPresented: $presentTraditionalView).toolbar {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
-                                Button("Cancel") {
+                                Button("Close") {
                                     presentTraditionalView.toggle()
                                 }
                                 
@@ -58,7 +58,7 @@ struct ContentView: View {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
-                                Button("Cancel") {
+                                Button("Close") {
                                     presentAboutView.toggle()
                                 }
                                 

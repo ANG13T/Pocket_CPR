@@ -12,21 +12,28 @@ struct HandsOnlyView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "headphones")
-                .font(.system(size: 30))
-
-            Text("To play audio, connect Bluetooth headphones to your Apple Watch.")
-                .font(.footnote)
+            VStack {
+                Text("**Hands-Only CPR**")
+                .font(.headline)
                 .multilineTextAlignment(.center)
+                .padding(.vertical, 5)
+                
+                Button("Start Timer") {
+                    isPresented.toggle()
+                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
+                .padding(.bottom, 5)
+                
+                Button("Tutorial") {
+                    isPresented.toggle()
+                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                
+            }
+            .opacity(0.8)
+            .padding(1)
         }
-        .opacity(0.8)
-        .padding(10)
 
         Spacer()
-
-        Button("Connect a Device") {
-            isPresented.toggle()
-        }.padding(.horizontal)
+        
     }
 }
 

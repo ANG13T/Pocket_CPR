@@ -23,10 +23,6 @@ struct TraditionalView: View {
         .padding(10)
 
         Spacer()
-
-        Button("Connect a Device") {
-            isPresented.toggle()
-        }.padding(.horizontal)
     }
 }
 
