@@ -9,10 +9,14 @@ import SwiftUI
 
 struct TraditionalTimerView: View {
     @Binding var isPresented: Bool
-    @State private var selectedTab = "one"
+    @State private var selection: Tab = .tabOne
+       enum Tab {
+           case tabOne
+           case tabTwo
+       }
      
     var body: some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: $selection) {
             // PAGE 1
             VStack {
                 VStack {
@@ -28,7 +32,7 @@ struct TraditionalTimerView: View {
                 .padding(10)
 
                 Spacer()
-            }.padding(.top, 15).tag("one")
+            }.padding(.top, 15).tag(Tab.tabOne)
 
             VStack {
                 VStack {
@@ -43,11 +47,11 @@ struct TraditionalTimerView: View {
                 .padding(10)
 
                 Spacer()
-            }.padding(.top, 15).tag("two")
+            }.padding(.top, 15).tag(Tab.tabTwo)
             
             
             
 
-        }.tabViewStyle(.page)
+        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
