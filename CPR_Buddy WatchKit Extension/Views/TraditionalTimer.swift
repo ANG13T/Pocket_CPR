@@ -44,18 +44,6 @@ struct TraditionalTimerView: View {
                 Spacer()
             }.padding(.top, 15)
             
-            VStack {
-                VStack {
-
-                    Text("In an average person's body, under standard conditions, the heart's resting heart rate is between 60 - 100 beats per minute.")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                }
-                .opacity(0.8)
-                .padding(10)
-
-                Spacer()
-            }.padding(.top, 25)
             
             
 

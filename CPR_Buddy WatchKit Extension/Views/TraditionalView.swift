@@ -19,11 +19,25 @@ struct TraditionalView: View {
                 .font(.headline)
                 .multilineTextAlignment(.center)
                 .padding(.vertical, 5)
+            
                 
                 Button("Start Timer") {
-                    isPresented.toggle()
-                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
-                .padding(.bottom, 10)
+                    presentTimerView.toggle()
+                }.buttonStyle(BorderedButtonStyle(tint: .blue))
+                    .fullScreenCover(isPresented: $presentTimerView) {
+                        TraditionalTimerView(isPresented: $presentTimerView).toolbar {
+                            
+                            ToolbarItem(placement: .cancellationAction) {
+                                
+                                Button("Close") {
+                                    presentTimerView.toggle()
+                                }
+                                
+                            }
+                            
+                        }
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
+                    .padding(.bottom, 10)
                 
                 Button("Tutorial") {
                     isPresented.toggle()
