@@ -15,34 +15,36 @@ struct HandsOnlyTutorialView: View {
             // PAGE 1
             VStack {
                 VStack {
-                    Image(systemName: "heart")
-                        .font(.system(size: 30))
+                    Text("**Observe your Surroundings**")
+                    .font(.footnote)
+                    .multilineTextAlignment(.center)
 
-                    Text("CPR is a life saving procedure performed on people whose heart stops beating.")
+                    Text("Check your surroundings and person. Ensure you are in a safe area, tap on the person's shoulder to see if they are OK, and check for signs of normal breathing.")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
                         .padding(.top, 10)
                 }
                 .opacity(0.8)
-                .padding(10)
+                .padding(2)
 
                 Spacer()
             }.padding(.top, 15)
 
             VStack {
                 VStack {
-                    Image(systemName: "heart")
-                        .font(.system(size: 30))
-                    Text("CPR can double or triple the victim's survival rate. With enough guidance, anyone can learn CPR.")
+                    Text("**Call 911**")
+                    Image(systemName: "phone.fill")
+                        .font(.system(size: 30)).padding(.top, 10)
+                    Text("If you observe signs of irregular breathing or if there is no response from the person, call 911 for help.")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
                         .padding(.top, 10)
                 }
                 .opacity(0.8)
-                .padding(10)
+                .padding(2)
 
                 Spacer()
-            }.padding(.top, 15)
+            }
             
             VStack {
                 VStack {
