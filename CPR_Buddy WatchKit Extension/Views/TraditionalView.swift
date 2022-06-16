@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TraditionalView: View {
     @Binding var isPresented: Bool
+    @State private var presentTimerView = false
+    @State private var presentTutorialView = false
     
     var body: some View {
         VStack {
