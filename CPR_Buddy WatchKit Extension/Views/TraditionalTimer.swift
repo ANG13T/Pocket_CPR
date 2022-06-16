@@ -35,7 +35,7 @@ struct TraditionalTimerView: View {
                 .padding(10)
 
                 Spacer()
-            }.padding(.top, 15).tag(Tab.tabOne)
+            }.gesture(DragGesture()).padding(.top, 15).tag(Tab.tabOne)
 
             VStack {
                 VStack {
@@ -50,7 +50,7 @@ struct TraditionalTimerView: View {
                 .padding(10)
 
                 Spacer()
-            }.padding(.top, 15).tag(Tab.tabTwo)
+            }.gesture(DragGesture()).padding(.top, 15).tag(Tab.tabTwo)
             
             
             
