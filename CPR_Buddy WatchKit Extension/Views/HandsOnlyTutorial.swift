@@ -65,7 +65,9 @@ struct HandsOnlyTutorialView: View {
                     Text("**Hand Placement**")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
-                    Text("When a person's heart stops beating, CPR can help regulate blood flow around the body. There are two forms of CPR: \n **1) Hands-Only CPR** \n **2) Traditional CPR**")
+                    Image(systemName: "hand.raised")
+                        .font(.system(size: 30))
+                    Text("Place the heel of one hand in the center of their chest, with your other hand on top. Interlace your fingers and ensure they are above the chest.")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
                 }
@@ -81,7 +83,7 @@ struct HandsOnlyTutorialView: View {
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                     
-                    Text("People who have little or no CPR training should use hands-only CPR. It requires you to compress the victim's chest hard for about 100-120 compressions a minute until help arrives.")
+                    Text("Position your body so that your shoulders are directly over your hands. Lock your elbows to keep your arms straight.")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                 }
@@ -96,7 +98,7 @@ struct HandsOnlyTutorialView: View {
                     .font(.footnote)
                     .multilineTextAlignment(.center)
 
-                    Text("Traditional CPR is meant for people who have former CPR training. It requires you to perform two rescue breaths for every 30 chest compressions until help arrives.")
+                    Text("Push hard and fast (at least 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression.")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
                 }
