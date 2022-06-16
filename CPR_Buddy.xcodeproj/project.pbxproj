@@ -22,6 +22,7 @@
 		2951CD0428551B1B002C1577 /* TraditionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CD0328551B1B002C1577 /* TraditionalView.swift */; };
 		29E71551285B072E009C0D07 /* TraditionalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E71550285B072E009C0D07 /* TraditionalTimer.swift */; };
 		29E71553285B0FC6009C0D07 /* TraditionalTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E71552285B0FC6009C0D07 /* TraditionalTutorial.swift */; };
+		29E71555285B109C009C0D07 /* HandsOnlyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E71554285B109C009C0D07 /* HandsOnlyTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		2951CD0328551B1B002C1577 /* TraditionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalView.swift; sourceTree = "<group>"; };
 		29E71550285B072E009C0D07 /* TraditionalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalTimer.swift; sourceTree = "<group>"; };
 		29E71552285B0FC6009C0D07 /* TraditionalTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalTutorial.swift; sourceTree = "<group>"; };
+		29E71554285B109C009C0D07 /* HandsOnlyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandsOnlyTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				2951CD0328551B1B002C1577 /* TraditionalView.swift */,
 				29E71550285B072E009C0D07 /* TraditionalTimer.swift */,
 				29E71552285B0FC6009C0D07 /* TraditionalTutorial.swift */,
+				29E71554285B109C009C0D07 /* HandsOnlyTimer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				2951CCE52852F82A002C1577 /* NotificationController.swift in Sources */,
 				2951CCE32852F82A002C1577 /* ContentView.swift in Sources */,
 				2951CD0228551B11002C1577 /* HandsOnlyView.swift in Sources */,
+				29E71555285B109C009C0D07 /* HandsOnlyTimer.swift in Sources */,
 				29E71551285B072E009C0D07 /* TraditionalTimer.swift in Sources */,
 				2951CCE92852F82A002C1577 /* ComplicationController.swift in Sources */,
 				2951CCE12852F82A002C1577 /* CPR_BuddyApp.swift in Sources */,

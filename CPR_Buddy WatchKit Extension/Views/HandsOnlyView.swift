@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HandsOnlyView: View {
     @Binding var isPresented: Bool
+    @State private var presentTimerView = false
+    @State private var presentTutorialView = false
     
     var body: some View {
         VStack {
@@ -19,9 +21,22 @@ struct HandsOnlyView: View {
                 .padding(.vertical, 5)
                 
                 Button("Start Timer") {
-                    isPresented.toggle()
-                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
-                .padding(.bottom, 10)
+                    presentTimerView.toggle()
+                }.buttonStyle(BorderedButtonStyle(tint: .blue))
+                    .fullScreenCover(isPresented: $presentTimerView) {
+                        HandsOnlyTimerView(isPresented: $presentTimerView).toolbar {
+                            
+                            ToolbarItem(placement: .cancellationAction) {
+                                
+                                Button("Close") {
+                                    presentTimerView.toggle()
+                                }
+                                
+                            }
+                            
+                        }
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
+                    .padding(.bottom, 10)
                 
                 Button("Tutorial") {
                     isPresented.toggle()
