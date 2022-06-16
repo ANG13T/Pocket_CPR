@@ -34,6 +34,9 @@ struct HandsOnlyTutorialView: View {
                 VStack {
                     Text("**Call 911**").font(.footnote)
                         .multilineTextAlignment(.center)
+                    
+                    Image(systemName: "phone.fill")
+                    .font(.system(size: 30)).padding(.top, 10)
             
                     Text("If you observe signs of irregular breathing or if there is no response from the person, call 911 for help.")
                         .font(.footnote)
@@ -74,7 +77,7 @@ struct HandsOnlyTutorialView: View {
                 .padding(10)
 
                 Spacer()
-            }.padding(.top, 15)
+            }
             
             VStack {
                 VStack {
