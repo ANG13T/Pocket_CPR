@@ -15,13 +15,13 @@ struct TraditionalTimerView: View {
             // PAGE 1
             VStack {
                 VStack {
-                    Image(systemName: "heart")
-                        .font(.system(size: 30))
-
-                    Text("CPR is a life saving procedure performed on people whose heart stops beating.")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 10)
+                    Button("Child") {
+                        isPresented.toggle()
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    
+                    Button("Adult") {
+                        isPresented.toggle()
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                 }
                 .opacity(0.8)
                 .padding(10)
@@ -47,6 +47,6 @@ struct TraditionalTimerView: View {
             
             
 
-        }.tabViewStyle(PageTabViewStyle())
+        }.tabViewStyle(.page)
     }
 }
