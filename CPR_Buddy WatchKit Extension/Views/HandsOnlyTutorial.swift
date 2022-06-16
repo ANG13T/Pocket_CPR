@@ -32,9 +32,9 @@ struct HandsOnlyTutorialView: View {
 
             VStack {
                 VStack {
-                    Text("**Call 911**")
-                    Image(systemName: "phone.fill")
-                        .font(.system(size: 30)).padding(.top, 10)
+                    Text("**Call 911**").font(.footnote)
+                        .multilineTextAlignment(.center)
+            
                     Text("If you observe signs of irregular breathing or if there is no response from the person, call 911 for help.")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
@@ -48,9 +48,9 @@ struct HandsOnlyTutorialView: View {
             
             VStack {
                 VStack {
-                    Text("**Begin CPR**")
-                    Image(systemName: "heart.fill")
-                        .font(.system(size: 30))
+                    Text("**Begin CPR**").font(.footnote)
+                        .multilineTextAlignment(.center)
+                
                     Text("Make sure the person's back is against a firm, flat surface. Kneel beside the person. Spread your knees about a shoulder width apart.")
                         .font(.footnote)
                         .multilineTextAlignment(.center).padding(.top, 10)
@@ -65,11 +65,10 @@ struct HandsOnlyTutorialView: View {
                     Text("**Hand Placement**")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
-                    Image(systemName: "hand.raised")
-                        .font(.system(size: 30))
+                   
                     Text("Place the heel of one hand in the center of their chest, with your other hand on top. Interlace your fingers and ensure they are above the chest.")
                         .font(.footnote)
-                        .multilineTextAlignment(.center)
+                        .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
                 .padding(10)
@@ -85,7 +84,7 @@ struct HandsOnlyTutorialView: View {
                     
                     Text("Position your body so that your shoulders are directly over your hands. Lock your elbows to keep your arms straight.")
                     .font(.footnote)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
                 .padding(5)
@@ -100,7 +99,7 @@ struct HandsOnlyTutorialView: View {
 
                     Text("Push hard and fast (at least 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression.")
                         .font(.footnote)
-                        .multilineTextAlignment(.center)
+                        .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
                 .padding(5)
@@ -114,7 +113,7 @@ struct HandsOnlyTutorialView: View {
                     
                     Text("CPR Buddy teaches both Hands-Only and Traditional CPR methods through tutorials and CPR timers.")
                     .font(.footnote)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
 
