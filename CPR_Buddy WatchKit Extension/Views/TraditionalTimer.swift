@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TraditionalTimerView: View {
     @Binding var isPresented: Bool
+    @State private var chosenProfile: String = "Adult"
     @State private var selection: Tab = .tabOne
        enum Tab {
            case tabOne
@@ -21,11 +22,13 @@ struct TraditionalTimerView: View {
             VStack {
                 VStack {
                     Button("Child") {
-                        isPresented.toggle()
+                        chosenProfile = "Child"
+                        selection = Tab.tabTwo
                     }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                     
                     Button("Adult") {
-                        isPresented.toggle()
+                        chosenProfile = "Adult"
+                        selection = Tab.tabTwo
                     }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                 }
                 .opacity(0.8)
