@@ -48,20 +48,23 @@ struct HandsOnlyTutorialView: View {
             
             VStack {
                 VStack {
-
-                    Text("In an average person's body, under standard conditions, the heart's resting heart rate is between 60 - 100 beats per minute.")
+                    Text("**Begin CPR**")
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 30))
+                    Text("Make sure the person's back is against a firm, flat surface. Kneel beside the person. Spread your knees about a shoulder width apart.")
                         .font(.footnote)
-                        .multilineTextAlignment(.center)
+                        .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
                 .padding(10)
 
-                Spacer()
-            }.padding(.top, 25)
+            }
             
             VStack {
                 VStack {
-
+                    Text("**Hand Placement**")
+                    .font(.footnote)
+                    .multilineTextAlignment(.center)
                     Text("When a person's heart stops beating, CPR can help regulate blood flow around the body. There are two forms of CPR: \n **1) Hands-Only CPR** \n **2) Traditional CPR**")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
@@ -74,7 +77,7 @@ struct HandsOnlyTutorialView: View {
             
             VStack {
                 VStack {
-                    Text("**Hands-Only CPR**")
+                    Text("**Body Position**")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                     
@@ -89,7 +92,7 @@ struct HandsOnlyTutorialView: View {
             VStack {
                 VStack {
                     
-                    Text("**Traditional CPR**")
+                    Text("**Compressions**")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
 
@@ -103,7 +106,7 @@ struct HandsOnlyTutorialView: View {
             
             VStack {
                 VStack {
-                    Text("**About CPR Buddy**")
+                    Text("**For Kids**")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                     
