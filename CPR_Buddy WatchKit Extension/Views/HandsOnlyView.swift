@@ -39,8 +39,21 @@ struct HandsOnlyView: View {
                     .padding(.bottom, 10)
                 
                 Button("Tutorial") {
-                    isPresented.toggle()
-                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    presentTutorialView.toggle()
+                }.buttonStyle(BorderedButtonStyle(tint: .pink))
+                    .fullScreenCover(isPresented: $presentTutorialView) {
+                        HandsOnlyTutorialView(isPresented: $presentTutorialView).toolbar {
+                            
+                            ToolbarItem(placement: .cancellationAction) {
+                                
+                                Button("Close") {
+                                    presentTutorialView.toggle()
+                                }
+                                
+                            }
+                            
+                        }
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                 
             }
             .opacity(0.8)
