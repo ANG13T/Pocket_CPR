@@ -9,10 +9,39 @@ import SwiftUI
 
 struct HandsOnlyTutorialView: View {
     @Binding var isPresented: Bool
+    @State private var chosenProfile: String = "Adult"
+    @State private var selection: Tab = .tabOne
+    enum Tab {
+        case tabOne
+        case tabTwo
+    }
     
     var body: some View {
-        TabView {
-            // PAGE 1
+        TabView(selection: $selection) {
+            VStack {
+                VStack {
+                    Button("Infant") {
+                        chosenProfile = "Infant"
+                        selection = Tab.tabTwo
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    
+                    Button("Child") {
+                        chosenProfile = "Child"
+                        selection = Tab.tabTwo
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    
+                    Button("Adult") {
+                        chosenProfile = "Adult"
+                        selection = Tab.tabTwo
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                }
+                .opacity(0.8)
+                .padding(10)
+
+                Spacer()
+            }.gesture(DragGesture()).padding(.top, 15)
+
+            
             VStack {
                 VStack {
                     Text("**Observe your Surroundings**")
@@ -28,7 +57,7 @@ struct HandsOnlyTutorialView: View {
                 .padding(2)
 
                 Spacer()
-            }.padding(.top, 15)
+            }.padding(.top, 15).tag(Tab.tabTwo)
 
             VStack {
                 VStack {
@@ -107,24 +136,7 @@ struct HandsOnlyTutorialView: View {
                 .opacity(0.8)
                 .padding(5)
             }
-            
-            VStack {
-                VStack {
-                    Text("**For Kids**")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
-                    
-                    Text("CPR Buddy teaches both Hands-Only and Traditional CPR methods through tutorials and CPR timers.")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center).padding(.top, 10)
-                }
-                .opacity(0.8)
-
-                Spacer()
-                Button("Get Started") {
-                    isPresented.toggle()
-                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.top, 5)
-            }.padding(.top, 10)
+        
 
         }.tabViewStyle(PageTabViewStyle())
     }
