@@ -123,7 +123,6 @@ struct HandsOnlyTutorialView: View {
                 .opacity(0.8)
                 .padding(10)
                 
-                Spacer()
             }
             
             VStack {
@@ -167,7 +166,7 @@ struct HandsOnlyTutorialView: View {
                     
                     Button("Done") {
                         isPresented.toggle()
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange))
+                    }.padding(.top, 10).buttonStyle(BorderedButtonStyle(tint: .orange))
                 }
                 .opacity(0.8)
                 .padding(5)

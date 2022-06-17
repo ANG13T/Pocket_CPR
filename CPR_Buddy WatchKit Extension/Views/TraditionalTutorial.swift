@@ -9,76 +9,131 @@ import SwiftUI
 
 struct TraditionalTutorialView: View {
     @Binding var isPresented: Bool
+    @State private var chosenProfile: String = "Adult"
+    @State private var selection: Tab = .tabOne
+    
+    @State private var observation: String = "Check your surroundings and person. Ensure you are in a safe area, tap on the person's shoulder to see if they are OK, and check for signs of normal breathing."
+    @State private var handPlacement: String = "Place the heel of one hand in the center of their chest, with your other hand on top. Interlace your fingers and ensure they are above the chest."
+    @State private var bodyPosition: String = "Position your body so that your shoulders are directly over your hands. Lock your elbows to keep your arms straight."
+    @State private var compressions: String = "Push hard and fast (at least 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression."
+    
+    enum Tab {
+        case tabOne
+        case tabTwo
+    }
     
     var body: some View {
-        TabView {
-            // PAGE 1
+        TabView(selection: $selection) {
             VStack {
                 VStack {
-                    Image(systemName: "heart")
-                        .font(.system(size: 30))
-
-                    Text("CPR is a life saving procedure performed on people whose heart stops beating.")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 10)
-                }
-                .opacity(0.8)
-                .padding(10)
-
-                Spacer()
-            }.padding(.top, 15)
-
-            VStack {
-                VStack {
-                    Image(systemName: "heart")
-                        .font(.system(size: 30))
-                    Text("CPR can double or triple the victim's survival rate. With enough guidance, anyone can learn CPR.")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 10)
-                }
-                .opacity(0.8)
-                .padding(10)
-
-                Spacer()
-            }.padding(.top, 15)
-            
-            VStack {
-                VStack {
-
-                    Text("In an average person's body, under standard conditions, the heart's resting heart rate is between 60 - 100 beats per minute.")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                }
-                .opacity(0.8)
-                .padding(10)
-
-                Spacer()
-            }.padding(.top, 25)
-            
-            VStack {
-                VStack {
-
-                    Text("When a person's heart stops beating, CPR can help regulate blood flow around the body. There are two forms of CPR: \n **1) Hands-Only CPR** \n **2) Traditional CPR**")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                }
-                .opacity(0.8)
-                .padding(10)
-
-                Spacer()
-            }.padding(.top, 15)
-            
-            VStack {
-                VStack {
-                    Text("**Hands-Only CPR**")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
+                    Button("Infant") {
+                        chosenProfile = "Infant"
+                        selection = Tab.tabTwo
+                        observation = "Check the infant's response by tapping his/her foot. Check the infant's breathing by placing your cheek next to the mouth to feel for breath."
+                        handPlacement = "Give compressions by using 2 fingers at the center of the chest."
+                        bodyPosition = "Stand or kneel to the side of the infant, with your hips at a slight angle."
+                        compressions = "Give compressions by using 2 fingers on the chest between the nipples, and pressing ½ to 1 inch."
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                     
-                    Text("People who have little or no CPR training should use hands-only CPR. It requires you to compress the victim's chest hard for about 100-120 compressions a minute until help arrives.")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
+                    Button("Child") {
+                        chosenProfile = "Child"
+                        selection = Tab.tabTwo
+                        observation = "Check your surroundings and person. Ensure you are in a safe area, tap on the person's shoulder to see if they are OK, and check for signs of normal breathing."
+                        handPlacement = "Place the heel of one hand in the center of their chest, with your other hand on top. Interlace your fingers and ensure they are above the chest."
+                            bodyPosition = "Position your body so that your shoulders are directly over your hands. Lock your elbows to keep your arms straight."
+                        compressions = "Push hard and fast (about 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression."
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    
+                    Button("Adult") {
+                        chosenProfile = "Adult"
+                    observation = "Check your surroundings and person. Ensure you are in a safe area, tap on the person's shoulder to see if they are OK, and check for signs of normal breathing."
+                    handPlacement = "Place the heel of one hand in the center of their chest, with your other hand on top. Interlace your fingers and ensure they are above the chest."
+                        bodyPosition = "Position your body so that your shoulders are directly over your hands. Lock your elbows to keep your arms straight."
+                    compressions = "Push hard and fast (at least 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression."
+                        selection = Tab.tabTwo
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                }
+                .opacity(0.8)
+                .padding(10)
+                
+                Spacer()
+            }.gesture(DragGesture()).padding(.top, 15).tag(Tab.tabOne)
+            
+            
+            VStack {
+                VStack {
+                    Text("**Observe your Surroundings**")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                    
+                    Text(observation)
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 10)
+                }
+                .opacity(0.8)
+                .padding(2)
+                
+                Spacer()
+            }.padding(.top, 15).tag(Tab.tabTwo)
+            
+            VStack {
+                VStack {
+                    Text("**Call 911**").font(.footnote)
+                        .multilineTextAlignment(.center)
+                    
+                    Image(systemName: "phone.fill")
+                        .font(.system(size: 30)).padding(.top, 10)
+                    
+                    Text("If you observe signs of irregular breathing or if there is no response from the person, call 911 for help.")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 10)
+                }
+                .opacity(0.8)
+                .padding(2)
+                
+                Spacer()
+            }
+            
+            VStack {
+                VStack {
+                    Text("**Begin CPR**").font(.footnote)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("Make sure the person's back is against a firm, flat surface. Kneel beside the person. Spread your knees about a shoulder width apart.")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center).padding(.top, 10)
+                }
+                .opacity(0.8)
+                .padding(10)
+                
+            }
+            
+            VStack {
+                VStack {
+                    Text("**Hand Placement**")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                    
+                    Text(handPlacement)
+                        .font(.footnote)
+                        .multilineTextAlignment(.center).padding(.top, 10)
+                }
+                .opacity(0.8)
+                .padding(10)
+                
+            }
+            
+            VStack {
+                VStack {
+                    Text("**Body Position**")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                    
+                    Text(bodyPosition)
+                        .font(.footnote)
+                        .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
                 .padding(5)
@@ -87,36 +142,37 @@ struct TraditionalTutorialView: View {
             VStack {
                 VStack {
                     
-                    Text("**Traditional CPR**")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
-
-                    Text("Traditional CPR is meant for people who have former CPR training. It requires you to perform two rescue breaths for every 30 chest compressions until help arrives.")
+                    Text("**Compressions**")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
+                    
+                    Text(compressions)
+                        .font(.footnote)
+                        .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
                 .padding(5)
             }
             
+            
             VStack {
                 VStack {
-                    Text("**About CPR Buddy**")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
+                    Text("**Tutorial Complete**")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
                     
-                    Text("CPR Buddy teaches both Hands-Only and Traditional CPR methods through tutorials and CPR timers.")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 30)).padding(.top, 10)
+                    
+                    Button("Done") {
+                        isPresented.toggle()
+                    }.padding(.top, 10).buttonStyle(BorderedButtonStyle(tint: .orange))
                 }
                 .opacity(0.8)
-
-                Spacer()
-                Button("Get Started") {
-                    isPresented.toggle()
-                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.top, 5)
-            }.padding(.top, 10)
-
+                .padding(5)
+            }
+            
+            
         }.tabViewStyle(PageTabViewStyle())
     }
 }
