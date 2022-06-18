@@ -51,7 +51,7 @@ struct HandsOnlyTimerView: View {
                         ForEach((1...20), id: \.self) {
                             Text("\($0)").tag($0).font(.title2)
                         }
-                    }.frame(height: 70)
+                    }.frame(height: 70).padding(.top, 20).padding(.bottom, 10)
                     
                     Button("Start Cycles") {
                         isPresented.toggle()
