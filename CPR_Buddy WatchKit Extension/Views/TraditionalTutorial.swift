@@ -162,7 +162,7 @@ struct TraditionalTutorialView: View {
                         .multilineTextAlignment(.center)
                     
                     Image(systemName: "checkmark")
-                        .font(.system(size: 30)).padding(.top, 10)
+                        .font(.system(size: 30)).padding([.top, .bottom], 20)
                     
                     Button("Done") {
                         isPresented.toggle()
