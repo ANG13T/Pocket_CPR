@@ -143,7 +143,7 @@ struct TraditionalTutorialView: View {
             VStack {
                 VStack {
                     
-                    Text("**Compressions**")
+                    Text("**Give 30 Compressions**")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
                     
@@ -158,7 +158,7 @@ struct TraditionalTutorialView: View {
             VStack {
                 VStack {
                     
-                    Text("**Breathing**")
+                    Text("**Give 2 Breaths**")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
                     
