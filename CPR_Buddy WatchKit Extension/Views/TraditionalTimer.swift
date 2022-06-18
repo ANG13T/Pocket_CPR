@@ -21,6 +21,11 @@ struct TraditionalTimerView: View {
             // PAGE 1
             VStack {
                 VStack {
+                    Button("Infant") {
+                        chosenProfile = "Infant"
+                        selection = Tab.tabTwo
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    
                     Button("Child") {
                         chosenProfile = "Child"
                         selection = Tab.tabTwo

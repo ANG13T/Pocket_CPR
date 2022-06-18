@@ -162,11 +162,11 @@ struct HandsOnlyTutorialView: View {
                         .multilineTextAlignment(.center)
                     
                     Image(systemName: "checkmark")
-                        .font(.system(size: 30)).padding(.top, 10)
+                        .font(.system(size: 30)).padding([.top, .bottom], 20)
                     
                     Button("Done") {
                         isPresented.toggle()
-                    }.padding(.top, 10).buttonStyle(BorderedButtonStyle(tint: .orange))
+                    }.buttonStyle(BorderedButtonStyle(tint: .orange))
                 }
                 .opacity(0.8)
                 .padding(5)
