@@ -24,7 +24,7 @@ struct HandsOnlyTimerView: View {
                     Button("Infant") {
                         chosenProfile = "Infant"
                         selection = Tab.tabTwo
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
                     
                     Button("Child") {
                         chosenProfile = "Child"
@@ -34,7 +34,7 @@ struct HandsOnlyTimerView: View {
                     Button("Adult") {
                         chosenProfile = "Adult"
                         selection = Tab.tabTwo
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.top, 5)
                 }
                 .opacity(0.8)
                 .padding(10)

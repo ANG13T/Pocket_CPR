@@ -10,6 +10,8 @@ import SwiftUI
 struct TraditionalTimerView: View {
     @Binding var isPresented: Bool
     @State private var chosenProfile: String = "Adult"
+    @State private var cycles: TextField<Text> = 5
+    @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
        enum Tab {
            case tabOne
@@ -24,7 +26,7 @@ struct TraditionalTimerView: View {
                     Button("Infant") {
                         chosenProfile = "Infant"
                         selection = Tab.tabTwo
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
                     
                     Button("Child") {
                         chosenProfile = "Child"
@@ -34,7 +36,7 @@ struct TraditionalTimerView: View {
                     Button("Adult") {
                         chosenProfile = "Adult"
                         selection = Tab.tabTwo
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.top, 5)
                 }
                 .opacity(0.8)
                 .padding(10)
@@ -44,12 +46,14 @@ struct TraditionalTimerView: View {
 
             VStack {
                 VStack {
-                    Image(systemName: "heart")
-                        .font(.system(size: 30))
-                    Text("CPR can double or triple the victim's survival rate. With enough guidance, anyone can learn CPR.")
+                    Text("Set Timer Cycles")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
-                        .padding(.top, 10)
+                    Stepper("Cycles: \(cycles)", value: $cycles, in: 1...20)
+                    Toggle(isOn: $loop, label: {
+                        Text("Loop Timer?")
+                    })
+                        
                 }
                 .opacity(0.8)
                 .padding(10)
