@@ -10,7 +10,7 @@ import SwiftUI
 struct TraditionalTimerView: View {
     @Binding var isPresented: Bool
     @State private var chosenProfile: String = "Adult"
-    @State private var cycles: TextField<Text> = 5
+    @State private var cycles: Int = 5
     @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
        enum Tab {
@@ -49,11 +49,13 @@ struct TraditionalTimerView: View {
                     Text("Set Timer Cycles")
                         .font(.footnote)
                         .multilineTextAlignment(.center)
-                    Stepper("Cycles: \(cycles)", value: $cycles, in: 1...20)
-                    Toggle(isOn: $loop, label: {
-                        Text("Loop Timer?")
-                    })
-                        
+                    
+                    Picker(selection: self.$cycles, label: Text("")) {
+                        ForEach((1...20), id: \.self) {
+                            Text("\($0)").tag($0).font(.title2)
+                        }
+                    }
+                    
                 }
                 .opacity(0.8)
                 .padding(10)
