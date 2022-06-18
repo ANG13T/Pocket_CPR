@@ -16,6 +16,7 @@ struct TraditionalTutorialView: View {
     @State private var handPlacement: String = "Place the heel of one hand in the center of their chest, with your other hand on top. Interlace your fingers and ensure they are above the chest."
     @State private var bodyPosition: String = "Position your body so that your shoulders are directly over your hands. Lock your elbows to keep your arms straight."
     @State private var compressions: String = "Push hard and fast (at least 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression."
+    @State private var breathing: String = "Push hard and fast (at least 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression."
     
     enum Tab {
         case tabOne
@@ -33,7 +34,7 @@ struct TraditionalTutorialView: View {
                         handPlacement = "Give compressions by using 2 fingers at the center of the chest."
                         bodyPosition = "Stand or kneel to the side of the infant, with your hips at a slight angle."
                         compressions = "Give compressions by using 2 fingers on the chest between the nipples, and pressing ½ to 1 inch."
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
                     
                     Button("Child") {
                         chosenProfile = "Child"
@@ -51,7 +52,7 @@ struct TraditionalTutorialView: View {
                         bodyPosition = "Position your body so that your shoulders are directly over your hands. Lock your elbows to keep your arms straight."
                     compressions = "Push hard and fast (at least 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression."
                         selection = Tab.tabTwo
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.top, 5)
                 }
                 .opacity(0.8)
                 .padding(10)
@@ -154,6 +155,21 @@ struct TraditionalTutorialView: View {
                 .padding(5)
             }
             
+            VStack {
+                VStack {
+                    
+                    Text("**Breathing**")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                    
+                    Text(breathing)
+                        .font(.footnote)
+                        .multilineTextAlignment(.center).padding(.top, 10)
+                }
+                .opacity(0.8)
+                .padding(5)
+            }
+            
             
             VStack {
                 VStack {
@@ -166,7 +182,7 @@ struct TraditionalTutorialView: View {
                     
                     Button("Done") {
                         isPresented.toggle()
-                    }.padding(.top, 10).buttonStyle(BorderedButtonStyle(tint: .orange))
+                    }.buttonStyle(BorderedButtonStyle(tint: .orange))
                 }
                 .opacity(0.8)
                 .padding(5)
