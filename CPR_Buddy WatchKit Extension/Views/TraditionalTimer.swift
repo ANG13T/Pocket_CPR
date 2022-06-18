@@ -46,11 +46,8 @@ struct TraditionalTimerView: View {
 
             VStack {
                 VStack {
-                    Text("Set Timer Cycles")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
                     
-                    Picker(selection: self.$cycles, label: Text("")) {
+                    Picker(selection: self.$cycles, label: Text("Set Timer Cycles")) {
                         ForEach((1...20), id: \.self) {
                             Text("\($0)").tag($0).font(.title2)
                         }
@@ -66,9 +63,8 @@ struct TraditionalTimerView: View {
                 
                 }
                 .opacity(0.8)
-                .padding(10)
 
-            }.gesture(DragGesture()).padding(.top, 15).tag(Tab.tabTwo)
+            }.gesture(DragGesture()).tag(Tab.tabTwo)
             
             
             

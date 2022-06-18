@@ -10,6 +10,8 @@ import SwiftUI
 struct HandsOnlyTimerView: View {
     @Binding var isPresented: Bool
     @State private var chosenProfile: String = "Adult"
+    @State private var cycles: Int = 5
+    @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
        enum Tab {
            case tabOne
@@ -44,18 +46,25 @@ struct HandsOnlyTimerView: View {
 
             VStack {
                 VStack {
-                    Image(systemName: "heart")
-                        .font(.system(size: 30))
-                    Text("CPR can double or triple the victim's survival rate. With enough guidance, anyone can learn CPR.")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 10)
+                    
+                    Picker(selection: self.$cycles, label: Text("Set Timer Cycles")) {
+                        ForEach((1...20), id: \.self) {
+                            Text("\($0)").tag($0).font(.title2)
+                        }
+                    }.frame(height: 70)
+                    
+                    Button("Start Cycles") {
+                        isPresented.toggle()
+                    }.buttonStyle(BorderedButtonStyle(tint: .orange))
+                    
+                    Button("Loop Timer") {
+                        isPresented.toggle()
+                    }.buttonStyle(BorderedButtonStyle(tint: .pink))
+                
                 }
                 .opacity(0.8)
-                .padding(10)
 
-                Spacer()
-            }.gesture(DragGesture()).padding(.top, 15).tag(Tab.tabTwo)
+            }.gesture(DragGesture()).tag(Tab.tabTwo)
             
             
             
