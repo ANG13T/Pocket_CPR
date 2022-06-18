@@ -54,13 +54,20 @@ struct TraditionalTimerView: View {
                         ForEach((1...20), id: \.self) {
                             Text("\($0)").tag($0).font(.title2)
                         }
-                    }
+                    }.frame(height: 70)
                     
+                    Button("Start Cycles") {
+                        isPresented.toggle()
+                    }.buttonStyle(BorderedButtonStyle(tint: .orange))
+                    
+                    Button("Loop Timer") {
+                        isPresented.toggle()
+                    }.buttonStyle(BorderedButtonStyle(tint: .pink))
+                
                 }
                 .opacity(0.8)
                 .padding(10)
 
-                Spacer()
             }.gesture(DragGesture()).padding(.top, 15).tag(Tab.tabTwo)
             
             
