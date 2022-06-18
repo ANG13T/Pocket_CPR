@@ -16,7 +16,7 @@ struct TraditionalTutorialView: View {
     @State private var handPlacement: String = "Place the heel of one hand in the center of their chest, with your other hand on top. Interlace your fingers and ensure they are above the chest."
     @State private var bodyPosition: String = "Position your body so that your shoulders are directly over your hands. Lock your elbows to keep your arms straight."
     @State private var compressions: String = "Push hard and fast (at least 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression."
-    @State private var breathing: String = "Push hard and fast (at least 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression."
+    @State private var breathing: String = "Ensure each breath lasts about 1 second and makes the chest rise; allow air to exit before giving the next breath."
     
     enum Tab {
         case tabOne
@@ -34,6 +34,8 @@ struct TraditionalTutorialView: View {
                         handPlacement = "Give compressions by using 2 fingers at the center of the chest."
                         bodyPosition = "Stand or kneel to the side of the infant, with your hips at a slight angle."
                         compressions = "Give compressions by using 2 fingers on the chest between the nipples, and pressing ½ to 1 inch."
+            
+                        breathing = "Give breaths by placing your mouth of the infant's nose and mouth. Give just enough air to cause the chest to rise."
                     }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
                     
                     Button("Child") {
@@ -43,6 +45,7 @@ struct TraditionalTutorialView: View {
                         handPlacement = "Place the heel of one hand in the center of their chest, with your other hand on top. Interlace your fingers and ensure they are above the chest."
                             bodyPosition = "Position your body so that your shoulders are directly over your hands. Lock your elbows to keep your arms straight."
                         compressions = "Push hard and fast (about 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression."
+                        breathing = "Ensure each breath lasts about 1 second and makes the chest rise; allow air to exit before giving the next breath."
                     }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                     
                     Button("Adult") {
@@ -51,6 +54,7 @@ struct TraditionalTutorialView: View {
                     handPlacement = "Place the heel of one hand in the center of their chest, with your other hand on top. Interlace your fingers and ensure they are above the chest."
                         bodyPosition = "Position your body so that your shoulders are directly over your hands. Lock your elbows to keep your arms straight."
                     compressions = "Push hard and fast (at least 2 inches; 100 to 120 compressions per minute). Allow chest to return to its normal position after each compression."
+                    breathing = "Ensure each breath lasts about 1 second and makes the chest rise; allow air to exit before giving the next breath."
                         selection = Tab.tabTwo
                     }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.top, 5)
                 }
