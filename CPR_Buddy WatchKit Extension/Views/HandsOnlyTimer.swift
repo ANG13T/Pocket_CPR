@@ -13,6 +13,10 @@ struct HandsOnlyTimerView: View {
     @State private var cycles: Int = 5
     @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
+    @State private var timer: Timer?
+    @State private var count = 0
+
+    
        enum Tab {
            case tabOne
            case tabTwo
@@ -59,6 +63,14 @@ struct HandsOnlyTimerView: View {
                     Button("Start Cycles") {
                         selection = Tab.tabThree
                         loop = false
+                        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {time in
+                            if count > 0 {
+                                count -= 1
+                            }else {
+                                timer?.invalidate()
+                            }
+                        }
+
                     }.buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.bottom, 5)
                     
                     Button("Loop Timer") {
@@ -77,11 +89,8 @@ struct HandsOnlyTimerView: View {
                     Circle().stroke(lineWidth: 40).frame(width: 100, height: 100).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: false).speed(0.5)).onAppear() {
                         self.wave.toggle()
                     }
-                    Circle().stroke(lineWidth: 40).frame(width: 100, height: 100).foregroundColor(.blue).scaleEffect(wave1 ? 2 : 1).opacity(wave1 ? 0 : 1).animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: false).speed(0.7)).onAppear() {
-                        self.wave1.toggle()
-                    }
                     Circle().frame(width: 100, height: 100).foregroundColor(.blue).shadow(radius: 25)
-                    Image(systemName: "plus.circle.fill").font(.system(size: 90)).foregroundColor(.white).shadow(radius: 25)
+                    Text("\(count)").font(.system(size: 90)).foregroundColor(.white).shadow(radius: 25)
                 }
             }.gesture(DragGesture()).tag(Tab.tabThree)
             
