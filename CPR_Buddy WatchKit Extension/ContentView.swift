@@ -26,7 +26,7 @@ struct ContentView: View {
                                 Button(action: {
                                     presentHandsOnlyView.toggle()
                                 }) {
-                                    Image(systemName: "xmark.circle")
+                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                                 }
                                 
                             }
@@ -45,7 +45,7 @@ struct ContentView: View {
                                 Button(action: {
                                     presentTraditionalView.toggle()
                                 }) {
-                                    Image(systemName: "xmark.circle")
+                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                                 }
                                 
                             }
@@ -65,7 +65,7 @@ struct ContentView: View {
                                 Button(action: {
                                     presentAboutView.toggle()
                                 }) {
-                                    Image(systemName: "xmark.circle")
+                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                                 }
                                 
                             }

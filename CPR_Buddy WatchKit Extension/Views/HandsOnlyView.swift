@@ -31,7 +31,7 @@ struct HandsOnlyView: View {
                                 Button(action: {
                                     presentTimerView.toggle()
                                 }) {
-                                    Image(systemName: "xmark.circle")
+                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                                 }
                                 
                             }
@@ -51,7 +51,7 @@ struct HandsOnlyView: View {
                                 Button(action: {
                                     presentTutorialView.toggle()
                                 }) {
-                                    Image(systemName: "xmark.circle")
+                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                                 }
                                 
                             }

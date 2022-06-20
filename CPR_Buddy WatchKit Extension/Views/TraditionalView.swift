@@ -33,7 +33,7 @@ struct TraditionalView: View {
                                 Button(action: {
                                     presentTimerView.toggle()
                                 }) {
-                                    Image(systemName: "xmark.circle")
+                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                                 }
                                 
                             }
@@ -54,7 +54,7 @@ struct TraditionalView: View {
                                 Button(action: {
                                     presentTutorialView.toggle()
                                 }) {
-                                    Image(systemName: "xmark.circle")
+                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                                 }
                                 
                             }
