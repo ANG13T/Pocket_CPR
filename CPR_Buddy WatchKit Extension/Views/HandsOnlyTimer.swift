@@ -16,7 +16,10 @@ struct HandsOnlyTimerView: View {
        enum Tab {
            case tabOne
            case tabTwo
+           case tabThree
        }
+    @State private var wave: Bool = false
+    @State private var wave1: Bool = false
      
     var body: some View {
         TabView(selection: $selection) {
@@ -54,11 +57,13 @@ struct HandsOnlyTimerView: View {
                     }.frame(height: 70).padding(.top, 40).padding(.bottom, 5)
                     
                     Button("Start Cycles") {
-                        isPresented.toggle()
+                        selection = Tab.tabThree
+                        loop = false
                     }.buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.bottom, 5)
                     
                     Button("Loop Timer") {
-                        isPresented.toggle()
+                        selection = Tab.tabThree
+                        loop = true
                     }.buttonStyle(BorderedButtonStyle(tint: .pink))
                 
                 }
@@ -66,6 +71,19 @@ struct HandsOnlyTimerView: View {
 
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             
+            
+            VStack {
+                ZStack {
+                    Circle().stroke(lineWidth: 40).frame(width: 100, height: 100).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: false).speed(0.5)).onAppear() {
+                        self.wave.toggle()
+                    }
+                    Circle().stroke(lineWidth: 40).frame(width: 100, height: 100).foregroundColor(.blue).scaleEffect(wave1 ? 2 : 1).opacity(wave1 ? 0 : 1).animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: false).speed(0.7)).onAppear() {
+                        self.wave1.toggle()
+                    }
+                    Circle().frame(width: 100, height: 100).foregroundColor(.blue).shadow(radius: 25)
+                    Image(systemName: "plus.circle.fill").font(.system(size: 90)).foregroundColor(.white).shadow(radius: 25)
+                }
+            }.gesture(DragGesture()).tag(Tab.tabThree)
             
             
 
