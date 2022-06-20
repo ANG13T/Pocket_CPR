@@ -63,9 +63,13 @@ struct HandsOnlyTimerView: View {
                     Button("Start Cycles") {
                         selection = Tab.tabThree
                         loop = false
+                        count = 60
                         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {time in
                             if count > 0 {
                                 count -= 1
+                            }else if count <= 0 && cycles > 0{
+                                cycles -= 1
+                                count = 60
                             }else {
                                 timer?.invalidate()
                             }
@@ -90,7 +94,7 @@ struct HandsOnlyTimerView: View {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 100, height: 100).foregroundColor(.blue).shadow(radius: 25)
-                    Text("\(count)").font(.system(size: 90)).foregroundColor(.white).shadow(radius: 25)
+                    Text("\(count)").font(.system(size: 60)).foregroundColor(.white).shadow(radius: 25)
                 }
             }.gesture(DragGesture()).tag(Tab.tabThree)
             
