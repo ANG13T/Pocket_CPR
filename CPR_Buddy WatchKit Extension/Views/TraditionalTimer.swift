@@ -51,7 +51,7 @@ struct TraditionalTimerView: View {
                         ForEach((1...20), id: \.self) {
                             Text("\($0)").tag($0).font(.title2)
                         }
-                    }.frame(height: 70).padding(.top, 40).padding(.bottom, 5).border(Color.gray, width: 5)
+                    }.focusBorderHidden().frame(height: 70).padding(.top, 40).padding(.bottom, 5).border(Color.gray, width: 5)
                     
                     Button("Start Cycles") {
                         isPresented.toggle()

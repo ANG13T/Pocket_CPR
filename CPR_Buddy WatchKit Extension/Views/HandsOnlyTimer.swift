@@ -6,6 +6,33 @@
 //
 
 import SwiftUI
+extension Picker {
+    func focusBorderHidden() -> some View {
+        let isWatchOS7: Bool = {
+            if #available(watchOS 7, *) {
+                return true
+            }
+
+            return false
+        }()
+
+        let padding: EdgeInsets = {
+            if isWatchOS7 {
+                return .init(top: 17, leading: 0, bottom: 0, trailing: 0)
+            }
+
+            return .init(top: 8.5, leading: 0.5, bottom: 8.5, trailing: 0.5)
+        }()
+
+        return self
+            .overlay(
+                RoundedRectangle(cornerRadius: isWatchOS7 ? 8 : 7)
+                    .stroke(Color.black, lineWidth: isWatchOS7 ? 4 : 3.5)
+                    .offset(y: isWatchOS7 ? 0 : 8)
+                    .padding(padding)
+            )
+    }
+}
 
 struct HandsOnlyTimerView: View {
     @Binding var isPresented: Bool
@@ -51,7 +78,7 @@ struct HandsOnlyTimerView: View {
                         ForEach((1...20), id: \.self) {
                             Text("\($0)").tag($0).font(.title2)
                         }
-                    }.frame(height: 70).padding(.top, 40).padding(.bottom, 5).border(Color.gray, width: 5)
+                    }.focusBorderHidden().frame(height: 70).padding(.top, 40).padding(.bottom, 5)
                     
                     Button("Start Cycles") {
                         isPresented.toggle()
