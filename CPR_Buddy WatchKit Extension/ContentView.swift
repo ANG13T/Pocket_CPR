@@ -23,8 +23,10 @@ struct ContentView: View {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
-                                Button("Close") {
+                                Button(action: {
                                     presentHandsOnlyView.toggle()
+                                }) {
+                                    Image(systemName: "xmark.circle")
                                 }
                                 
                             }
@@ -40,8 +42,10 @@ struct ContentView: View {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
-                                Button("Close") {
+                                Button(action: {
                                     presentTraditionalView.toggle()
+                                }) {
+                                    Image(systemName: "xmark.circle")
                                 }
                                 
                             }
@@ -58,8 +62,10 @@ struct ContentView: View {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
-                                Button("Close") {
+                                Button(action: {
                                     presentAboutView.toggle()
+                                }) {
+                                    Image(systemName: "xmark.circle")
                                 }
                                 
                             }

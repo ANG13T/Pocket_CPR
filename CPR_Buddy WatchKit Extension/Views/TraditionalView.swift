@@ -29,8 +29,11 @@ struct TraditionalView: View {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
-                                Button("Close") {
+                                
+                                Button(action: {
                                     presentTimerView.toggle()
+                                }) {
+                                    Image(systemName: "xmark.circle")
                                 }
                                 
                             }
@@ -48,8 +51,10 @@ struct TraditionalView: View {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
-                                Button("Close") {
+                                Button(action: {
                                     presentTutorialView.toggle()
+                                }) {
+                                    Image(systemName: "xmark.circle")
                                 }
                                 
                             }

@@ -28,8 +28,10 @@ struct HandsOnlyView: View {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
-                                Button("Close") {
+                                Button(action: {
                                     presentTimerView.toggle()
+                                }) {
+                                    Image(systemName: "xmark.circle")
                                 }
                                 
                             }
@@ -46,8 +48,10 @@ struct HandsOnlyView: View {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
-                                Button("Close") {
+                                Button(action: {
                                     presentTutorialView.toggle()
+                                }) {
+                                    Image(systemName: "xmark.circle")
                                 }
                                 
                             }
