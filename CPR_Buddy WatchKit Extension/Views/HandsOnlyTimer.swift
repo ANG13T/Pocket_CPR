@@ -90,11 +90,11 @@ struct HandsOnlyTimerView: View {
             
             VStack {
                 ZStack {
-                    Circle().stroke(lineWidth: 40).frame(width: 100, height: 100).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: false).speed(0.5)).onAppear() {
+                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: false).speed(0.5)).onAppear() {
                         self.wave.toggle()
                     }
-                    Circle().frame(width: 100, height: 100).foregroundColor(.blue).shadow(radius: 25)
-                    Text("\(count)").font(.system(size: 60)).foregroundColor(.white).shadow(radius: 25)
+                    Circle().frame(width: 60, height: 60).foregroundColor(.blue).shadow(radius: 25)
+                    Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
             }.gesture(DragGesture()).tag(Tab.tabThree)
             
