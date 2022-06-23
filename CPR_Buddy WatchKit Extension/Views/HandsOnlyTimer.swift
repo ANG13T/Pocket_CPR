@@ -76,11 +76,11 @@ struct HandsOnlyTimerView: View {
                     Circle()
                         .trim(from: 0.0, to: circleProgress)
                         .stroke(Color.blue, lineWidth: 15)
-                        .frame(width: 200, height: 200)
+                        .frame(width: 100, height: 100)
                         .rotationEffect(Angle(degrees: -90))
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
-                Text("Cycle \((initialCycles + 1) - cycles)").font(.system(size: 40)).foregroundColor(.white)
+                Text("Cycle \((initialCycles + 1) - cycles)").font(.system(size: 20)).foregroundColor(.white)
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             
             
@@ -91,7 +91,7 @@ struct HandsOnlyTimerView: View {
     func startTimer() {
         _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { timer in
             withAnimation() {
-                self.circleProgress += 0.01
+                self.circleProgress += 0.004
                 if self.circleProgress >= 1.0 {
                     timer.invalidate()
                 }
