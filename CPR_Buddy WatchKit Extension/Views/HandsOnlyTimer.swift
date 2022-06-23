@@ -11,6 +11,7 @@ struct HandsOnlyTimerView: View {
     @Binding var isPresented: Bool
     @State private var chosenProfile: String = "Adult"
     @State private var cycles: Int = 5
+    @State private var initialCycles: Int = 5
     @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
     @State private var timer: Timer?
@@ -29,7 +30,7 @@ struct HandsOnlyTimerView: View {
             VStack {
                 VStack {
                     
-                    Picker(selection: self.$cycles, label: Text("Set Timer Cycles")) {
+                    Picker(selection: self.$initialCycles, label: Text("Set Timer Cycles")) {
                         ForEach((1...20), id: \.self) {
                             Text("\($0)").tag($0).font(.title2)
                         }
@@ -37,9 +38,10 @@ struct HandsOnlyTimerView: View {
                     
                     Button("Start Cycles") {
                         selection = Tab.tabTwo
+                        cycles = initialCycles
                         loop = false
                         count = 60
-                        timer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) {time in
+                        timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true) {time in
                             if count > 0 {
                                 count -= 1
                             }else if count <= 0 && cycles > 0{
@@ -65,12 +67,13 @@ struct HandsOnlyTimerView: View {
             
             VStack {
                 ZStack {
-                    Circle().stroke(lineWidth: 20).frame(width: 80, height: 80).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: 0.4).repeatForever(autoreverses: false).speed(0.8)).onAppear() {
+                    Circle().stroke(lineWidth: 20).frame(width: 80, height: 80).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: false).speed(1)).onAppear() {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 80, height: 80).foregroundColor(.blue).shadow(radius: 25)
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
+                Text("Cycle \((initialCycles + 1) - cycles)").font(.system(size: 40)).foregroundColor(.white)
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             
             
