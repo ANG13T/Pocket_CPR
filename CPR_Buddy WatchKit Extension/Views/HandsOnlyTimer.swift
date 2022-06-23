@@ -10,8 +10,9 @@ import SwiftUI
 struct HandsOnlyTimerView: View {
     @Binding var isPresented: Bool
     @State private var chosenProfile: String = "Adult"
-    @State private var cycles: Int = 5
-    @State private var initialCycles: Int = 5
+    @State private var cycles: CGFloat = 5
+    @State private var timeInterval = 0.6
+    @State private var initialCycles : CGFloat = 5
     @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
     @State var circleProgress: CGFloat = 0.0
@@ -43,7 +44,7 @@ struct HandsOnlyTimerView: View {
                         startTimer()
                         loop = false
                         count = 60
-                        timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true) {time in
+                        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             if count > 0 {
                                 count -= 1
                             }else if count <= 0 && cycles > 0{
@@ -69,7 +70,7 @@ struct HandsOnlyTimerView: View {
             
             VStack {
                 ZStack {
-                    Circle().stroke(lineWidth: 20).frame(width: 80, height: 80).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: false).speed(1)).onAppear() {
+                    Circle().stroke(lineWidth: 20).frame(width: 80, height: 80).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 80, height: 80).foregroundColor(.blue).shadow(radius: 25)
@@ -89,9 +90,10 @@ struct HandsOnlyTimerView: View {
     }
     
     func startTimer() {
-        _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { timer in
+        _ = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
-                self.circleProgress += 0.004
+                let cycleTime = 60 * initialCycles
+                self.circleProgress += (1 / cycleTime)
                 if self.circleProgress >= 1.0 {
                     timer.invalidate()
                 }
