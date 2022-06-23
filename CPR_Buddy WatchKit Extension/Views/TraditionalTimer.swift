@@ -21,35 +21,11 @@ struct TraditionalTimerView: View {
        enum Tab {
            case tabOne
            case tabTwo
-           case tabThree
        }
      
     var body: some View {
         TabView(selection: $selection) {
-            // PAGE 1
-            VStack {
-                VStack {
-                    Button("Infant") {
-                        chosenProfile = "Infant"
-                        selection = Tab.tabTwo
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
-                    
-                    Button("Child") {
-                        chosenProfile = "Child"
-                        selection = Tab.tabTwo
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
-                    
-                    Button("Adult") {
-                        chosenProfile = "Adult"
-                        selection = Tab.tabTwo
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.top, 5)
-                }
-                .opacity(0.8)
-                .padding(10)
-
-                Spacer()
-            }.gesture(DragGesture()).padding(.top, 15).tag(Tab.tabOne)
-
+            
             VStack {
                 VStack {
                     
@@ -60,7 +36,7 @@ struct TraditionalTimerView: View {
                     }.frame(height: 70).padding(.top, 40).padding(.bottom, 5)
                     
                     Button("Start Cycles") {
-                        selection = Tab.tabThree
+                        selection = Tab.tabTwo
                         loop = false
                         count = 60
                         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {time in
@@ -77,14 +53,14 @@ struct TraditionalTimerView: View {
                     }.buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.bottom, 5)
                     
                     Button("Loop Timer") {
-                        selection = Tab.tabThree
+                        selection = Tab.tabTwo
                         loop = true
                     }.buttonStyle(BorderedButtonStyle(tint: .pink))
                 
                 }
                 .opacity(0.8)
 
-            }.gesture(DragGesture()).tag(Tab.tabTwo)
+            }.gesture(DragGesture()).tag(Tab.tabOne)
             
             VStack {
                 ZStack {
@@ -94,7 +70,7 @@ struct TraditionalTimerView: View {
                     Circle().frame(width: 60, height: 60).foregroundColor(.blue).shadow(radius: 25)
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
-            }.gesture(DragGesture()).tag(Tab.tabThree)
+            }.gesture(DragGesture()).tag(Tab.tabTwo)
 
             
 
