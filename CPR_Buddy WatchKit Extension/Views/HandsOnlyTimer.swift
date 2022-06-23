@@ -14,6 +14,7 @@ struct HandsOnlyTimerView: View {
     @State private var initialCycles: Int = 5
     @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
+    @State var circleProgress: CGFloat = 0.0
     @State private var timer: Timer?
     @State private var count = 0
     
@@ -39,6 +40,7 @@ struct HandsOnlyTimerView: View {
                     Button("Start Cycles") {
                         selection = Tab.tabTwo
                         cycles = initialCycles
+                        startTimer()
                         loop = false
                         count = 60
                         timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true) {time in
@@ -71,6 +73,11 @@ struct HandsOnlyTimerView: View {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 80, height: 80).foregroundColor(.blue).shadow(radius: 25)
+                    Circle()
+                        .trim(from: 0.0, to: circleProgress)
+                        .stroke(Color.blue, lineWidth: 15)
+                        .frame(width: 200, height: 200)
+                        .rotationEffect(Angle(degrees: -90))
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
                 Text("Cycle \((initialCycles + 1) - cycles)").font(.system(size: 40)).foregroundColor(.white)
@@ -79,5 +86,16 @@ struct HandsOnlyTimerView: View {
             
 
         }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+    }
+    
+    func startTimer() {
+        _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { timer in
+            withAnimation() {
+                self.circleProgress += 0.01
+                if self.circleProgress >= 1.0 {
+                    timer.invalidate()
+                }
+            }
+        }
     }
 }
