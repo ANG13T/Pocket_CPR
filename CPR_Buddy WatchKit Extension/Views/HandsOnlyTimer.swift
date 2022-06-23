@@ -10,9 +10,9 @@ import SwiftUI
 struct HandsOnlyTimerView: View {
     @Binding var isPresented: Bool
     @State private var chosenProfile: String = "Adult"
-    @State private var cycles: CGFloat = 5
+    @State private var cycles = 5
     @State private var timeInterval = 0.6
-    @State private var initialCycles : CGFloat = 5
+    @State private var initialCycles = 5
     @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
     @State var circleProgress: CGFloat = 0.0
@@ -69,19 +69,20 @@ struct HandsOnlyTimerView: View {
             
             
             VStack {
+                Spacer().frame(height: 40)
                 ZStack {
-                    Circle().stroke(lineWidth: 20).frame(width: 80, height: 80).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
+                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 80, height: 80).foregroundColor(.blue).shadow(radius: 25)
                     Circle()
                         .trim(from: 0.0, to: circleProgress)
-                        .stroke(Color.blue, lineWidth: 15)
-                        .frame(width: 100, height: 100)
+                        .stroke(Color.blue, lineWidth: 10)
+                        .frame(width: 120, height: 120)
                         .rotationEffect(Angle(degrees: -90))
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
-                Text("Cycle \((initialCycles + 1) - cycles)").font(.system(size: 20)).foregroundColor(.white)
+                Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             
             
@@ -92,7 +93,7 @@ struct HandsOnlyTimerView: View {
     func startTimer() {
         _ = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
-                let cycleTime = 60 * initialCycles
+                let cycleTime = CGFloat(60 * initialCycles)
                 self.circleProgress += (1 / cycleTime)
                 if self.circleProgress >= 1.0 {
                     timer.invalidate()
