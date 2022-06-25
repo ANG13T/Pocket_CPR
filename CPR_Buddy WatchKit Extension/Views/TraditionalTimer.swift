@@ -49,9 +49,13 @@ struct TraditionalTimerView: View {
                         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             if count > 0 {
                                 count -= 1
-                            }else if count <= 0 && cycles > 0{
+                            }else if count <= 0 && cycles > 0 {
+                                compressions = !compressions
                                 cycles -= 1
                                 count = 60
+                                if (!compressions) {
+                                    count = 10
+                                }
                             }else {
                                 timer?.invalidate()
                             }
@@ -84,7 +88,7 @@ struct TraditionalTimerView: View {
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
                 Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
-                Text(compressions ? "Compressions" : "Breaths").font(.system(size: 10)).foregroundColor(.white).padding(.top, 10)
+                Text(compressions ? "Compressions" : "Breaths").font(.system(size: 10)).foregroundColor(.white)
             }.gesture(DragGesture()).tag(Tab.tabTwo)
 
             
@@ -102,7 +106,6 @@ struct TraditionalTimerView: View {
                 let cycleTime = CGFloat(pulseAmount * initialCycles)
                 self.circleProgress += (1 / cycleTime)
                 if self.circleProgress >= 1.0 {
-                    compressions = !compressions
                     timer.invalidate()
                 }
             }
