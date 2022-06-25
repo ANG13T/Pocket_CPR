@@ -41,9 +41,10 @@ struct TraditionalTimerView: View {
                     Button("Start Cycles") {
                         selection = Tab.tabTwo
                         cycles = initialCycles
+                        startTimer()
                         loop = false
                         count = 60
-                        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {time in
+                        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             if count > 0 {
                                 count -= 1
                             }else if count <= 0 && cycles > 0{
