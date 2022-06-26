@@ -43,6 +43,16 @@ struct TraditionalTimerView: View {
             }
         )
     }
+    
+    func getTimerCount(count: Int) -> Int {
+        if(compressions) {return count}
+        if (count > 5) {
+            return 2
+            
+        }else{
+            return 1
+        }
+    }
      
     var body: some View {
         
@@ -109,7 +119,7 @@ struct TraditionalTimerView: View {
                         .stroke(compressions ? Color.blue : Color.green, lineWidth: 10)
                         .frame(width: 120, height: 120)
                         .rotationEffect(Angle(degrees: -90))
-                    Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
+                    Text("\(getTimerCount(count: count))").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
                 Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
                 Text(compressions ? "60 Compressions" : "2 Breaths").font(.system(size: 10)).foregroundColor(.white).padding(.top, 5)
