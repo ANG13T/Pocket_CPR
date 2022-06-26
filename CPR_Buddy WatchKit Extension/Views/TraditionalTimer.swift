@@ -112,7 +112,7 @@ struct TraditionalTimerView: View {
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
                 Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
-                Text(compressions ? "Compressions" : "Breaths").font(.system(size: 10)).foregroundColor(.white).padding(.top, 5)
+                Text(compressions ? "60 Compressions" : "2 Breaths").font(.system(size: 10)).foregroundColor(.white).padding(.top, 5)
             }.gesture(DragGesture()).tag(Tab.tabTwo)
 
             
@@ -123,10 +123,8 @@ struct TraditionalTimerView: View {
     func startTimer() {
         _ = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
-                var pulseAmount = 60
-                if(!compressions) {
-                    pulseAmount = 10
-                }
+                var pulseAmount = 70
+                
                 let cycleTime = CGFloat(pulseAmount * initialCycles)
                 self.circleProgress += (1 / cycleTime)
                 if self.circleProgress >= 1.0 {
