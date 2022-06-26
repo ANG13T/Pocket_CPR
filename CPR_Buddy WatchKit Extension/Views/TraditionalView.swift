@@ -12,6 +12,25 @@ struct TraditionalView: View {
     @State private var presentTimerView = false
     @State private var presentTutorialView = false
     
+    private var completedTimer: some View {
+        RoundedRectangle(cornerRadius: 10)
+        .fill(Color.black.opacity(0.7))
+        .frame(width: WKInterfaceDevice.current().screenBounds.width, height: WKInterfaceDevice.current().screenBounds.height)
+        .overlay(
+            VStack {
+                Text("Timer Complete!").font(.system(size: 40))
+                Image(systemName: "checkmark")
+                    .font(.system(size: 30)).padding([.top, .bottom], 20)
+                
+                Button(action: {
+                    isPresented = false
+                }, label: {
+                    Text("Close").bold()
+                }).background(RoundedRectangle(cornerRadius: 20).fill(.orange))
+            }
+        )
+    }
+    
     var body: some View {
         VStack {
             VStack {

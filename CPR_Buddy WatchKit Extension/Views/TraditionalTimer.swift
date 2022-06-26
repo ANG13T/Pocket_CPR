@@ -91,7 +91,9 @@ struct TraditionalTimerView: View {
                         loop = false
                         count = 60
                         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
-                            WKInterfaceDevice.current().play(.click)
+                            if (isPresented) {
+                                WKInterfaceDevice.current().play(.click)
+                            }
                             if count > 0 {
                                 count -= 1
                             }else if count <= 0 && cycles > 0 {
