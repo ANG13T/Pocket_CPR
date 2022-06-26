@@ -33,7 +33,9 @@ struct TraditionalTimerView: View {
         .frame(width: WKInterfaceDevice.current().screenBounds.width, height: WKInterfaceDevice.current().screenBounds.height)
         .overlay(
             VStack {
-                Text("Timer Complete!").font(.title)
+                Text("Timer Complete!").font(.system(size: 40))
+                Image(systemName: "checkmark")
+                    .font(.system(size: 30)).padding([.top, .bottom], 20)
                 
                 Button(action: {
                     isPresented = false
@@ -53,6 +55,16 @@ struct TraditionalTimerView: View {
             return 1
         }
     }
+    
+    func getTimerDuration(duration: Double) -> Double {
+        if (compressions) {
+            return duration
+        }else {
+            return duration * 5
+        }
+        
+    }
+
      
     var body: some View {
         
@@ -110,7 +122,7 @@ struct TraditionalTimerView: View {
             VStack {
                 Spacer().frame(height: 40)
                 ZStack {
-                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(compressions ? Color.blue : Color.green).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
+                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(compressions ? Color.blue : Color.green).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: getTimerDuration(duration: timeInterval)).repeatForever(autoreverses: false).speed(1)).onAppear() {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 80, height: 80).foregroundColor(compressions ? Color.blue : Color.green).shadow(radius: 25)
@@ -121,8 +133,8 @@ struct TraditionalTimerView: View {
                         .rotationEffect(Angle(degrees: -90))
                     Text("\(getTimerCount(count: count))").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
-                Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
-                Text(compressions ? "60 Compressions" : "2 Breaths").font(.system(size: 10)).foregroundColor(.white).padding(.top, 5)
+                Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 15)
+                Text(compressions ? "60 Compressions" : "2 Breaths").font(.system(size: 10)).foregroundColor(.white).padding(.top, 3)
             }.gesture(DragGesture()).tag(Tab.tabTwo)
 
             
