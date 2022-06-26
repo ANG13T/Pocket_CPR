@@ -27,9 +27,29 @@ struct TraditionalTimerView: View {
            case tabTwo
        }
     
-
+    private var completedTimer: some View {
+        RoundedRectangle(cornerRadius: 10)
+        .fill(Color.black.opacity(0.7))
+        .frame(width: WKInterfaceDevice.current().screenBounds.width, height: WKInterfaceDevice.current().screenBounds.height)
+        .overlay(
+            VStack {
+                Text("Timer Complete!").font(.title)
+                
+                Button(action: {
+                    isPresented = false
+                }, label: {
+                    Text("Close").bold()
+                }).background(RoundedRectangle(cornerRadius: 20).fill(.orange))
+            }
+        )
+    }
      
     var body: some View {
+        
+        if cycles == 0 {
+            completedTimer
+        }
+        
         TabView(selection: $selection) {
             
             VStack {
