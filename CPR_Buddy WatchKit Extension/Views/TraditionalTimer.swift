@@ -26,6 +26,8 @@ struct TraditionalTimerView: View {
            case tabOne
            case tabTwo
        }
+    
+
      
     var body: some View {
         TabView(selection: $selection) {
@@ -52,10 +54,11 @@ struct TraditionalTimerView: View {
                                 count -= 1
                             }else if count <= 0 && cycles > 0 {
                                 compressions = !compressions
-                                cycles -= 1
-                                count = 60
                                 if (!compressions) {
                                     count = 10
+                                }else {
+                                    count = 60
+                                    cycles -= 1
                                 }
                             }else {
                                 timer?.invalidate()
@@ -89,7 +92,7 @@ struct TraditionalTimerView: View {
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
                 Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
-                Text(compressions ? "Compressions" : "Breaths").font(.system(size: 10)).foregroundColor(.white)
+                Text(compressions ? "Compressions" : "Breaths").font(.system(size: 10)).foregroundColor(.white).padding(.top, 5)
             }.gesture(DragGesture()).tag(Tab.tabTwo)
 
             
