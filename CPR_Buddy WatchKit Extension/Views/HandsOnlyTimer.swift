@@ -54,7 +54,11 @@ struct HandsOnlyTimerView: View {
     }
     
     private var cycleDisplayView: some View {
-        Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
+        var cycleCount = (initialCycles + 1) - cycles
+        if !loop {
+            cycleCount = cycles
+        }
+        return Text("**Cycle \(cycleCount)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
     }
      
     var body: some View {
@@ -131,12 +135,12 @@ struct HandsOnlyTimerView: View {
                     if !loop {
                         loopTimerView
                     }
-                    Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25).padding(.top, 30)
+                    Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                     Button(action: {
                         isPresented = false
                     }, label: {
                         Text("Finish Timer").bold()
-                    }).background(RoundedRectangle(cornerRadius: 20).fill(.orange))
+                    }).buttonStyle(BorderedButtonStyle(tint: .blue))
                 }
                 cycleDisplayView
             }.gesture(DragGesture()).tag(Tab.tabTwo)
