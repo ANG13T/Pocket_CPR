@@ -100,6 +100,18 @@ struct HandsOnlyTimerView: View {
                     Button("Loop Timer") {
                         selection = Tab.tabTwo
                         loop = true
+                        count = 60
+                        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
+                            if (isPresented) {
+                                WKInterfaceDevice.current().play(.click)
+                            }
+                            
+                            if count > 0 {
+                                count -= 1
+                            }else {
+                                count = 60
+                            }
+                        }
                     }.buttonStyle(BorderedButtonStyle(tint: .pink))
                 
                 }
@@ -115,20 +127,12 @@ struct HandsOnlyTimerView: View {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 80, height: 80).foregroundColor(.blue).shadow(radius: 25)
-//                    Circle()
-//                        .trim(from: 0.0, to: circleProgress)
-//                        .stroke(Color.blue, lineWidth: 10)
-//                        .frame(width: 120, height: 120)
-//                        .rotationEffect(Angle(degrees: -90))
                     if !loop {
                         loopTimerView
                     }
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
-                //Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
-                if !loop {
-                    cycleDisplayView
-                }
+                cycleDisplayView
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             
             
