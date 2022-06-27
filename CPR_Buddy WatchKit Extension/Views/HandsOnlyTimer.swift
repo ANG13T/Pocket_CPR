@@ -19,30 +19,30 @@ struct HandsOnlyTimerView: View {
     @State private var timer: Timer?
     @State private var count = 0
     
-       enum Tab {
-           case tabOne
-           case tabTwo
-       }
+    enum Tab {
+        case tabOne
+        case tabTwo
+    }
     @State private var wave: Bool = false
     @State private var wave1: Bool = false
     
     private var completedTimer: some View {
         RoundedRectangle(cornerRadius: 10)
-        .fill(Color.black.opacity(0.7))
-        .frame(width: WKInterfaceDevice.current().screenBounds.width, height: WKInterfaceDevice.current().screenBounds.height)
-        .overlay(
-            VStack {
-                Text("Timer Complete!").font(.system(size: 40))
-                Image(systemName: "checkmark")
-                    .font(.system(size: 30)).padding([.top, .bottom], 20)
-                
-                Button(action: {
-                    isPresented = false
-                }, label: {
-                    Text("Close").bold()
-                }).background(RoundedRectangle(cornerRadius: 20).fill(.orange))
-            }
-        )
+            .fill(Color.black.opacity(0.7))
+            .frame(width: WKInterfaceDevice.current().screenBounds.width, height: WKInterfaceDevice.current().screenBounds.height)
+            .overlay(
+                VStack {
+                    Text("Timer Complete!").font(.system(size: 40))
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 30)).padding([.top, .bottom], 20)
+                    
+                    Button(action: {
+                        isPresented = false
+                    }, label: {
+                        Text("Close").bold()
+                    }).background(RoundedRectangle(cornerRadius: 20).fill(.orange))
+                }
+            )
     }
     
     private var loopTimerView: some View {
@@ -55,12 +55,12 @@ struct HandsOnlyTimerView: View {
     
     private var cycleDisplayView: some View {
         var cycleCount = (initialCycles + 1) - cycles
-        if !loop {
+        if loop {
             cycleCount = cycles
         }
         return Text("**Cycle \(cycleCount)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
     }
-     
+    
     var body: some View {
         
         if cycles == 0 {
@@ -68,7 +68,7 @@ struct HandsOnlyTimerView: View {
         }
         
         TabView(selection: $selection) {
-
+            
             VStack {
                 VStack {
                     
@@ -98,7 +98,7 @@ struct HandsOnlyTimerView: View {
                                 timer?.invalidate()
                             }
                         }
-
+                        
                     }.buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.bottom, 5)
                     
                     Button("Loop Timer") {
@@ -118,10 +118,10 @@ struct HandsOnlyTimerView: View {
                             }
                         }
                     }.buttonStyle(BorderedButtonStyle(tint: .pink))
-                
+                    
                 }
                 .opacity(0.8)
-
+                
             }.gesture(DragGesture()).tag(Tab.tabOne)
             
             
@@ -146,7 +146,7 @@ struct HandsOnlyTimerView: View {
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             
             
-
+            
         }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
     
