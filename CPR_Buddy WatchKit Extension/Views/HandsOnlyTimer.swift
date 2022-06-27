@@ -110,6 +110,7 @@ struct HandsOnlyTimerView: View {
                                 count -= 1
                             }else {
                                 count = 60
+                                cycles += 1
                             }
                         }
                     }.buttonStyle(BorderedButtonStyle(tint: .pink))
@@ -130,7 +131,12 @@ struct HandsOnlyTimerView: View {
                     if !loop {
                         loopTimerView
                     }
-                    Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
+                    Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25).padding(.top, 30)
+                    Button(action: {
+                        isPresented = false
+                    }, label: {
+                        Text("Finish Timer").bold()
+                    }).background(RoundedRectangle(cornerRadius: 20).fill(.orange))
                 }
                 cycleDisplayView
             }.gesture(DragGesture()).tag(Tab.tabTwo)
@@ -152,3 +158,5 @@ struct HandsOnlyTimerView: View {
         }
     }
 }
+
+
