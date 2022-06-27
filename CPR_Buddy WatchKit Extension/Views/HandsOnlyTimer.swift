@@ -44,6 +44,18 @@ struct HandsOnlyTimerView: View {
             }
         )
     }
+    
+    private var loopTimerView: some View {
+        Circle()
+            .trim(from: 0.0, to: circleProgress)
+            .stroke(Color.blue, lineWidth: 10)
+            .frame(width: 120, height: 120)
+            .rotationEffect(Angle(degrees: -90))
+    }
+    
+    private var cycleDisplayView: some View {
+        Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
+    }
      
     var body: some View {
         
@@ -103,14 +115,20 @@ struct HandsOnlyTimerView: View {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 80, height: 80).foregroundColor(.blue).shadow(radius: 25)
-                    Circle()
-                        .trim(from: 0.0, to: circleProgress)
-                        .stroke(Color.blue, lineWidth: 10)
-                        .frame(width: 120, height: 120)
-                        .rotationEffect(Angle(degrees: -90))
+//                    Circle()
+//                        .trim(from: 0.0, to: circleProgress)
+//                        .stroke(Color.blue, lineWidth: 10)
+//                        .frame(width: 120, height: 120)
+//                        .rotationEffect(Angle(degrees: -90))
+                    if !loop {
+                        loopTimerView
+                    }
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
-                Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
+                //Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
+                if !loop {
+                    cycleDisplayView
+                }
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             
             
