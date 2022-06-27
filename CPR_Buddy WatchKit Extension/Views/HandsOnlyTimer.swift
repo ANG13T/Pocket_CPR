@@ -53,6 +53,29 @@ struct HandsOnlyTimerView: View {
             .rotationEffect(Angle(degrees: -90))
     }
     
+    private var buttonDisplayView: some View {
+        HStack {
+            Button(action: {
+                        print("Round Action")
+                        }) {
+                        Text("Press")
+                            .frame(width: 100, height: 100)
+                            .foregroundColor(Color.black)
+                            .background(Color.red)
+                            .clipShape(Circle())
+                    }
+            Button(action: {
+                        print("Round Action")
+                        }) {
+                        Text("Press")
+                            .frame(width: 100, height: 100)
+                            .foregroundColor(Color.black)
+                            .background(Color.red)
+                            .clipShape(Circle())
+                    }
+        }
+    }
+    
     private var cycleDisplayView: some View {
         var cycleCount = (initialCycles + 1) - cycles
         if loop {
@@ -136,13 +159,9 @@ struct HandsOnlyTimerView: View {
                         loopTimerView
                     }
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
-                    Button(action: {
-                        isPresented = false
-                    }, label: {
-                        Text("Finish Timer").bold()
-                    }).buttonStyle(BorderedButtonStyle(tint: .blue))
                 }
                 cycleDisplayView
+                buttonDisplayView
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             
             
