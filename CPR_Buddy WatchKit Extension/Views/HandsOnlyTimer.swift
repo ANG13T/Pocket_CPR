@@ -61,27 +61,27 @@ struct HandsOnlyTimerView: View {
             }) {
                 ZStack {
                     Circle()
-                        .foregroundColor(Color(red: 153/255, green: 102/255, blue: 255/255))
-                        .frame(width: 55, height: 55)
-                    Image(systemName: "camera.fill")
+                        .foregroundColor(.gray)
+                        .frame(width: 30, height: 30)
+                    Image(systemName: "xmark")
                         .imageScale(.large)
                         .foregroundColor(.white)
                 }
                 
-            }
+            }.buttonStyle(PlainButtonStyle())
             Button(action: {
                 print("Pause")
             }) {
                 ZStack {
                     Circle()
-                        .foregroundColor(Color(red: 153/255, green: 102/255, blue: 255/255))
-                        .frame(width: 55, height: 55)
-                    Image(systemName: "camera.fill")
+                        .foregroundColor(.blue)
+                        .frame(width: 30, height: 30)
+                    Image(systemName: "pause")
                         .imageScale(.large)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 }
                 
-            }
+            }.buttonStyle(PlainButtonStyle())
         }
     }
     
