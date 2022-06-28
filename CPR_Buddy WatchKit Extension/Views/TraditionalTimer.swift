@@ -23,10 +23,10 @@ struct TraditionalTimerView: View {
     @State private var wave: Bool = false
     @State private var wave1: Bool = false
     
-       enum Tab {
-           case tabOne
-           case tabTwo
-       }
+    enum Tab {
+        case tabOne
+        case tabTwo
+    }
     
     
     private var cycleDisplayView: some View {
@@ -38,62 +38,73 @@ struct TraditionalTimerView: View {
         return Text("**Cycle \(cycleCount)**").font(.system(size: 20)).foregroundColor(.white)
     }
     
+    private var loopTimerView: some View {
+        Circle()
+            .trim(from: 0.0, to: circleProgress)
+            .stroke(compressions ? Color.blue : Color.green, lineWidth: 10)
+            .frame(width: 120, height: 120)
+            .rotationEffect(Angle(degrees: -90))
+    }
+    
     private var buttonDisplayView: some View {
-        HStack(spacing: 20) {
-            Button(action: {
-                isPresented = false
-                pauseStatus = false
-            }) {
-                ZStack {
-                    Circle()
-                        .foregroundColor(.gray)
-                        .frame(width: 30, height: 30)
-                    Image(systemName: "xmark")
-                        .imageScale(.large)
-                        .foregroundColor(.white)
-                }
+        VStack {
+            HStack(spacing: 20) {
+                Button(action: {
+                    isPresented = false
+                    pauseStatus = false
+                }) {
+                    ZStack {
+                        Circle()
+                            .foregroundColor(.gray)
+                            .frame(width: 30, height: 30)
+                        Image(systemName: "xmark")
+                            .imageScale(.large)
+                            .foregroundColor(.white)
+                    }
+                    
+                }.buttonStyle(PlainButtonStyle())
                 
-            }.buttonStyle(PlainButtonStyle())
-            
-            cycleDisplayView
-            
-            Button(action: {
-                pauseStatus.toggle()
-            }) {
-                ZStack {
-                    Circle()
-                        .foregroundColor(.blue)
-                        .frame(width: 30, height: 30)
-                    Image(systemName: pauseStatus ? "play.fill" : "pause.fill")
-                        .imageScale(.large)
-                        .foregroundColor(.black)
-                }
+                cycleDisplayView
                 
-            }.buttonStyle(PlainButtonStyle())
+                Button(action: {
+                    pauseStatus.toggle()
+                }) {
+                    ZStack {
+                        Circle()
+                            .foregroundColor(.blue)
+                            .frame(width: 30, height: 30)
+                        Image(systemName: pauseStatus ? "play.fill" : "pause.fill")
+                            .imageScale(.large)
+                            .foregroundColor(.black)
+                    }
+                    
+                }.buttonStyle(PlainButtonStyle())
+            }
+            Text(compressions ? "60 Compressions" : "2 Breaths").font(.system(size: 10)).foregroundColor(.white)
         }
     }
     
     private var completedTimer: some View {
         RoundedRectangle(cornerRadius: 10)
-        .fill(Color.black.opacity(0.7))
-        .frame(width: WKInterfaceDevice.current().screenBounds.width, height: WKInterfaceDevice.current().screenBounds.height)
-        .overlay(
-            VStack {
-                Text("**Timer Complete!**")
-                    .font(.headline)
-                    .multilineTextAlignment(.center)
-                    .padding(.vertical, 5)
-                Image(systemName: "clock.badge.checkmark")
-                    .font(.system(size: 30)).padding([.top, .bottom], 20)
-                
-                Button(action: {
-                    isPresented = false
-                    pauseStatus = false
-                }, label: {
-                    Text("Close")
-                }).buttonStyle(BorderedButtonStyle(tint: .blue))
-            }
-        )
+            .fill(Color.black.opacity(0.7))
+            .frame(width: WKInterfaceDevice.current().screenBounds.width, height: WKInterfaceDevice.current().screenBounds.height)
+            .overlay(
+                VStack {
+                    Text("**Timer Complete!**")
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .padding(.vertical, 5)
+                    Image(systemName: "clock.badge.checkmark")
+                        .font(.system(size: 30)).padding([.top, .bottom], 20)
+                    
+                    Button(action: {
+                        isPresented = false
+                        pauseStatus = false
+                    }, label: {
+                        Text("Close")
+                    }).buttonStyle(BorderedButtonStyle(tint: .blue))
+                }
+            )
     }
     
     func getTimerCount(count: Int) -> Int {
@@ -114,8 +125,8 @@ struct TraditionalTimerView: View {
         }
         
     }
-
-     
+    
+    
     var body: some View {
         
         if cycles == 0 {
@@ -158,17 +169,34 @@ struct TraditionalTimerView: View {
                                 timer?.invalidate()
                             }
                         }
-
+                        
                     }.buttonStyle(BorderedButtonStyle(tint: .orange)).padding(.bottom, 5)
                     
                     Button("Loop Timer") {
                         selection = Tab.tabTwo
                         loop = true
+                        count = 60
+                        cycles = 1
+                        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
+                            
+                            if !pauseStatus {
+                                if (isPresented) {
+                                    WKInterfaceDevice.current().play(.click)
+                                }
+                                
+                                if count > 0 {
+                                    count -= 1
+                                }else {
+                                    count = 60
+                                    cycles += 1
+                                }
+                            }
+                        }
                     }.buttonStyle(BorderedButtonStyle(tint: .pink))
-                
+                    
                 }
                 .opacity(0.8)
-
+                
             }.gesture(DragGesture()).tag(Tab.tabOne)
             
             VStack {
@@ -178,20 +206,18 @@ struct TraditionalTimerView: View {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 80, height: 80).foregroundColor(compressions ? Color.blue : Color.green).shadow(radius: 25)
-                    Circle()
-                        .trim(from: 0.0, to: circleProgress)
-                        .stroke(compressions ? Color.blue : Color.green, lineWidth: 10)
-                        .frame(width: 120, height: 120)
-                        .rotationEffect(Angle(degrees: -90))
+                    
+                    if !loop {
+                        loopTimerView
+                    }
                     Text("\(getTimerCount(count: count))").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
-//                Text("**Cycle \((initialCycles + 1) - cycles)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 15)
-//                Text(compressions ? "60 Compressions" : "2 Breaths").font(.system(size: 10)).foregroundColor(.white).padding(.top, 3)
+                
                 buttonDisplayView
             }.gesture(DragGesture()).tag(Tab.tabTwo)
-
             
-
+            
+            
         }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
     
