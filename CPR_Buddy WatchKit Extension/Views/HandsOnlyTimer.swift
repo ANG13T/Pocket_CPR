@@ -18,7 +18,7 @@ struct HandsOnlyTimerView: View {
     @State private var selection: Tab = .tabOne
     @State var circleProgress: CGFloat = 0.0
     @State private var timer: Timer?
-    @State private var count = 0
+    @State public var count = 0
     
     enum Tab {
         case tabOne
@@ -140,6 +140,7 @@ struct HandsOnlyTimerView: View {
                         selection = Tab.tabTwo
                         loop = true
                         count = 60
+                        cycles = 1
                         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             if (isPresented) {
                                 WKInterfaceDevice.current().play(.click)

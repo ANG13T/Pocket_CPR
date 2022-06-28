@@ -18,7 +18,7 @@ struct TraditionalTimerView: View {
     @State private var timer: Timer?
     @State var circleProgress: CGFloat = 0.0
     @State private var initialCycles = 5
-    @State private var count = 0
+    @State public var count = 0
     @State private var wave: Bool = false
     @State private var wave1: Bool = false
     
