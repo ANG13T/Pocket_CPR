@@ -18,15 +18,18 @@ struct TraditionalView: View {
         .frame(width: WKInterfaceDevice.current().screenBounds.width, height: WKInterfaceDevice.current().screenBounds.height)
         .overlay(
             VStack {
-                Text("Timer Complete!").font(.system(size: 40))
+                Text("**Timer Complete!**")
+                .font(.headline)
+                .multilineTextAlignment(.center)
+                .padding(.vertical, 5)
                 Image(systemName: "checkmark")
                     .font(.system(size: 30)).padding([.top, .bottom], 20)
                 
                 Button(action: {
                     isPresented = false
                 }, label: {
-                    Text("Close").bold()
-                }).background(RoundedRectangle(cornerRadius: 20).fill(.orange))
+                    Text("Close")
+                }).buttonStyle(BorderedButtonStyle(tint: .blue))
             }
         )
     }

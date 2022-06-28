@@ -93,6 +93,7 @@ struct HandsOnlyTimerView: View {
         if loop {
             cycleCount = cycles
         }
+        print(cycleCount)
         return Text("**Cycle \(cycleCount)**").font(.system(size: 20)).foregroundColor(.white)
     }
     
