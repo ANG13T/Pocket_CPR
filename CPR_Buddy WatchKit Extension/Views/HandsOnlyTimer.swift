@@ -37,7 +37,7 @@ struct HandsOnlyTimerView: View {
                         .font(.headline)
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 5)
-                    Image(systemName: "checkmark")
+                    Image(systemName: "clock.badge.checkmark")
                         .font(.system(size: 30)).padding([.top, .bottom], 20)
                     
                     Button(action: {
@@ -175,7 +175,8 @@ struct HandsOnlyTimerView: View {
             VStack {
                 Spacer().frame(height: 40)
                 ZStack {
-                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
+                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear(
+                    ) {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 80, height: 80).foregroundColor(.blue).shadow(radius: 25)
