@@ -46,6 +46,26 @@ struct TraditionalTimerView: View {
             .rotationEffect(Angle(degrees: -90))
     }
     
+    private var compressionsAnimationView: some View {
+        ZStack {
+            Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(Color.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
+            self.wave.toggle()
+        }
+            Circle().frame(width: 80, height: 80).foregroundColor(Color.blue).shadow(radius: 25)
+        }
+    }
+    
+    private var breathsAnimationView: some View {
+        ZStack {
+        Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(Color.green).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval * 5).repeatForever(autoreverses: false).speed(1)).onAppear() {
+            self.wave.toggle()
+        }
+        Circle().frame(width: 80, height: 80).foregroundColor(Color.green).shadow(radius: 25)
+        }
+    }
+    
+    
+    
     private var buttonDisplayView: some View {
         VStack {
             HStack(spacing: 20) {
@@ -95,7 +115,7 @@ struct TraditionalTimerView: View {
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 5)
                     Image(systemName: "clock.badge.checkmark")
-                        .font(.system(size: 30)).padding([.top, .bottom], 20)
+                        .font(.system(size: 50)).padding([.top, .bottom], 10)
                     
                     Button(action: {
                         isPresented = false
@@ -115,15 +135,6 @@ struct TraditionalTimerView: View {
         }else{
             return 1
         }
-    }
-    
-    func getTimerDuration(duration: Double) -> Double {
-        if (compressions) {
-            return duration
-        }else {
-            return duration * 5
-        }
-        
     }
     
     
@@ -209,10 +220,11 @@ struct TraditionalTimerView: View {
             VStack {
                 Spacer().frame(height: 40)
                 ZStack {
-                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(compressions ? Color.blue : Color.green).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: getTimerDuration(duration: timeInterval)).repeatForever(autoreverses: false).speed(1)).onAppear() {
-                        self.wave.toggle()
+                    if compressions {
+                        compressionsAnimationView
+                    }else {
+                        breathsAnimationView
                     }
-                    Circle().frame(width: 80, height: 80).foregroundColor(compressions ? Color.blue : Color.green).shadow(radius: 25)
                     
                     if !loop {
                         loopTimerView
@@ -232,7 +244,7 @@ struct TraditionalTimerView: View {
         _ = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
                 if !pauseStatus {
-                    var pulseAmount = 70
+                    let pulseAmount = 70
                     let cycleTime = CGFloat(pulseAmount * initialCycles)
                     self.circleProgress += (1 / cycleTime)
                     if self.circleProgress >= 1.0 {

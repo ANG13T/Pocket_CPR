@@ -38,7 +38,7 @@ struct HandsOnlyTimerView: View {
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 5)
                     Image(systemName: "clock.badge.checkmark")
-                        .font(.system(size: 30)).padding([.top, .bottom], 20)
+                        .font(.system(size: 50)).padding([.top, .bottom], 10)
                     
                     Button(action: {
                         isPresented = false
