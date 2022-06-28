@@ -81,7 +81,7 @@ struct TraditionalTimerView: View {
                 }.buttonStyle(PlainButtonStyle())
             }
             Text(compressions ? "60 Compressions" : "2 Breaths").font(.system(size: 10)).foregroundColor(.white)
-        }
+        }.padding(.top, 20)
     }
     
     private var completedTimer: some View {
@@ -152,21 +152,23 @@ struct TraditionalTimerView: View {
                         loop = false
                         count = 60
                         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
-                            if (isPresented) {
-                                WKInterfaceDevice.current().play(.click)
-                            }
-                            if count > 0 {
-                                count -= 1
-                            }else if count <= 0 && cycles > 0 {
-                                compressions = !compressions
-                                if (!compressions) {
-                                    count = 10
-                                }else {
-                                    count = 60
-                                    cycles -= 1
+                            if !pauseStatus {
+                                if (isPresented) {
+                                    WKInterfaceDevice.current().play(.click)
                                 }
-                            }else {
-                                timer?.invalidate()
+                                if count > 0 {
+                                    count -= 1
+                                }else if count <= 0 && cycles > 0 {
+                                    compressions = !compressions
+                                    if (!compressions) {
+                                        count = 10
+                                    }else {
+                                        count = 60
+                                        cycles -= 1
+                                    }
+                                }else {
+                                    timer?.invalidate()
+                                }
                             }
                         }
                         
@@ -187,8 +189,13 @@ struct TraditionalTimerView: View {
                                 if count > 0 {
                                     count -= 1
                                 }else {
-                                    count = 60
-                                    cycles += 1
+                                    compressions = !compressions
+                                    if (!compressions) {
+                                        count = 10
+                                    }else {
+                                        count = 60
+                                        cycles += 1
+                                    }
                                 }
                             }
                         }
@@ -202,7 +209,7 @@ struct TraditionalTimerView: View {
             VStack {
                 Spacer().frame(height: 40)
                 ZStack {
-                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(compressions ? Color.blue : Color.green).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(Animation.easeInOut(duration: getTimerDuration(duration: timeInterval)).repeatForever(autoreverses: false).speed(1)).onAppear() {
+                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(compressions ? Color.blue : Color.green).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: getTimerDuration(duration: timeInterval)).repeatForever(autoreverses: false).speed(1)).onAppear() {
                         self.wave.toggle()
                     }
                     Circle().frame(width: 80, height: 80).foregroundColor(compressions ? Color.blue : Color.green).shadow(radius: 25)
@@ -224,12 +231,13 @@ struct TraditionalTimerView: View {
     func startTimer() {
         _ = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
-                var pulseAmount = 70
-                
-                let cycleTime = CGFloat(pulseAmount * initialCycles)
-                self.circleProgress += (1 / cycleTime)
-                if self.circleProgress >= 1.0 {
-                    timer.invalidate()
+                if !pauseStatus {
+                    var pulseAmount = 70
+                    let cycleTime = CGFloat(pulseAmount * initialCycles)
+                    self.circleProgress += (1 / cycleTime)
+                    if self.circleProgress >= 1.0 {
+                        timer.invalidate()
+                    }
                 }
             }
         }
