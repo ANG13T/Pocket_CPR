@@ -56,23 +56,32 @@ struct HandsOnlyTimerView: View {
     private var buttonDisplayView: some View {
         HStack {
             Button(action: {
-                        print("Round Action")
-                        }) {
-                        Text("Press")
-                            .frame(width: 100, height: 100)
-                            .foregroundColor(Color.black)
-                            .background(Color.red)
-                            .clipShape(Circle())
-                    }
+                
+                print("Stop")
+            }) {
+                ZStack {
+                    Circle()
+                        .foregroundColor(Color(red: 153/255, green: 102/255, blue: 255/255))
+                        .frame(width: 55, height: 55)
+                    Image(systemName: "camera.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.white)
+                }
+                
+            }
             Button(action: {
-                        print("Round Action")
-                        }) {
-                        Text("Press")
-                            .frame(width: 100, height: 100)
-                            .foregroundColor(Color.black)
-                            .background(Color.red)
-                            .clipShape(Circle())
-                    }
+                print("Pause")
+            }) {
+                ZStack {
+                    Circle()
+                        .foregroundColor(Color(red: 153/255, green: 102/255, blue: 255/255))
+                        .frame(width: 55, height: 55)
+                    Image(systemName: "camera.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.white)
+                }
+                
+            }
         }
     }
     
