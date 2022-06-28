@@ -34,9 +34,9 @@ struct HandsOnlyTimerView: View {
             .overlay(
                 VStack {
                     Text("**Timer Complete!**")
-                    .font(.headline)
-                    .multilineTextAlignment(.center)
-                    .padding(.vertical, 5)
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .padding(.vertical, 5)
                     Image(systemName: "checkmark")
                         .font(.system(size: 30)).padding([.top, .bottom], 20)
                     
@@ -98,9 +98,7 @@ struct HandsOnlyTimerView: View {
         if loop {
             cycleCount = cycles
         }
-        print(initialCycles)
-        print((initialCycles + 1) - cycles)
-        print(loop)
+        
         return Text("**Cycle \(cycleCount)**").font(.system(size: 20)).foregroundColor(.white)
     }
     
@@ -128,17 +126,19 @@ struct HandsOnlyTimerView: View {
                         loop = false
                         count = 60
                         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
-                            if (isPresented) {
-                                WKInterfaceDevice.current().play(.click)
-                            }
-                            
-                            if count > 0 {
-                                count -= 1
-                            }else if count <= 0 && cycles > 0{
-                                cycles -= 1
-                                count = 60
-                            }else {
-                                timer?.invalidate()
+                            if !pauseStatus {
+                                if (isPresented) {
+                                    WKInterfaceDevice.current().play(.click)
+                                }
+                                
+                                if count > 0 {
+                                    count -= 1
+                                }else if count <= 0 && cycles > 0{
+                                    cycles -= 1
+                                    count = 60
+                                }else {
+                                    timer?.invalidate()
+                                }
                             }
                         }
                         
@@ -150,15 +150,18 @@ struct HandsOnlyTimerView: View {
                         count = 60
                         cycles = 1
                         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
-                            if (isPresented) {
-                                WKInterfaceDevice.current().play(.click)
-                            }
                             
-                            if count > 0 {
-                                count -= 1
-                            }else {
-                                count = 60
-                                cycles += 1
+                            if !pauseStatus {
+                                if (isPresented) {
+                                    WKInterfaceDevice.current().play(.click)
+                                }
+                                
+                                if count > 0 {
+                                    count -= 1
+                                }else {
+                                    count = 60
+                                    cycles += 1
+                                }
                             }
                         }
                     }.buttonStyle(BorderedButtonStyle(tint: .pink))
@@ -193,11 +196,14 @@ struct HandsOnlyTimerView: View {
     func startTimer() {
         _ = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
-                let cycleTime = CGFloat(60 * initialCycles)
-                self.circleProgress += (1 / cycleTime)
-                if self.circleProgress >= 1.0 {
-                    timer.invalidate()
+                if !pauseStatus {
+                    let cycleTime = CGFloat(60 * initialCycles)
+                    self.circleProgress += (1 / cycleTime)
+                    if self.circleProgress >= 1.0 {
+                        timer.invalidate()
+                    }
                 }
+                
             }
         }
     }
