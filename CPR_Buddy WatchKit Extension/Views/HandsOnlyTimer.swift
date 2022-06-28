@@ -33,15 +33,19 @@ struct HandsOnlyTimerView: View {
             .frame(width: WKInterfaceDevice.current().screenBounds.width, height: WKInterfaceDevice.current().screenBounds.height)
             .overlay(
                 VStack {
-                    Text("Timer Complete!").font(.system(size: 40))
+                    Text("**Timer Complete!**")
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+                    .padding(.vertical, 5)
                     Image(systemName: "checkmark")
                         .font(.system(size: 30)).padding([.top, .bottom], 20)
                     
                     Button(action: {
                         isPresented = false
+                        pauseStatus = false
                     }, label: {
-                        Text("Close").bold()
-                    }).background(RoundedRectangle(cornerRadius: 20).fill(.orange))
+                        Text("Close")
+                    }).buttonStyle(BorderedButtonStyle(tint: .blue))
                 }
             )
     }
@@ -58,6 +62,7 @@ struct HandsOnlyTimerView: View {
         HStack(spacing: 20) {
             Button(action: {
                 isPresented = false
+                pauseStatus = false
             }) {
                 ZStack {
                     Circle()
@@ -73,13 +78,13 @@ struct HandsOnlyTimerView: View {
             cycleDisplayView
             
             Button(action: {
-                print("Pause")
+                pauseStatus.toggle()
             }) {
                 ZStack {
                     Circle()
                         .foregroundColor(.blue)
                         .frame(width: 30, height: 30)
-                    Image(systemName: "pause")
+                    Image(systemName: pauseStatus ? "play.fill" : "pause.fill")
                         .imageScale(.large)
                         .foregroundColor(.black)
                 }
@@ -93,7 +98,9 @@ struct HandsOnlyTimerView: View {
         if loop {
             cycleCount = cycles
         }
-        print(cycleCount)
+        print(initialCycles)
+        print((initialCycles + 1) - cycles)
+        print(loop)
         return Text("**Cycle \(cycleCount)**").font(.system(size: 20)).foregroundColor(.white)
     }
     
@@ -195,5 +202,3 @@ struct HandsOnlyTimerView: View {
         }
     }
 }
-
-
