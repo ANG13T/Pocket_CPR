@@ -11,6 +11,7 @@ struct HandsOnlyTimerView: View {
     @Binding var isPresented: Bool
     @State private var chosenProfile: String = "Adult"
     @State private var cycles = 5
+    @State private var pauseStatus : Bool = false
     @State private var timeInterval = 0.6
     @State private var initialCycles = 5
     @State private var loop: Bool = false
@@ -54,10 +55,9 @@ struct HandsOnlyTimerView: View {
     }
     
     private var buttonDisplayView: some View {
-        HStack {
+        HStack(spacing: 20) {
             Button(action: {
-                
-                print("Stop")
+                isPresented = false
             }) {
                 ZStack {
                     Circle()
@@ -69,6 +69,9 @@ struct HandsOnlyTimerView: View {
                 }
                 
             }.buttonStyle(PlainButtonStyle())
+            
+            cycleDisplayView
+            
             Button(action: {
                 print("Pause")
             }) {
@@ -90,7 +93,7 @@ struct HandsOnlyTimerView: View {
         if loop {
             cycleCount = cycles
         }
-        return Text("**Cycle \(cycleCount)**").font(.system(size: 20)).foregroundColor(.white).padding(.top, 10)
+        return Text("**Cycle \(cycleCount)**").font(.system(size: 20)).foregroundColor(.white)
     }
     
     var body: some View {
@@ -169,7 +172,7 @@ struct HandsOnlyTimerView: View {
                     }
                     Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
-                cycleDisplayView
+                Spacer().frame(height: 30)
                 buttonDisplayView
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             
