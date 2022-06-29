@@ -130,6 +130,13 @@
 			path = Traditional;
 			sourceTree = "<group>";
 		};
+		2946FB5D286CD8C800C47FC7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		2951CCC52852F821002C1577 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +192,7 @@
 		2951CCFE28551071002C1577 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2946FB5D286CD8C800C47FC7 /* Settings */,
 				2946FB5C286CCFA100C47FC7 /* Traditional */,
 				2946FB5B286CCF9400C47FC7 /* Hands-Only */,
 				2946FB5A286CCF8C00C47FC7 /* About */,
