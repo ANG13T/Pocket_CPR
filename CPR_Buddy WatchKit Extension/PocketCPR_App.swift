@@ -1,6 +1,6 @@
 //
-//  CPR_BuddyApp.swift
-//  CPR_Buddy WatchKit Extension
+//  PocketCPR_App.swift
+//  PocketCPR_App WatchKit Extension
 //
 //  Created by Angelina Tsuboi on 6/9/22.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct CPR_BuddyApp: App {
+struct PocketCPR_App: App {
     
     @SceneBuilder var body: some Scene {
         WindowGroup {
@@ -17,7 +17,7 @@ struct CPR_BuddyApp: App {
                     
                     ToolbarItem(placement: .cancellationAction) {
                         
-                        Text("CPR Buddy")
+                        Text("Pocket CPR")
                         
                     }
                     

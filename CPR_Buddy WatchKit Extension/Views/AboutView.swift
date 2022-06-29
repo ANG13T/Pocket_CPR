@@ -101,11 +101,11 @@ struct AboutView: View {
             
             VStack {
                 VStack {
-                    Text("**About CPR Buddy**")
+                    Text("**About Pocket CPR**")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                     
-                    Text("CPR Buddy teaches both Hands-Only and Traditional CPR methods through tutorials and CPR timers.")
+                    Text("Pocket CPR teaches both Hands-Only and Traditional CPR methods through tutorials and CPR timers.")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                 }
