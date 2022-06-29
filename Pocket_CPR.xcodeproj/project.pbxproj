@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2951CCD12852F822002C1577 /* CPR_Buddy WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2951CCD02852F822002C1577 /* CPR_Buddy WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2951CCD12852F822002C1577 /* Pocket_CPR WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2951CCD62852F82A002C1577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2951CCD52852F82A002C1577 /* Assets.xcassets */; };
-		2951CCDC2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2951CCDB2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2951CCDC2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2951CCDB2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2951CCE12852F82A002C1577 /* PocketCPR_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCE02852F82A002C1577 /* PocketCPR_App.swift */; };
 		2951CCE32852F82A002C1577 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCE22852F82A002C1577 /* ContentView.swift */; };
 		2951CCE52852F82A002C1577 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCE42852F82A002C1577 /* NotificationController.swift */; };
@@ -50,7 +50,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2951CCDC2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex in Embed App Extensions */,
+				2951CCDC2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,7 +61,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				2951CCD12852F822002C1577 /* CPR_Buddy WatchKit App.app in Embed Watch Content */,
+				2951CCD12852F822002C1577 /* Pocket_CPR WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,10 +69,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2951CCCC2852F822002C1577 /* CPR_Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPR_Buddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2951CCD02852F822002C1577 /* CPR_Buddy WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CPR_Buddy WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2951CCCC2852F822002C1577 /* Pocket_CPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocket_CPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket_CPR WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2951CCD52852F82A002C1577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2951CCDB2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CPR_Buddy WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2951CCDB2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Pocket_CPR WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2951CCE02852F82A002C1577 /* PocketCPR_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketCPR_App.swift; sourceTree = "<group>"; };
 		2951CCE22852F82A002C1577 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2951CCE42852F82A002C1577 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -142,9 +142,9 @@
 		2951CCCD2852F822002C1577 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2951CCCC2852F822002C1577 /* CPR_Buddy.app */,
-				2951CCD02852F822002C1577 /* CPR_Buddy WatchKit App.app */,
-				2951CCDB2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex */,
+				2951CCCC2852F822002C1577 /* Pocket_CPR.app */,
+				2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */,
+				2951CCDB2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,9 +195,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2951CCCB2852F822002C1577 /* CPR_Buddy */ = {
+		2951CCCB2852F822002C1577 /* Pocket_CPR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2951CCFB2852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy" */;
+			buildConfigurationList = 2951CCFB2852F82C002C1577 /* Build configuration list for PBXNativeTarget "Pocket_CPR" */;
 			buildPhases = (
 				2951CCCA2852F822002C1577 /* Resources */,
 				2951CCFA2852F82C002C1577 /* Embed Watch Content */,
@@ -207,14 +207,14 @@
 			dependencies = (
 				2951CCD32852F822002C1577 /* PBXTargetDependency */,
 			);
-			name = CPR_Buddy;
+			name = Pocket_CPR;
 			productName = CPR_Buddy;
-			productReference = 2951CCCC2852F822002C1577 /* CPR_Buddy.app */;
+			productReference = 2951CCCC2852F822002C1577 /* Pocket_CPR.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
 		};
-		2951CCCF2852F822002C1577 /* CPR_Buddy WatchKit App */ = {
+		2951CCCF2852F822002C1577 /* Pocket_CPR WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2951CCF72852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy WatchKit App" */;
+			buildConfigurationList = 2951CCF72852F82C002C1577 /* Build configuration list for PBXNativeTarget "Pocket_CPR WatchKit App" */;
 			buildPhases = (
 				2951CCCE2852F822002C1577 /* Resources */,
 				2951CCF62852F82C002C1577 /* Embed App Extensions */,
@@ -224,14 +224,14 @@
 			dependencies = (
 				2951CCDE2852F82A002C1577 /* PBXTargetDependency */,
 			);
-			name = "CPR_Buddy WatchKit App";
+			name = "Pocket_CPR WatchKit App";
 			productName = "CPR_Buddy WatchKit App";
-			productReference = 2951CCD02852F822002C1577 /* CPR_Buddy WatchKit App.app */;
+			productReference = 2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		2951CCDA2852F82A002C1577 /* CPR_Buddy WatchKit Extension */ = {
+		2951CCDA2852F82A002C1577 /* Pocket_CPR WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2951CCF32852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy WatchKit Extension" */;
+			buildConfigurationList = 2951CCF32852F82C002C1577 /* Build configuration list for PBXNativeTarget "Pocket_CPR WatchKit Extension" */;
 			buildPhases = (
 				2951CCD72852F82A002C1577 /* Sources */,
 				2951CCD82852F82A002C1577 /* Frameworks */,
@@ -241,9 +241,9 @@
 			);
 			dependencies = (
 			);
-			name = "CPR_Buddy WatchKit Extension";
+			name = "Pocket_CPR WatchKit Extension";
 			productName = "CPR_Buddy WatchKit Extension";
-			productReference = 2951CCDB2852F82A002C1577 /* CPR_Buddy WatchKit Extension.appex */;
+			productReference = 2951CCDB2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
@@ -267,7 +267,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2951CCC92852F822002C1577 /* Build configuration list for PBXProject "CPR_Buddy" */;
+			buildConfigurationList = 2951CCC92852F822002C1577 /* Build configuration list for PBXProject "Pocket_CPR" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -280,9 +280,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2951CCCB2852F822002C1577 /* CPR_Buddy */,
-				2951CCCF2852F822002C1577 /* CPR_Buddy WatchKit App */,
-				2951CCDA2852F82A002C1577 /* CPR_Buddy WatchKit Extension */,
+				2951CCCB2852F822002C1577 /* Pocket_CPR */,
+				2951CCCF2852F822002C1577 /* Pocket_CPR WatchKit App */,
+				2951CCDA2852F82A002C1577 /* Pocket_CPR WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -339,12 +339,12 @@
 /* Begin PBXTargetDependency section */
 		2951CCD32852F822002C1577 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2951CCCF2852F822002C1577 /* CPR_Buddy WatchKit App */;
+			target = 2951CCCF2852F822002C1577 /* Pocket_CPR WatchKit App */;
 			targetProxy = 2951CCD22852F822002C1577 /* PBXContainerItemProxy */;
 		};
 		2951CCDE2852F82A002C1577 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2951CCDA2852F82A002C1577 /* CPR_Buddy WatchKit Extension */;
+			target = 2951CCDA2852F82A002C1577 /* Pocket_CPR WatchKit Extension */;
 			targetProxy = 2951CCDD2852F82A002C1577 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -475,7 +475,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CPR_Buddy WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = Pocket_CPR_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -506,7 +506,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CPR_Buddy WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = Pocket_CPR_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -601,7 +601,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2951CCC92852F822002C1577 /* Build configuration list for PBXProject "CPR_Buddy" */ = {
+		2951CCC92852F822002C1577 /* Build configuration list for PBXProject "Pocket_CPR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2951CCF12852F82B002C1577 /* Debug */,
@@ -610,7 +610,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2951CCF32852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy WatchKit Extension" */ = {
+		2951CCF32852F82C002C1577 /* Build configuration list for PBXNativeTarget "Pocket_CPR WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2951CCF42852F82C002C1577 /* Debug */,
@@ -619,7 +619,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2951CCF72852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy WatchKit App" */ = {
+		2951CCF72852F82C002C1577 /* Build configuration list for PBXNativeTarget "Pocket_CPR WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2951CCF82852F82C002C1577 /* Debug */,
@@ -628,7 +628,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2951CCFB2852F82C002C1577 /* Build configuration list for PBXNativeTarget "CPR_Buddy" */ = {
+		2951CCFB2852F82C002C1577 /* Build configuration list for PBXNativeTarget "Pocket_CPR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2951CCFC2852F82C002C1577 /* Debug */,

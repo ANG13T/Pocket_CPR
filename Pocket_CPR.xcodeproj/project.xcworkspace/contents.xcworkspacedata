@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/angelinatsuboi/Desktop/CPR_Buddy/Pocket_CPR.xcodeproj">
    </FileRef>
 </Workspace>
