@@ -137,6 +137,7 @@ struct HandsOnlyTimerView: View {
                                     cycles -= 1
                                     count = 60
                                 }else {
+                                    WKInterfaceDevice.current().play(.success)
                                     timer?.invalidate()
                                 }
                             }

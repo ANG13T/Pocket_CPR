@@ -14,6 +14,7 @@ struct TraditionalTimerView: View {
     @State private var pauseStatus : Bool = false
     @State private var loop: Bool = false
     @State private var compressions: Bool = true
+    @State private var compressionCount: Int = 30
     @State private var selection: Tab = .tabOne
     @State private var timeInterval = 0.6
     @State private var timer: Timer?
@@ -100,7 +101,7 @@ struct TraditionalTimerView: View {
                     
                 }.buttonStyle(PlainButtonStyle())
             }
-            Text(compressions ? "60 Compressions" : "2 Breaths").font(.system(size: 10)).foregroundColor(.white)
+            Text(compressions ? "30 Compressions" : "2 Breaths").font(.system(size: 10)).foregroundColor(.white)
         }.padding(.top, 20)
     }
     
@@ -161,7 +162,7 @@ struct TraditionalTimerView: View {
                         cycles = initialCycles
                         startTimer()
                         loop = false
-                        count = 60
+                        count = compressionCount
                         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             if !pauseStatus {
                                 if (isPresented) {
@@ -174,10 +175,11 @@ struct TraditionalTimerView: View {
                                     if (!compressions) {
                                         count = 10
                                     }else {
-                                        count = 60
+                                        count = compressionCount
                                         cycles -= 1
                                     }
                                 }else {
+                                    WKInterfaceDevice.current().play(.success)
                                     timer?.invalidate()
                                 }
                             }
@@ -188,7 +190,7 @@ struct TraditionalTimerView: View {
                     Button("Loop Timer") {
                         selection = Tab.tabTwo
                         loop = true
-                        count = 60
+                        count = compressionCount
                         cycles = 1
                         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             
@@ -204,7 +206,7 @@ struct TraditionalTimerView: View {
                                     if (!compressions) {
                                         count = 10
                                     }else {
-                                        count = 60
+                                        count = compressionCount
                                         cycles += 1
                                     }
                                 }
