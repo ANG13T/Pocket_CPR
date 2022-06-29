@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2946FB5F286CDC8600C47FC7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946FB5E286CDC8600C47FC7 /* SettingsView.swift */; };
 		2951CCD12852F822002C1577 /* Pocket_CPR WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2951CCD62852F82A002C1577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2951CCD52852F82A002C1577 /* Assets.xcassets */; };
 		2951CCDC2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2951CCDB2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -69,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2946FB5E286CDC8600C47FC7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2951CCCC2852F822002C1577 /* Pocket_CPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocket_CPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket_CPR WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2951CCD52852F82A002C1577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		2946FB5D286CD8C800C47FC7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				2946FB5E286CDC8600C47FC7 /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				2951CD0428551B1B002C1577 /* TraditionalView.swift in Sources */,
 				2951CCE72852F82A002C1577 /* NotificationView.swift in Sources */,
 				29E71553285B0FC6009C0D07 /* TraditionalTutorial.swift in Sources */,
+				2946FB5F286CDC8600C47FC7 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

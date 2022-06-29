@@ -79,7 +79,7 @@ struct ContentView: View {
                         presentSettingsView.toggle()
                     }.buttonStyle(BorderedButtonStyle(tint: .green))
                         .fullScreenCover(isPresented: $presentSettingsView) {
-                            AboutView(isPresented: $presentSettingsView).toolbar {
+                            SettingsView(isPresented: $presentSettingsView).toolbar {
                                 
                                 ToolbarItem(placement: .cancellationAction) {
                                     
