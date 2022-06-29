@@ -102,6 +102,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2946FB5A286CCF8C00C47FC7 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				2951CCFF2855108F002C1577 /* AboutView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		2946FB5B286CCF9400C47FC7 /* Hands-Only */ = {
+			isa = PBXGroup;
+			children = (
+				2951CD0128551B11002C1577 /* HandsOnlyView.swift */,
+				29E71554285B109C009C0D07 /* HandsOnlyTimer.swift */,
+				29E71556285B110D009C0D07 /* HandsOnlyTutorial.swift */,
+			);
+			path = "Hands-Only";
+			sourceTree = "<group>";
+		};
+		2946FB5C286CCFA100C47FC7 /* Traditional */ = {
+			isa = PBXGroup;
+			children = (
+				2951CD0328551B1B002C1577 /* TraditionalView.swift */,
+				29E71550285B072E009C0D07 /* TraditionalTimer.swift */,
+				29E71552285B0FC6009C0D07 /* TraditionalTutorial.swift */,
+			);
+			path = Traditional;
+			sourceTree = "<group>";
+		};
 		2951CCC52852F821002C1577 = {
 			isa = PBXGroup;
 			children = (
@@ -157,13 +185,9 @@
 		2951CCFE28551071002C1577 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2951CCFF2855108F002C1577 /* AboutView.swift */,
-				2951CD0128551B11002C1577 /* HandsOnlyView.swift */,
-				2951CD0328551B1B002C1577 /* TraditionalView.swift */,
-				29E71550285B072E009C0D07 /* TraditionalTimer.swift */,
-				29E71552285B0FC6009C0D07 /* TraditionalTutorial.swift */,
-				29E71554285B109C009C0D07 /* HandsOnlyTimer.swift */,
-				29E71556285B110D009C0D07 /* HandsOnlyTutorial.swift */,
+				2946FB5C286CCFA100C47FC7 /* Traditional */,
+				2946FB5B286CCF9400C47FC7 /* Hands-Only */,
+				2946FB5A286CCF8C00C47FC7 /* About */,
 			);
 			path = Views;
 			sourceTree = "<group>";
