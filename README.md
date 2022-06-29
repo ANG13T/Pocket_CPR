@@ -23,7 +23,19 @@ Pocket CPR includes multiple tutorials that explain proper CPR form, compression
 It is estimated that more than 659,000 deaths a year occur within the United States due to heart attacks. Employing effective CPR methods can double or triple chances of a victim's survival of a heart attack. Learn CPR using Pocket CPR, and be prepared to save a life.
 
 ## Project Structure
+``ContentView`` contains the onboarding display with the Hands-Only, Traditional, and "About Pocket CPR" options
 
+``Views/About`` contains all files for the About Page of Pocket CPR which includes a slideshow tutorial explaining the basics of CPR 
+
+``Views/Traditional`` contains all files for the Traditional Page of Pocket CPR 
+- ``Views/Traditional/TraditionalView``
+- ``Views/Traditional/TraditionalTimer``
+- ``Views/Traditional/TraditionalTutorial``
+
+``Views/Hands-Only`` contains all files for the Hands-Only Page of Pocket CPR
+- ``Views/Hands-Only/HandsOnlyView``
+- ``Views/Hands-Only/HandsOnlyTimer``
+- ``Views/Hands-Only/HandsOnlyTutorial``
 
 ## Screenshots
 
