@@ -27,15 +27,15 @@ It is estimated that more than 659,000 deaths a year occur within the United Sta
 
 ``Views/About`` contains all files for the About Page of Pocket CPR which includes a slideshow tutorial explaining the basics of CPR 
 
-``Views/Traditional`` contains all files for the Traditional Page of Pocket CPR 
-- ``Views/Traditional/TraditionalView``
-- ``Views/Traditional/TraditionalTimer``
-- ``Views/Traditional/TraditionalTutorial``
-
 ``Views/Hands-Only`` contains all files for the Hands-Only Page of Pocket CPR
-- ``Views/Hands-Only/HandsOnlyView``
-- ``Views/Hands-Only/HandsOnlyTimer``
-- ``Views/Hands-Only/HandsOnlyTutorial``
+- ``Views/Hands-Only/HandsOnlyView`` contains options for viewing a Hands-Only CPR timer or tutorial
+- ``Views/Hands-Only/HandsOnlyTimer``an interactive cadence timer (pulses and vibrations) for Hands-Only CPR repeating 60 compressions
+- ``Views/Hands-Only/HandsOnlyTutorial`` a step-by-step slideshow demonstration of Hands-Only CPR
+
+``Views/Traditional`` contains all files for the Traditional Page of Pocket CPR 
+- ``Views/Traditional/TraditionalView`` contains options for viewing a traditional CPR timer or tutorial
+- ``Views/Traditional/TraditionalTimer`` an interactive cadence timer alternating between 60 compressions and 2 breaths
+- ``Views/Traditional/TraditionalTutorial`` a step-by-step slideshow demonstration of Traditional CPR
 
 ## Screenshots
 
