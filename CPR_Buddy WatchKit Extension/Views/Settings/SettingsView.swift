@@ -28,7 +28,7 @@ struct SettingsView: View {
                 
                 
                 HStack {
-                    Text("Compression Pulse Color")
+                    Text("Compressions Color")
                     Spacer()
                     Image(systemName: "circle.fill").foregroundColor(userSettings.color)
                 }
@@ -51,7 +51,7 @@ struct SettingsView: View {
                 }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                 
                 HStack {
-                    Text("Breaths Pulse Color")
+                    Text("Breaths Color")
                     Spacer()
                     Image(systemName: "circle.fill").foregroundColor(userSettings.breathsColor)
                 }
