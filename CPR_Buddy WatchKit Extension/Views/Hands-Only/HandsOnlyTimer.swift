@@ -137,10 +137,13 @@ struct HandsOnlyTimerView: View {
                                     WKInterfaceDevice.current().play(.click)
                                 }
                                 
+                                if count <= 0 {
+                                    cycles -= 1
+                                }
+                                
                                 if count > 0 {
                                     count -= 1
                                 }else if count <= 0 && cycles > 0{
-                                    cycles -= 1
                                     count = 60
                                 }else {
                                     if (userSettings.vibration) {
