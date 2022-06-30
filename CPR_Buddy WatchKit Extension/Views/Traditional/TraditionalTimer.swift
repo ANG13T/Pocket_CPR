@@ -17,8 +17,8 @@ struct TraditionalTimerView: View {
     @State private var compressionCount: Int = 30
     @State private var selection: Tab = .tabOne
     @State private var timeInterval = 0.6
-    @State private var clickTimer: Timer?
-    @State private var progressTimer: Timer?
+    @Binding public var clickTimer: Timer?
+    @Binding public var progressTimer: Timer?
     @State var circleProgress: CGFloat = 0.0
     @State private var initialCycles = 5
     @State public var count = 0

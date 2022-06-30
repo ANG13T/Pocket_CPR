@@ -10,6 +10,8 @@ import SwiftUI
 struct TraditionalView: View {
     @Binding var isPresented: Bool
     @State private var presentTimerView = false
+    @State private var clickTimer : Timer?
+    @State private var progressTimer : Timer?
     @State private var presentTutorialView = false
     
     private var completedTimer: some View {
@@ -47,13 +49,15 @@ struct TraditionalView: View {
                     presentTimerView.toggle()
                 }.buttonStyle(BorderedButtonStyle(tint: .blue))
                     .fullScreenCover(isPresented: $presentTimerView) {
-                        TraditionalTimerView(isPresented: $presentTimerView).toolbar {
+                        TraditionalTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
                                 
                                 Button(action: {
                                     presentTimerView.toggle()
+                                    clickTimer?.invalidate()
+                                    progressTimer?.invalidate()
                                 }) {
                                     Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                                 }
