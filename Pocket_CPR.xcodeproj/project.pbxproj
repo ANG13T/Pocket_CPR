@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2946FB5F286CDC8600C47FC7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946FB5E286CDC8600C47FC7 /* SettingsView.swift */; };
 		2946FB61286D133600C47FC7 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946FB60286D133600C47FC7 /* ColorPickerView.swift */; };
+		2946FB65286E1DDF00C47FC7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946FB64286E1DDF00C47FC7 /* UserSettings.swift */; };
 		2951CCD12852F822002C1577 /* Pocket_CPR WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2951CCD62852F82A002C1577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2951CCD52852F82A002C1577 /* Assets.xcassets */; };
 		2951CCDC2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2951CCDB2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -73,6 +74,7 @@
 /* Begin PBXFileReference section */
 		2946FB5E286CDC8600C47FC7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2946FB60286D133600C47FC7 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		2946FB64286E1DDF00C47FC7 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2951CCCC2852F822002C1577 /* Pocket_CPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocket_CPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket_CPR WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2951CCD52852F82A002C1577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		2946FB62286E1D9900C47FC7 /* Enviroment */ = {
+			isa = PBXGroup;
+			children = (
+				2946FB64286E1DDF00C47FC7 /* UserSettings.swift */,
+			);
+			path = Enviroment;
+			sourceTree = "<group>";
+		};
 		2951CCC52852F821002C1577 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +183,7 @@
 		2951CCDF2852F82A002C1577 /* CPR_Buddy WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2946FB62286E1D9900C47FC7 /* Enviroment */,
 				2951CCFE28551071002C1577 /* Views */,
 				2951CCE02852F82A002C1577 /* PocketCPR_App.swift */,
 				2951CCE22852F82A002C1577 /* ContentView.swift */,
@@ -346,6 +357,7 @@
 				2946FB61286D133600C47FC7 /* ColorPickerView.swift in Sources */,
 				2951CCE72852F82A002C1577 /* NotificationView.swift in Sources */,
 				29E71553285B0FC6009C0D07 /* TraditionalTutorial.swift in Sources */,
+				2946FB65286E1DDF00C47FC7 /* UserSettings.swift in Sources */,
 				2946FB5F286CDC8600C47FC7 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

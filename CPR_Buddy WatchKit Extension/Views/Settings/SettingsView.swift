@@ -10,9 +10,9 @@ import SwiftUI
 struct SettingsView: View {
     @Binding var isPresented: Bool
     @State var presentColorPicker: Bool = false
-    @State var vibrationStatus: Bool = true
-    @State var colorSelection: Color = Color.blue
-    @State private var compressionRate = 100.0
+    @State var vibrationStatus: Bool = true //
+    @State var colorSelection: Color = Color.blue //
+    @State private var compressionRate = 100.0 //
     @State private var colorScheme = 1
     
     var body: some View {
