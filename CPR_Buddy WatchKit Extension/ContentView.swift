@@ -75,6 +75,60 @@ struct TraditionalOptionCard : View {
     }
 }
 
+
+struct AboutOptionCard : View {
+    @Binding public var presentAboutView : Bool
+    var body: some View {
+        VStack(alignment: .leading) {
+            Button("About CPR") {
+                presentAboutView.toggle()
+            }.buttonStyle(BorderedButtonStyle(tint: .orange))
+                .fullScreenCover(isPresented: $presentAboutView) {
+                    AboutView(isPresented: $presentAboutView).toolbar {
+                        
+                        ToolbarItem(placement: .cancellationAction) {
+                            
+                            Button(action: {
+                                presentAboutView.toggle()
+                            }) {
+                                Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                            }
+                            
+                        }
+                        
+                    }
+                }
+        }.padding()
+    }
+}
+
+struct SettingsOptionCard : View {
+    @Binding public var presentSettingsView : Bool
+    var body: some View {
+        VStack(alignment: .leading) {
+            Button("Settings") {
+                presentSettingsView.toggle()
+            }.buttonStyle(BorderedButtonStyle(tint: .green))
+                .fullScreenCover(isPresented: $presentSettingsView) {
+                    SettingsView(isPresented: $presentSettingsView).toolbar {
+                        
+                        ToolbarItem(placement: .cancellationAction) {
+                            
+                            Button(action: {
+                                presentSettingsView.toggle()
+                            }) {
+                                Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                            }
+                            
+                        }
+                        
+                    }
+                }
+        }.padding()
+    }
+}
+
+
 struct ContentView: View {
     @State private var presentAboutView = false
     @State private var presentTraditionalView = false
@@ -88,44 +142,10 @@ struct ContentView: View {
                 
                 TraditionalOptionCard(presentTraditionalView: $presentTraditionalView)
                 
+                AboutOptionCard(presentAboutView: $presentAboutView)
                 
-                Button("About CPR") {
-                    presentAboutView.toggle()
-                }.buttonStyle(BorderedButtonStyle(tint: .orange))
-                    .fullScreenCover(isPresented: $presentAboutView) {
-                        AboutView(isPresented: $presentAboutView).toolbar {
-                            
-                            ToolbarItem(placement: .cancellationAction) {
-                                
-                                Button(action: {
-                                    presentAboutView.toggle()
-                                }) {
-                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
-                                }
-                                
-                            }
-                            
-                        }
-                    }
+                SettingsOptionCard(presentSettingsView: $presentSettingsView)
                 
-                Button("Settings") {
-                    presentSettingsView.toggle()
-                }.buttonStyle(BorderedButtonStyle(tint: .green))
-                    .fullScreenCover(isPresented: $presentSettingsView) {
-                        SettingsView(isPresented: $presentSettingsView).toolbar {
-                            
-                            ToolbarItem(placement: .cancellationAction) {
-                                
-                                Button(action: {
-                                    presentSettingsView.toggle()
-                                }) {
-                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
-                                }
-                                
-                            }
-                            
-                        }
-                    }
             }.listStyle(CarouselListStyle())
         }
     }
