@@ -14,7 +14,6 @@ struct SettingsView: View {
     @State var colorSelection: Color = Color.blue
     @State private var compressionRate = 100.0
     @State private var colorScheme = 1
-    @State private var selectedColor : Color = .blue
     
     var body: some View {
         ScrollView {
@@ -33,7 +32,7 @@ struct SettingsView: View {
                 HStack {
                     Text("Pulse Color")
                     Spacer()
-                    Image(systemName: "circle.fill").foregroundColor(selectedColor)
+                    Image(systemName: "circle.fill").foregroundColor(colorSelection)
                 }
                 .foregroundColor(Color.white).onTapGesture {
                     presentColorPicker = true
@@ -56,7 +55,7 @@ struct SettingsView: View {
                 
                 Toggle(isOn: $vibrationStatus) {
                     Text("Vibrations")
-                }
+                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                 
             }
         }

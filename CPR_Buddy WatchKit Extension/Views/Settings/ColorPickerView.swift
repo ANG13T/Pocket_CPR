@@ -10,27 +10,29 @@ import SwiftUI
 struct ColorPickerView: View {
     @Binding var isPresented: Bool
     @Binding var selection: Color
-
-        var body: some View {
-
-            let colors = [
-                Color.red,
-                Color.blue,
-                Color.green,
-                Color.gray,
-                Color.orange,
-                Color.yellow,
-                Color.purple,
-                Color.cyan,
-                Color.indigo,
-                Color.mint,
-                Color.pink
-            ]
-
-            let columns = [
-                GridItem(.adaptive(minimum: 60))
-            ]
-
+    
+    var body: some View {
+        
+        let colors = [
+            Color.red,
+            Color.blue,
+            Color.green,
+            Color.gray,
+            Color.orange,
+            Color.yellow,
+            Color.purple,
+            Color.cyan,
+            Color.indigo,
+            Color.mint,
+            Color.pink,
+            Color.teal
+        ]
+        
+        let columns = [
+            GridItem(.adaptive(minimum: 60))
+        ]
+        
+        ScrollView {
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(colors, id: \.self){ color in
                     ZStack {
@@ -41,7 +43,7 @@ struct ColorPickerView: View {
                                 selection = color
                             })
                             .padding(10)
-
+                        
                         if selection == color {
                             Circle()
                                 .stroke(color, lineWidth: 5)
@@ -52,6 +54,7 @@ struct ColorPickerView: View {
             }
             .padding(10)
         }
+    }
 }
 
 
