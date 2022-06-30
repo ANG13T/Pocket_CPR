@@ -17,7 +17,7 @@ struct SettingsView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(spacing: 15) {
                 Text("Settings").bold().font(.system(size: 20))
                 Slider(
                     value: $compressionRate,
@@ -28,40 +28,39 @@ struct SettingsView: View {
                 Text("Compressions Per Minute: \(String(format: "%.0f", compressionRate))")
                     .foregroundColor(.blue).font(.system(size: 13)).padding(.top, 5)
                 
-                VStack {
-                    List {
-                        HStack {
-                            Text("Pulse Color")
-                            
-                            Spacer().frame(width: 40)
-                            
-                            Image(systemName: "circle.fill").foregroundColor(selectedColor)
-                        }
-                    }
-                    .foregroundColor(Color.white)
-                }.fullScreenCover(isPresented: $presentColorPicker) {
-                    TraditionalTutorialView(isPresented: $presentColorPicker).toolbar {
-                        
-                        ToolbarItem(placement: .cancellationAction) {
-                            
-                            Button(action: {
-                                presentColorPicker.toggle()
-                            }) {
-                                Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
-                            }
-                            
-                        }
-                        
-                    }
-                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                 
+                HStack {
+                    Text("Pulse Color")
+                    
+                    //                            Spacer().frame(width: 40)
+                    Spacer()
+                    
+                    Image(systemName: "circle.fill").foregroundColor(selectedColor)
+                }
+                .foregroundColor(Color.white)
                 Toggle(isOn: $vibrationStatus) {
                     Text("Vibrations")
                 }
-                //            Text("Vibrations")
                 
+                //            Text("Vibrations")
             }
         }
     }
 }
 
+
+//    .fullScreenCover(isPresented: $presentColorPicker) {
+//        TraditionalTutorialView(isPresented: $presentColorPicker).toolbar {
+//
+//            ToolbarItem(placement: .cancellationAction) {
+//
+//                Button(action: {
+//                    presentColorPicker.toggle()
+//                }) {
+//                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+//                }
+//
+//            }
+//
+//        }
+//    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
