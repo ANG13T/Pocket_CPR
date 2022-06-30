@@ -17,7 +17,7 @@ struct PocketCPR_App: App {
                     
                     ToolbarItem(placement: .cancellationAction) {
                         
-                        Text("Pocket CPR")
+                        Text("Pocket CPR").bold().foregroundColor(Color.white)
                         
                     }
                     

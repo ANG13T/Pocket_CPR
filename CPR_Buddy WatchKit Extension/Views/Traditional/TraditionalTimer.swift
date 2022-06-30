@@ -95,7 +95,7 @@ struct TraditionalTimerView: View {
                 }) {
                     ZStack {
                         Circle()
-                            .foregroundColor(.blue)
+                            .foregroundColor(userSettings.color)
                             .frame(width: 30, height: 30)
                         Image(systemName: pauseStatus ? "play.fill" : "pause.fill")
                             .imageScale(.large)
@@ -105,7 +105,7 @@ struct TraditionalTimerView: View {
                 }.buttonStyle(PlainButtonStyle())
             }
             Text(compressions ? "30 Compressions" : "2 Breaths").font(.system(size: 10)).foregroundColor(.white)
-        }.padding(.top, 20)
+        }
     }
     
     private var completedTimer: some View {
@@ -233,7 +233,7 @@ struct TraditionalTimerView: View {
             }.gesture(DragGesture()).tag(Tab.tabOne)
             
             VStack {
-                Spacer().frame(height: 40)
+                Spacer().frame(height: loop ? 70 : 60)
                 ZStack {
                     if compressions {
                         compressionsAnimationView
@@ -246,7 +246,7 @@ struct TraditionalTimerView: View {
                     }
                     Text("\(getTimerCount(count: count))").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
-                
+                Spacer().frame(height: loop ? 30 : 10)
                 buttonDisplayView
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             
