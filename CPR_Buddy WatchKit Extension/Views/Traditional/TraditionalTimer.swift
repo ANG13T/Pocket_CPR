@@ -174,6 +174,12 @@ struct TraditionalTimerView: View {
                                     WKInterfaceDevice.current().play(.click)
                                 }
                                 
+                                if count <= 1 {
+                                    if(!compressions) {
+                                        cycles -= 1
+                                    } 
+                                }
+                                
                                 if count > 1 {
                                     count -= 1
                                 }else if count <= 1 && cycles > 0 {
@@ -182,7 +188,6 @@ struct TraditionalTimerView: View {
                                         count = 10
                                     }else {
                                         count = compressionCount
-                                        cycles -= 1
                                     }
                                 }else {
                                     if (userSettings.vibration) {
