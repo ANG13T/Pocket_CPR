@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TraditionalTimerView: View {
+    @EnvironmentObject private var userSettings: UserSettings
     @Binding var isPresented: Bool
-    @State private var chosenProfile: String = "Adult"
     @State private var cycles: Int = 5
     @State private var pauseStatus : Bool = false
     @State private var loop: Bool = false
@@ -17,7 +17,8 @@ struct TraditionalTimerView: View {
     @State private var compressionCount: Int = 30
     @State private var selection: Tab = .tabOne
     @State private var timeInterval = 0.6
-    @State private var timer: Timer?
+    @State private var clickTimer: Timer?
+    @State private var progressTimer: Timer?
     @State var circleProgress: CGFloat = 0.0
     @State private var initialCycles = 5
     @State public var count = 0
@@ -42,17 +43,17 @@ struct TraditionalTimerView: View {
     private var loopTimerView: some View {
         Circle()
             .trim(from: 0.0, to: circleProgress)
-            .stroke(compressions ? Color.blue : Color.green, lineWidth: 10)
+            .stroke(compressions ? userSettings.color : Color.green, lineWidth: 10)
             .frame(width: 120, height: 120)
             .rotationEffect(Angle(degrees: -90))
     }
     
     private var compressionsAnimationView: some View {
         ZStack {
-            Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(Color.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
+            Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(userSettings.color).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
             self.wave.toggle()
         }
-            Circle().frame(width: 80, height: 80).foregroundColor(Color.blue).shadow(radius: 25)
+            Circle().frame(width: 80, height: 80).foregroundColor(userSettings.color).shadow(radius: 25)
         }
     }
     
@@ -73,6 +74,8 @@ struct TraditionalTimerView: View {
                 Button(action: {
                     isPresented = false
                     pauseStatus = false
+                    progressTimer?.invalidate()
+                    clickTimer?.invalidate()
                 }) {
                     ZStack {
                         Circle()
@@ -121,6 +124,8 @@ struct TraditionalTimerView: View {
                     Button(action: {
                         isPresented = false
                         pauseStatus = false
+                        progressTimer?.invalidate()
+                        clickTimer?.invalidate()
                     }, label: {
                         Text("Close")
                     }).buttonStyle(BorderedButtonStyle(tint: .blue))
@@ -163,11 +168,16 @@ struct TraditionalTimerView: View {
                         startTimer()
                         loop = false
                         count = compressionCount
-                        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
+                        clickTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             if !pauseStatus {
-                                if (isPresented) {
+                                if (isPresented && userSettings.vibration) {
                                     WKInterfaceDevice.current().play(.click)
                                 }
+                                
+                                if count <= 0 {
+                                    cycles -= 1
+                                }
+                                
                                 if count > 0 {
                                     count -= 1
                                 }else if count <= 0 && cycles > 0 {
@@ -176,11 +186,12 @@ struct TraditionalTimerView: View {
                                         count = 10
                                     }else {
                                         count = compressionCount
-                                        cycles -= 1
                                     }
                                 }else {
-                                    WKInterfaceDevice.current().play(.success)
-                                    timer?.invalidate()
+                                    if (userSettings.vibration) {
+                                        WKInterfaceDevice.current().play(.success)
+                                    }
+                                    clickTimer?.invalidate()
                                 }
                             }
                         }
@@ -192,10 +203,10 @@ struct TraditionalTimerView: View {
                         loop = true
                         count = compressionCount
                         cycles = 1
-                        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
+                        clickTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             
                             if !pauseStatus {
-                                if (isPresented) {
+                                if (isPresented && userSettings.vibration) {
                                     WKInterfaceDevice.current().play(.click)
                                 }
                                 
@@ -243,7 +254,7 @@ struct TraditionalTimerView: View {
     }
     
     func startTimer() {
-        _ = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
+        progressTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
                 if !pauseStatus {
                     let pulseAmount = 70
