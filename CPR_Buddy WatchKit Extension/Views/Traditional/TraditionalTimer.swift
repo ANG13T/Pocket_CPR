@@ -170,7 +170,7 @@ struct TraditionalTimerView: View {
                         count = compressionCount
                         clickTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             if !pauseStatus {
-                                if (isPresented && userSettings.vibration) {
+                                if (isPresented && userSettings.vibration && compressions) {
                                     WKInterfaceDevice.current().play(.click)
                                 }
                                 
@@ -206,7 +206,7 @@ struct TraditionalTimerView: View {
                         clickTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             
                             if !pauseStatus {
-                                if (isPresented && userSettings.vibration) {
+                                if (isPresented && userSettings.vibration && compressions) {
                                     WKInterfaceDevice.current().play(.click)
                                 }
                                 

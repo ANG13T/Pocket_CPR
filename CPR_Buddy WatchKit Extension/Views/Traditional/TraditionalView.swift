@@ -47,6 +47,8 @@ struct TraditionalView: View {
                 
                 Button("Start Timer") {
                     presentTimerView.toggle()
+                    clickTimer?.invalidate()
+                    progressTimer?.invalidate()
                 }.buttonStyle(BorderedButtonStyle(tint: .blue))
                     .fullScreenCover(isPresented: $presentTimerView) {
                         TraditionalTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
