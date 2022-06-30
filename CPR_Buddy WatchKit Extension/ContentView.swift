@@ -7,28 +7,17 @@
 
 import SwiftUI
 
-struct CategoryRow : View {
-    var category:Category
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("Hello World")
-                .font(.title)
-                .foregroundColor(Color.white)
-            Spacer()
-            Text("10 questions")
-        }.padding()
-    }
-}
 
 struct HandsOnlyOptionCard : View {
     @Binding public var presentHandsOnlyView : Bool
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Button("Hands-Only CPR") {
+        VStack(alignment: .leading, spacing: 5) {
+            Image(systemName: "hand.raised").foregroundColor(.blue).font(.system(size: 25))
+            Text("Hands-Only CPR")
+            Button("**BEGIN**") {
                 presentHandsOnlyView.toggle()
-            }.buttonStyle(BorderedButtonStyle(tint: .blue))
+            }.foregroundColor(.blue)
                 .fullScreenCover(isPresented: $presentHandsOnlyView) {
                     HandsOnlyView(isPresented: $presentHandsOnlyView).toolbar {
                         
@@ -52,10 +41,12 @@ struct TraditionalOptionCard : View {
     @Binding public var presentTraditionalView : Bool
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Button("Traditional CPR") {
+        VStack(alignment: .leading, spacing: 5) {
+            Image(systemName: "heart").foregroundColor(.pink).font(.system(size: 25))
+            Text("Traditional CPR")
+            Button("**BEGIN**") {
                 presentTraditionalView.toggle()
-            }.buttonStyle(BorderedButtonStyle(tint: .pink))
+            }.foregroundColor(.pink)
                 .fullScreenCover(isPresented: $presentTraditionalView) {
                     TraditionalView(isPresented: $presentTraditionalView).toolbar {
                         
@@ -79,10 +70,12 @@ struct TraditionalOptionCard : View {
 struct AboutOptionCard : View {
     @Binding public var presentAboutView : Bool
     var body: some View {
-        VStack(alignment: .leading) {
-            Button("About CPR") {
+        VStack(alignment: .leading, spacing: 5) {
+            Text("About CPR")
+            Image(systemName: "heart").foregroundColor(.orange).font(.system(size: 25))
+            Button("**BEGIN**") {
                 presentAboutView.toggle()
-            }.buttonStyle(BorderedButtonStyle(tint: .orange))
+            }.foregroundColor(.orange)
                 .fullScreenCover(isPresented: $presentAboutView) {
                     AboutView(isPresented: $presentAboutView).toolbar {
                         
@@ -105,10 +98,12 @@ struct AboutOptionCard : View {
 struct SettingsOptionCard : View {
     @Binding public var presentSettingsView : Bool
     var body: some View {
-        VStack(alignment: .leading) {
-            Button("Settings") {
+        VStack(alignment: .leading, spacing: 5) {
+            Text("Settings")
+            Image(systemName: "gearshape").foregroundColor(.green).font(.system(size: 25))
+            Button("**BEGIN**") {
                 presentSettingsView.toggle()
-            }.buttonStyle(BorderedButtonStyle(tint: .green))
+            }.foregroundColor(.green)
                 .fullScreenCover(isPresented: $presentSettingsView) {
                     SettingsView(isPresented: $presentSettingsView).toolbar {
                         
