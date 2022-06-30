@@ -10,6 +10,8 @@ import SwiftUI
 struct HandsOnlyView: View {
     @Binding var isPresented: Bool
     @State private var presentTimerView = false
+    @State private var clickTimer : Timer?
+    @State private var progressTimer : Timer?
     @State private var presentTutorialView = false
     
     var body: some View {
@@ -24,12 +26,15 @@ struct HandsOnlyView: View {
                     presentTimerView.toggle()
                 }.buttonStyle(BorderedButtonStyle(tint: .blue))
                     .fullScreenCover(isPresented: $presentTimerView) {
-                        HandsOnlyTimerView(isPresented: $presentTimerView).toolbar {
+                        HandsOnlyTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
                             
                             ToolbarItem(placement: .cancellationAction) {
                                 
+                                
                                 Button(action: {
                                     presentTimerView.toggle()
+                                    progressTimer?.invalidate()
+                                    clickTimer?.invalidate()
                                 }) {
                                     Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                                 }

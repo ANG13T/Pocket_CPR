@@ -18,8 +18,8 @@ struct HandsOnlyTimerView: View {
     @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
     @State var circleProgress: CGFloat = 0.0
-    @State private var clickTimer: Timer?
-    @State private var progressTimer: Timer?
+    @Binding public var clickTimer: Timer?
+    @Binding public var progressTimer: Timer?
     @State public var count = 0
     
     enum Tab {
