@@ -177,7 +177,7 @@ struct TraditionalTimerView: View {
                                 if count <= 1 {
                                     if(!compressions) {
                                         cycles -= 1
-                                    } 
+                                    }
                                 }
                                 
                                 if count > 1 {
@@ -259,7 +259,7 @@ struct TraditionalTimerView: View {
         progressTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
                 if !pauseStatus {
-                    let pulseAmount = 70
+                    let pulseAmount = initialCycles * 30 //TODO
                     let cycleTime = CGFloat(pulseAmount * initialCycles)
                     self.circleProgress += (1 / cycleTime)
                     if self.circleProgress >= 1.0 {
