@@ -26,41 +26,41 @@ struct SettingsView: View {
                 )
                 
                 Text("Compressions Per Minute: \(String(format: "%.0f", compressionRate))")
-                    .foregroundColor(.blue).font(.system(size: 13)).padding(.top, 5)
+                    .foregroundColor(.blue).font(.system(size: 13))
                 
                 
                 HStack {
                     Text("Pulse Color")
-                    
-                    //                            Spacer().frame(width: 40)
                     Spacer()
-                    
                     Image(systemName: "circle.fill").foregroundColor(selectedColor)
                 }
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.white).onTapGesture {
+                    presentColorPicker = true
+                }.fullScreenCover(isPresented: $presentColorPicker) {
+                    ColorPickerView(isPresented: $presentColorPicker).toolbar {
+                        
+                        ToolbarItem(placement: .cancellationAction) {
+                            
+                            Button(action: {
+                                presentColorPicker.toggle()
+                            }) {
+                                Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                            }
+                            
+                        }
+                        
+                    }
+                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                
+                
                 Toggle(isOn: $vibrationStatus) {
                     Text("Vibrations")
                 }
                 
-                //            Text("Vibrations")
             }
         }
     }
 }
 
 
-//    .fullScreenCover(isPresented: $presentColorPicker) {
-//        TraditionalTutorialView(isPresented: $presentColorPicker).toolbar {
-//
-//            ToolbarItem(placement: .cancellationAction) {
-//
-//                Button(action: {
-//                    presentColorPicker.toggle()
-//                }) {
-//                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
-//                }
-//
-//            }
-//
-//        }
-//    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+
