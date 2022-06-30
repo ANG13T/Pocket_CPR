@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HandsOnlyTimerView: View {
     @Binding var isPresented: Bool
+    @EnvironmentObject private var userSettings: UserSettings
     @State private var chosenProfile: String = "Adult"
     @State private var cycles = 5
     @State private var pauseStatus : Bool = false
@@ -53,7 +54,7 @@ struct HandsOnlyTimerView: View {
     private var loopTimerView: some View {
         Circle()
             .trim(from: 0.0, to: circleProgress)
-            .stroke(Color.blue, lineWidth: 10)
+            .stroke(userSettings.color, lineWidth: 10)
             .frame(width: 120, height: 120)
             .rotationEffect(Angle(degrees: -90))
     }
@@ -82,7 +83,7 @@ struct HandsOnlyTimerView: View {
             }) {
                 ZStack {
                     Circle()
-                        .foregroundColor(.blue)
+                        .foregroundColor(userSettings.color)
                         .frame(width: 30, height: 30)
                     Image(systemName: pauseStatus ? "play.fill" : "pause.fill")
                         .imageScale(.large)
@@ -127,7 +128,7 @@ struct HandsOnlyTimerView: View {
                         count = 60
                         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             if !pauseStatus {
-                                if (isPresented) {
+                                if (isPresented && userSettings.vibration) {
                                     WKInterfaceDevice.current().play(.click)
                                 }
                                 
@@ -137,7 +138,9 @@ struct HandsOnlyTimerView: View {
                                     cycles -= 1
                                     count = 60
                                 }else {
-                                    WKInterfaceDevice.current().play(.success)
+                                    if (userSettings.vibration) {
+                                        WKInterfaceDevice.current().play(.success)
+                                    }
                                     timer?.invalidate()
                                 }
                             }
@@ -153,7 +156,7 @@ struct HandsOnlyTimerView: View {
                         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             
                             if !pauseStatus {
-                                if (isPresented) {
+                                if (isPresented && userSettings.vibration) {
                                     WKInterfaceDevice.current().play(.click)
                                 }
                                 
@@ -176,11 +179,11 @@ struct HandsOnlyTimerView: View {
             VStack {
                 Spacer().frame(height: 40)
                 ZStack {
-                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(.blue).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear(
+                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(userSettings.color).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear(
                     ) {
                         self.wave.toggle()
                     }
-                    Circle().frame(width: 80, height: 80).foregroundColor(.blue).shadow(radius: 25)
+                    Circle().frame(width: 80, height: 80).foregroundColor(userSettings.color).shadow(radius: 25)
                     if !loop {
                         loopTimerView
                     }
