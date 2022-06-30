@@ -11,11 +11,13 @@ import SwiftUI
 class UserSettings: ObservableObject {
     @Published var vibration: Bool
     @Published var color: Color
+    @Published var breathsColor: Color
     @Published var compressionRate: Float
 
-    init(vibration: Bool, color: Color, compressionRate: Float) {
+    init(vibration: Bool, color: Color, compressionRate: Float, breathsColor: Color) {
         self.vibration = vibration
         self.color = color
         self.compressionRate = compressionRate
+        self.breathsColor = breathsColor
     }
 }

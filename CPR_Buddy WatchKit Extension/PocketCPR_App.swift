@@ -13,7 +13,7 @@ struct PocketCPR_App: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView().environmentObject(UserSettings(vibration: true, color: Color.blue, compressionRate: 100.0)).toolbar {
+                ContentView().environmentObject(UserSettings(vibration: true, color: Color.blue, compressionRate: 100.0, breathsColor: Color.green)).toolbar {
                     
                     ToolbarItem(placement: .cancellationAction) {
                         

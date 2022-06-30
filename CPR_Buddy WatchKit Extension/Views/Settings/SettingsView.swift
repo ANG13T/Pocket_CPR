@@ -27,7 +27,30 @@ struct SettingsView: View {
                 
                 
                 HStack {
-                    Text("Pulse Color")
+                    Text("Compression Pulse Color")
+                    Spacer()
+                    Image(systemName: "circle.fill").foregroundColor(userSettings.color)
+                }
+                .foregroundColor(Color.white).onTapGesture {
+                    presentColorPicker = true
+                }.fullScreenCover(isPresented: $presentColorPicker) {
+                    ColorPickerView(isPresented: $presentColorPicker, selection: $userSettings.color).toolbar {
+                        
+                        ToolbarItem(placement: .cancellationAction) {
+                            
+                            Button(action: {
+                                presentColorPicker.toggle()
+                            }) {
+                                Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                            }
+                            
+                        }
+                        
+                    }
+                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                
+                HStack {
+                    Text("Breaths Pulse Color")
                     Spacer()
                     Image(systemName: "circle.fill").foregroundColor(userSettings.color)
                 }

@@ -43,7 +43,7 @@ struct TraditionalTimerView: View {
     private var loopTimerView: some View {
         Circle()
             .trim(from: 0.0, to: circleProgress)
-            .stroke(compressions ? userSettings.color : Color.green, lineWidth: 10)
+            .stroke(compressions ? userSettings.color : userSettings.breathsColor, lineWidth: 10)
             .frame(width: 120, height: 120)
             .rotationEffect(Angle(degrees: -90))
     }
@@ -59,10 +59,10 @@ struct TraditionalTimerView: View {
     
     private var breathsAnimationView: some View {
         ZStack {
-        Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(Color.green).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval * 5).repeatForever(autoreverses: false).speed(1)).onAppear() {
+            Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(userSettings.breathsColor).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval * 5).repeatForever(autoreverses: false).speed(1)).onAppear() {
             self.wave.toggle()
         }
-        Circle().frame(width: 80, height: 80).foregroundColor(Color.green).shadow(radius: 25)
+            Circle().frame(width: 80, height: 80).foregroundColor(userSettings.breathsColor).shadow(radius: 25)
         }
     }
     
