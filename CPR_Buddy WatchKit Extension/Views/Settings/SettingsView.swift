@@ -8,36 +8,33 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject private var userSettings: UserSettings
     @Binding var isPresented: Bool
     @State var presentColorPicker: Bool = false
-    @State var vibrationStatus: Bool = true //
-    @State var colorSelection: Color = Color.blue //
-    @State private var compressionRate = 100.0 //
-    @State private var colorScheme = 1
     
     var body: some View {
         ScrollView {
             VStack(spacing: 15) {
                 Text("Settings").bold().font(.system(size: 20))
                 Slider(
-                    value: $compressionRate,
+                    value: $userSettings.compressionRate,
                     in: 100...120,
                     step: 1
                 )
                 
-                Text("Compressions Per Minute: \(String(format: "%.0f", compressionRate))")
+                Text("Compressions Per Minute: \(String(format: "%.0f", userSettings.compressionRate))")
                     .foregroundColor(.blue).font(.system(size: 13))
                 
                 
                 HStack {
                     Text("Pulse Color")
                     Spacer()
-                    Image(systemName: "circle.fill").foregroundColor(colorSelection)
+                    Image(systemName: "circle.fill").foregroundColor(userSettings.color)
                 }
                 .foregroundColor(Color.white).onTapGesture {
                     presentColorPicker = true
                 }.fullScreenCover(isPresented: $presentColorPicker) {
-                    ColorPickerView(isPresented: $presentColorPicker, selection: $colorSelection).toolbar {
+                    ColorPickerView(isPresented: $presentColorPicker, selection: $userSettings.color).toolbar {
                         
                         ToolbarItem(placement: .cancellationAction) {
                             
@@ -53,7 +50,7 @@ struct SettingsView: View {
                 }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                 
                 
-                Toggle(isOn: $vibrationStatus) {
+                Toggle(isOn: $userSettings.vibration) {
                     Text("Vibrations")
                 }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                 
