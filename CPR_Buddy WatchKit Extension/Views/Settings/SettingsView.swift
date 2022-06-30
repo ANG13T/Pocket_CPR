@@ -11,6 +11,7 @@ struct SettingsView: View {
     @EnvironmentObject private var userSettings: UserSettings
     @Binding var isPresented: Bool
     @State var presentColorPicker: Bool = false
+    @State var presentBreathsColorPicker: Bool = false
     
     var body: some View {
         ScrollView {
@@ -52,17 +53,17 @@ struct SettingsView: View {
                 HStack {
                     Text("Breaths Pulse Color")
                     Spacer()
-                    Image(systemName: "circle.fill").foregroundColor(userSettings.color)
+                    Image(systemName: "circle.fill").foregroundColor(userSettings.breathsColor)
                 }
                 .foregroundColor(Color.white).onTapGesture {
-                    presentColorPicker = true
-                }.fullScreenCover(isPresented: $presentColorPicker) {
-                    ColorPickerView(isPresented: $presentColorPicker, selection: $userSettings.color).toolbar {
+                    presentBreathsColorPicker = true
+                }.fullScreenCover(isPresented: $presentBreathsColorPicker) {
+                    ColorPickerView(isPresented: $presentBreathsColorPicker, selection: $userSettings.breathsColor).toolbar {
                         
                         ToolbarItem(placement: .cancellationAction) {
                             
                             Button(action: {
-                                presentColorPicker.toggle()
+                                presentBreathsColorPicker.toggle()
                             }) {
                                 Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                             }
