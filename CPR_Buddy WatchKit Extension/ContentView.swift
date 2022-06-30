@@ -12,12 +12,12 @@ struct HandsOnlyOptionCard : View {
     @Binding public var presentHandsOnlyView : Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
-            Image(systemName: "hand.raised.fill").foregroundColor(.blue).font(.system(size: 25))
+        VStack(alignment: .leading, spacing: 5) {
+            Image(systemName: "hand.raised.fill").foregroundColor(.blue).font(.system(size: 30)).padding(.top, 5)
             Text("Hands-Only CPR").bold().padding(.top, 5)
             Button("**BEGIN**") {
                 presentHandsOnlyView.toggle()
-            }.foregroundColor(.blue)
+            }.foregroundColor(.blue).padding(.bottom, 5)
                 .fullScreenCover(isPresented: $presentHandsOnlyView) {
                     HandsOnlyView(isPresented: $presentHandsOnlyView).toolbar {
                         
@@ -42,11 +42,11 @@ struct TraditionalOptionCard : View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Image(systemName: "heart.fill").foregroundColor(.pink).font(.system(size: 25))
+            Image(systemName: "heart.fill").foregroundColor(.pink).font(.system(size: 30)).padding(.top, 5)
             Text("Traditional CPR").bold().padding(.top, 5)
             Button("**BEGIN**") {
                 presentTraditionalView.toggle()
-            }.foregroundColor(.pink)
+            }.foregroundColor(.pink).padding(.bottom, 5)
                 .fullScreenCover(isPresented: $presentTraditionalView) {
                     TraditionalView(isPresented: $presentTraditionalView).toolbar {
                         
@@ -71,11 +71,11 @@ struct AboutOptionCard : View {
     @Binding public var presentAboutView : Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Image(systemName: "heart.fill").foregroundColor(.orange).font(.system(size: 25))
+            Image(systemName: "text.book.closed.fill").foregroundColor(.orange).font(.system(size: 30)).padding(.top, 5)
             Text("About CPR").bold().padding(.top, 5)
             Button("**BEGIN**") {
                 presentAboutView.toggle()
-            }.foregroundColor(.orange)
+            }.foregroundColor(.orange).padding(.bottom, 5)
                 .fullScreenCover(isPresented: $presentAboutView) {
                     AboutView(isPresented: $presentAboutView).toolbar {
                         
@@ -99,11 +99,11 @@ struct SettingsOptionCard : View {
     @Binding public var presentSettingsView : Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Image(systemName: "gearshape.fill").foregroundColor(.green).font(.system(size: 25))
+            Image(systemName: "gearshape.fill").foregroundColor(.green).font(.system(size: 30)).padding(.top, 5)
             Text("Settings").bold().padding(.top, 5)
             Button("**BEGIN**") {
                 presentSettingsView.toggle()
-            }.foregroundColor(.green)
+            }.foregroundColor(.green).padding(.bottom, 5)
                 .fullScreenCover(isPresented: $presentSettingsView) {
                     SettingsView(isPresented: $presentSettingsView).toolbar {
                         
@@ -141,7 +141,7 @@ struct ContentView: View {
                 
                 SettingsOptionCard(presentSettingsView: $presentSettingsView)
                 
-            }.listStyle(CarouselListStyle())
+            }.listStyle(CarouselListStyle()).environment(\.defaultMinListRowHeight, 50)
         }
     }
 }
