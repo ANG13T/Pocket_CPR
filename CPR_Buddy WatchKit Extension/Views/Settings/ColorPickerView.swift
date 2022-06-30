@@ -35,7 +35,7 @@ struct ColorPickerView: View {
                 ForEach(colors, id: \.self){ color in
                     ZStack {
                         Circle()
-                            .fill(Color(color))
+                            .fill(color)
                             .frame(width: 50, height: 50)
                             .onTapGesture(perform: {
                                 selection = color
@@ -44,7 +44,7 @@ struct ColorPickerView: View {
 
                         if selection == color {
                             Circle()
-                                .stroke(Color(color), lineWidth: 5)
+                                .stroke(color, lineWidth: 5)
                                 .frame(width: 60, height: 60)
                         }
                     }

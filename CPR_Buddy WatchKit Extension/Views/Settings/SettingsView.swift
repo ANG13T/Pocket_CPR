@@ -11,6 +11,7 @@ struct SettingsView: View {
     @Binding var isPresented: Bool
     @State var presentColorPicker: Bool = false
     @State var vibrationStatus: Bool = true
+    @State var colorSelection: Color = Color.blue
     @State private var compressionRate = 100.0
     @State private var colorScheme = 1
     @State private var selectedColor : Color = .blue
@@ -37,7 +38,7 @@ struct SettingsView: View {
                 .foregroundColor(Color.white).onTapGesture {
                     presentColorPicker = true
                 }.fullScreenCover(isPresented: $presentColorPicker) {
-                    ColorPickerView(isPresented: $presentColorPicker).toolbar {
+                    ColorPickerView(isPresented: $presentColorPicker, selection: $colorSelection).toolbar {
                         
                         ToolbarItem(placement: .cancellationAction) {
                             
