@@ -18,7 +18,8 @@ struct HandsOnlyTimerView: View {
     @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
     @State var circleProgress: CGFloat = 0.0
-    @State private var timer: Timer?
+    @State private var clickTimer: Timer?
+    @State private var progressTimer: Timer?
     @State public var count = 0
     
     enum Tab {
@@ -44,6 +45,8 @@ struct HandsOnlyTimerView: View {
                     Button(action: {
                         isPresented = false
                         pauseStatus = false
+                        progressTimer?.invalidate()
+                        clickTimer?.invalidate()
                     }, label: {
                         Text("Close")
                     }).buttonStyle(BorderedButtonStyle(tint: .blue))
@@ -64,6 +67,8 @@ struct HandsOnlyTimerView: View {
             Button(action: {
                 isPresented = false
                 pauseStatus = false
+                progressTimer?.invalidate()
+                clickTimer?.invalidate()
             }) {
                 ZStack {
                     Circle()
@@ -126,7 +131,7 @@ struct HandsOnlyTimerView: View {
                         startTimer()
                         loop = false
                         count = 60
-                        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
+                        clickTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             if !pauseStatus {
                                 if (isPresented && userSettings.vibration) {
                                     WKInterfaceDevice.current().play(.click)
@@ -141,7 +146,7 @@ struct HandsOnlyTimerView: View {
                                     if (userSettings.vibration) {
                                         WKInterfaceDevice.current().play(.success)
                                     }
-                                    timer?.invalidate()
+                                    clickTimer?.invalidate()
                                 }
                             }
                         }
@@ -153,7 +158,7 @@ struct HandsOnlyTimerView: View {
                         loop = true
                         count = 60
                         cycles = 1
-                        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
+                        clickTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             
                             if !pauseStatus {
                                 if (isPresented && userSettings.vibration) {
@@ -199,7 +204,7 @@ struct HandsOnlyTimerView: View {
     }
     
     func startTimer() {
-        _ = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
+        progressTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
                 if !pauseStatus {
                     let cycleTime = CGFloat(60 * initialCycles)
