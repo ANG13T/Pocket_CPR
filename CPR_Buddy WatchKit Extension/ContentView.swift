@@ -12,9 +12,9 @@ struct HandsOnlyOptionCard : View {
     @Binding public var presentHandsOnlyView : Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            Image(systemName: "hand.raised").foregroundColor(.blue).font(.system(size: 25))
-            Text("Hands-Only CPR")
+        VStack(alignment: .leading, spacing: 15) {
+            Image(systemName: "hand.raised.fill").foregroundColor(.blue).font(.system(size: 25))
+            Text("Hands-Only CPR").bold().padding(.top, 5)
             Button("**BEGIN**") {
                 presentHandsOnlyView.toggle()
             }.foregroundColor(.blue)
@@ -32,7 +32,7 @@ struct HandsOnlyOptionCard : View {
                         }
                         
                     }
-                }.padding(.top, 10)
+                }
         }.padding()
     }
 }
@@ -42,8 +42,8 @@ struct TraditionalOptionCard : View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Image(systemName: "heart").foregroundColor(.pink).font(.system(size: 25))
-            Text("Traditional CPR")
+            Image(systemName: "heart.fill").foregroundColor(.pink).font(.system(size: 25))
+            Text("Traditional CPR").bold().padding(.top, 5)
             Button("**BEGIN**") {
                 presentTraditionalView.toggle()
             }.foregroundColor(.pink)
@@ -71,8 +71,8 @@ struct AboutOptionCard : View {
     @Binding public var presentAboutView : Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("About CPR")
-            Image(systemName: "heart").foregroundColor(.orange).font(.system(size: 25))
+            Image(systemName: "heart.fill").foregroundColor(.orange).font(.system(size: 25))
+            Text("About CPR").bold().padding(.top, 5)
             Button("**BEGIN**") {
                 presentAboutView.toggle()
             }.foregroundColor(.orange)
@@ -99,8 +99,8 @@ struct SettingsOptionCard : View {
     @Binding public var presentSettingsView : Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("Settings")
-            Image(systemName: "gearshape").foregroundColor(.green).font(.system(size: 25))
+            Image(systemName: "gearshape.fill").foregroundColor(.green).font(.system(size: 25))
+            Text("Settings").bold().padding(.top, 5)
             Button("**BEGIN**") {
                 presentSettingsView.toggle()
             }.foregroundColor(.green)

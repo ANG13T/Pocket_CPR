@@ -28,7 +28,7 @@ struct SettingsView: View {
                 
                 
                 HStack {
-                    Text("Compressions Color")
+                    Text("Pulse Color")
                     Spacer()
                     Image(systemName: "circle.fill").foregroundColor(userSettings.color)
                 }
