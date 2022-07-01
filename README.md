@@ -37,6 +37,14 @@ It is estimated that more than 659,000 deaths a year occur within the United Sta
 - ``Views/Traditional/TraditionalTimer`` an interactive cadence timer alternating between 60 compressions and 2 breaths
 - ``Views/Traditional/TraditionalTutorial`` a step-by-step slideshow demonstration of Traditional CPR
 
+``Views/Settings`` includes settings options for Pocket CPR 
+- ``Views/Settings/SettingsView`` contains options for toggling vibrations, changing pulse colors, and altering compression rate
+- ``Views/Settings/ColorPickerView`` a color picker view for changing the compression and breathing cadence pulses
+
+``Environment`` includes ObservableObject for Settings and a global class containing WatchResolution functions
+- ``Environment/UserSettings`` contains a global class for user settings
+- ``Environment/SizeResponsive`` includes functions that return values based off of dimensions of user's Apple Watch
+
 ## Screenshots
 
 ## Download Pocket CPR
