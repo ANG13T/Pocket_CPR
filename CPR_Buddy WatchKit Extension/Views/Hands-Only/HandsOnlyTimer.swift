@@ -129,8 +129,9 @@ struct HandsOnlyTimerView: View {
                         selection = Tab.tabTwo
                         cycles = initialCycles
                         startTimer()
+                        timeInterval = Double(60 / userSettings.compressionRate)
                         loop = false
-                        count = 60
+                        count = Int(userSettings.compressionRate)
                         clickTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             if !pauseStatus {
                                 if (isPresented && userSettings.vibration) {
@@ -144,7 +145,7 @@ struct HandsOnlyTimerView: View {
                                 if count > 1 {
                                     count -= 1
                                 }else if count <= 1 && cycles > 0{
-                                    count = 60
+                                    count = Int(userSettings.compressionRate)
                                 }else {
                                     if (userSettings.vibration) {
                                         WKInterfaceDevice.current().play(.success)
@@ -159,7 +160,8 @@ struct HandsOnlyTimerView: View {
                     Button("Loop Timer") {
                         selection = Tab.tabTwo
                         loop = true
-                        count = 60
+                        timeInterval = Double(60 / userSettings.compressionRate)
+                        count = Int(userSettings.compressionRate)
                         cycles = 1
                         clickTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
                             
@@ -171,7 +173,7 @@ struct HandsOnlyTimerView: View {
                                 if count > 1 {
                                     count -= 1
                                 }else {
-                                    count = 60
+                                    count = Int(userSettings.compressionRate)
                                     cycles += 1
                                 }
                             }
@@ -210,7 +212,7 @@ struct HandsOnlyTimerView: View {
         progressTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
                 if !pauseStatus {
-                    let cycleTime = CGFloat(60 * initialCycles)
+                    let cycleTime = CGFloat(Int(userSettings.compressionRate) * initialCycles)
                     self.circleProgress += (1 / cycleTime)
                     if self.circleProgress >= 1.0 {
                         timer.invalidate()
