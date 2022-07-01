@@ -187,19 +187,19 @@ struct HandsOnlyTimerView: View {
             
             
             VStack {
-                Spacer().frame(height: loop ? 70 : 60)
+                Spacer().frame(height: loop ? SizeResponsive().getTimerTopButtonPaddingLoop() : SizeResponsive().getTimerTopButtonPaddingNotLoop())
                 ZStack {
-                    Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(userSettings.color).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear(
+                    Circle().stroke(lineWidth: 20).frame(width: SizeResponsive().getTimerCircleSize() - 20, height: SizeResponsive().getTimerCircleSize() - 20).foregroundColor(userSettings.color).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear(
                     ) {
                         self.wave.toggle()
                     }
-                    Circle().frame(width: 80, height: 80).foregroundColor(userSettings.color).shadow(radius: 25)
+                    Circle().frame(width: SizeResponsive().getTimerCircleSize(), height: SizeResponsive().getTimerCircleSize()).foregroundColor(userSettings.color).shadow(radius: 25)
                     if !loop {
                         loopTimerView
                     }
-                    Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
+                    Text("\(count)").font(.system(size: SizeResponsive().getTimerFontSize())).foregroundColor(.white).shadow(radius: 25)
                 }
-                Spacer().frame(height: loop ? 40 : 20)
+                Spacer().frame(height: loop ? SizeResponsive().getTimerBottomButtonPaddingLoop() : SizeResponsive().getTimerBottomButtonPaddingNotLoop())
                 buttonDisplayView
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             

@@ -105,6 +105,98 @@ class SizeResponsive {
         }
     }
     
+    //    Timer Sizes
+    
+    func getTimerTopButtonPaddingLoop() -> CGFloat {
+        switch resol {
+        case .Watch38mm:
+            return 30
+        case .Watch40mm :
+            return 30
+        case .Watch42mm:
+            return 30
+        case .Watch44mm:
+            return 70
+        default:
+            return 70
+        }
+    }
+    
+    func getTimerTopButtonPaddingNotLoop() -> CGFloat {
+        switch resol {
+        case .Watch38mm:
+            return 30
+        case .Watch40mm :
+            return 30
+        case .Watch42mm:
+            return 30
+        case .Watch44mm:
+            return 60
+        default:
+            return 60
+        }
+    }
+    
+    func getTimerBottomButtonPaddingLoop() -> CGFloat {
+        switch resol {
+        case .Watch38mm:
+            return 30
+        case .Watch40mm :
+            return 30
+        case .Watch42mm:
+            return 30
+        case .Watch44mm:
+            return 40
+        default:
+            return 40
+        }
+    }
+    
+    func getTimerCircleSize() -> CGFloat {
+        switch resol {
+        case .Watch38mm:
+            return 60
+        case .Watch40mm :
+            return 60
+        case .Watch42mm:
+            return 80
+        case .Watch44mm:
+            return 80
+        default:
+            return 80
+        }
+    }
+    
+    func getTimerFontSize() -> CGFloat {
+        switch resol {
+        case .Watch38mm:
+            return 30
+        case .Watch40mm :
+            return 30
+        case .Watch42mm:
+            return 30
+        case .Watch44mm:
+            return 40
+        default:
+            return 40
+        }
+    }
+    
+    func getTimerBottomButtonPaddingNotLoop() -> CGFloat {
+        switch resol {
+        case .Watch38mm:
+            return 0
+        case .Watch40mm :
+            return 0
+        case .Watch42mm:
+            return 0
+        case .Watch44mm:
+            return 20
+        default:
+            return 20
+        }
+    }
+    
     init(){
         resol = WKInterfaceDevice.currentResolution()
     }
