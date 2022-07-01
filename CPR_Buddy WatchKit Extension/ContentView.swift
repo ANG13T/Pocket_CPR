@@ -101,7 +101,7 @@ struct SettingsOptionCard : View {
         VStack(alignment: .leading, spacing: 5) {
             Image(systemName: "gearshape.fill").foregroundColor(.green).font(.system(size: 30)).padding(.top, 5)
             Text("Settings").bold().padding(.top, 5)
-            Button("**BEGIN**") {
+            Button("**ENTER**") {
                 presentSettingsView.toggle()
             }.foregroundColor(.green).padding(.bottom, 5)
                 .fullScreenCover(isPresented: $presentSettingsView) {
