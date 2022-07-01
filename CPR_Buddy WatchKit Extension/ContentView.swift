@@ -103,6 +103,7 @@ struct SettingsOptionCard : View {
             Text("Settings").bold().padding(.top, 5)
             Button("**ENTER**") {
                 presentSettingsView.toggle()
+                print(WKInterfaceDevice.currentResolution())
             }.foregroundColor(.green).padding(.bottom, 5)
                 .fullScreenCover(isPresented: $presentSettingsView) {
                     SettingsView(isPresented: $presentSettingsView).toolbar {
