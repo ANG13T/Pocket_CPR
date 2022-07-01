@@ -155,7 +155,7 @@ struct TraditionalTimerView: View {
             VStack {
                 VStack {
                     
-                    Picker(selection: self.$initialCycles, label: Text("Set Timer Cycles")) {
+                    Picker(selection: self.$initialCycles, label: Text("Set Timer Cycles").font(SizeResponsive().getTimerSetTimerCyclesFont().bold())) {
                         ForEach((1...20), id: \.self) {
                             Text("\($0)").tag($0).font(.title2)
                         }

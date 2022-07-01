@@ -50,7 +50,7 @@ class SizeResponsive {
             return .system(size: 12)
             // Do Something
         case .Watch44mm:
-            return .footnote
+            return .system(size: 12)
         default:
             return .footnote
         }
@@ -99,7 +99,22 @@ class SizeResponsive {
             return .system(size: 12)
             // Do Something
         case .Watch44mm:
+            return .system(size: 12)
+        default:
             return .system(size: 13)
+        }
+    }
+    
+    func getTimerSetTimerCyclesFont() -> Font {
+        switch resol {
+        case .Watch38mm:
+            return .system(size: 11)
+        case .Watch40mm :
+            return .system(size: 11)
+        case .Watch42mm:
+            return .system(size: 11)
+        case .Watch44mm:
+            return .system(size: 12)
         default:
             return .system(size: 13)
         }
@@ -116,7 +131,7 @@ class SizeResponsive {
         case .Watch42mm:
             return 30
         case .Watch44mm:
-            return 70
+            return 50
         default:
             return 70
         }
@@ -131,7 +146,7 @@ class SizeResponsive {
         case .Watch42mm:
             return 30
         case .Watch44mm:
-            return 60
+            return 40
         default:
             return 60
         }
