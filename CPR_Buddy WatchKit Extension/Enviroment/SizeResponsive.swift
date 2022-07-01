@@ -37,7 +37,26 @@ class func currentResolution() -> WatchResolution {
 }
 
 class SizeResponsive {
-    func getAboutFontSize() {
-        
+    let resol : WatchResolution
+    
+    func getAboutFont() -> Font {
+        switch resol {
+        case .Watch38mm:
+            // Do Something
+            return .system(size: 11)
+        case .Watch40mm :
+            return .system(size: 11)
+        case .Watch42mm:
+            return .system(size: 12)
+            // Do Something
+        case .Watch44mm:
+            return .footnote
+        default:
+            return .footnote
+        }
+    }
+    
+    init(){
+        resol = WKInterfaceDevice.currentResolution()
     }
 }
