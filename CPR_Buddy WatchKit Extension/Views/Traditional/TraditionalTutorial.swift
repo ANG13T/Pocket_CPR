@@ -68,11 +68,11 @@ struct TraditionalTutorialView: View {
             VStack {
                 VStack {
                     Text("**Observe your Surroundings**")
-                        .font(.footnote)
+                        .font(SizeResponsive().getSubtextFont())
                         .multilineTextAlignment(.center)
                     
                     Text(observation)
-                        .font(.footnote)
+                        .font(SizeResponsive().getSubtextFont())
                         .multilineTextAlignment(.center)
                         .padding(.top, 10)
                 }
@@ -91,7 +91,7 @@ struct TraditionalTutorialView: View {
                         .font(.system(size: 30)).padding(.top, 10)
                     
                     Text("If you observe signs of irregular breathing or if there is no response from the person, call 911 for help.")
-                        .font(.footnote)
+                        .font(SizeResponsive().getSubtextFont())
                         .multilineTextAlignment(.center)
                         .padding(.top, 10)
                 }
@@ -107,7 +107,7 @@ struct TraditionalTutorialView: View {
                         .multilineTextAlignment(.center)
                     
                     Text("Make sure the person's back is against a firm, flat surface. Kneel beside the person. Spread your knees about a shoulder width apart.")
-                        .font(.footnote)
+                        .font(SizeResponsive().getSubtextFont())
                         .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
@@ -122,7 +122,7 @@ struct TraditionalTutorialView: View {
                         .multilineTextAlignment(.center)
                     
                     Text(handPlacement)
-                        .font(.footnote)
+                        .font(SizeResponsive().getSubtextFont())
                         .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
@@ -137,7 +137,7 @@ struct TraditionalTutorialView: View {
                         .multilineTextAlignment(.center)
                     
                     Text(bodyPosition)
-                        .font(.footnote)
+                        .font(SizeResponsive().getSubtextFont())
                         .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
@@ -152,7 +152,7 @@ struct TraditionalTutorialView: View {
                         .multilineTextAlignment(.center)
                     
                     Text(compressions)
-                        .font(.footnote)
+                        .font(SizeResponsive().getSubtextFont())
                         .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)
@@ -167,7 +167,7 @@ struct TraditionalTutorialView: View {
                         .multilineTextAlignment(.center)
                     
                     Text(breathing)
-                        .font(.footnote)
+                        .font(SizeResponsive().getSubtextFont())
                         .multilineTextAlignment(.center).padding(.top, 10)
                 }
                 .opacity(0.8)

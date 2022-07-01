@@ -24,7 +24,7 @@ struct SettingsView: View {
                 )
                 
                 Text("Compressions Per Minute: \(String(format: "%.0f", userSettings.compressionRate))")
-                    .foregroundColor(.blue).font(.system(size: 13))
+                    .foregroundColor(.blue).font(SizeResponsive().getSettingsCompressionRateFont())
                 
                 
                 HStack {

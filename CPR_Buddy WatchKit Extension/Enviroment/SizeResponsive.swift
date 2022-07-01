@@ -39,7 +39,7 @@ class func currentResolution() -> WatchResolution {
 class SizeResponsive {
     let resol : WatchResolution
     
-    func getAboutFont() -> Font {
+    func getSubtextFont() -> Font {
         switch resol {
         case .Watch38mm:
             // Do Something
@@ -53,6 +53,23 @@ class SizeResponsive {
             return .footnote
         default:
             return .footnote
+        }
+    }
+    
+    func getSettingsCompressionRateFont() -> Font {
+        switch resol {
+        case .Watch38mm:
+            // Do Something
+            return .system(size: 11)
+        case .Watch40mm :
+            return .system(size: 11)
+        case .Watch42mm:
+            return .system(size: 12)
+            // Do Something
+        case .Watch44mm:
+            return .system(size: 13)
+        default:
+            return .system(size: 13)
         }
     }
     
