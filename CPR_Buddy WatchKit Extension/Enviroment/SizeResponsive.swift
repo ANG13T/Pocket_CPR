@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum WatchResolution {
-    case Watch38mm, Watch40mm, Watch41mm, Watch42mm,Watch44mm, Unknown
+    case Watch38mm, Watch40mm, Watch41mm, Watch42mm, Watch44mm, Unknown
 }
 
 extension WKInterfaceDevice {
@@ -45,13 +45,13 @@ class SizeResponsive {
     func getSubtextFont() -> Font {
         switch resol {
         case .Watch38mm:
-            // Do Something
             return .system(size: 11)
         case .Watch40mm :
             return .system(size: 11)
+        case .Watch41mm:
+            return .system(size: 11)
         case .Watch42mm:
             return .system(size: 12)
-            // Do Something
         case .Watch44mm:
             return .system(size: 12)
         default:
@@ -131,6 +131,8 @@ class SizeResponsive {
             return 30
         case .Watch40mm :
             return 30
+        case .Watch41mm:
+            return 55
         case .Watch42mm:
             return 30
         case .Watch44mm:
@@ -145,6 +147,8 @@ class SizeResponsive {
         case .Watch38mm:
             return 30
         case .Watch40mm :
+            return 35
+        case .Watch41mm:
             return 35
         case .Watch42mm:
             return 35
@@ -161,6 +165,8 @@ class SizeResponsive {
             return 30
         case .Watch40mm :
             return 30
+        case .Watch41mm:
+            return 25
         case .Watch42mm:
             return 30
         case .Watch44mm:
@@ -176,6 +182,8 @@ class SizeResponsive {
             return 70
         case .Watch40mm :
             return 70
+        case .Watch41mm :
+            return 75
         case .Watch42mm:
             return 80
         case .Watch44mm:
@@ -190,6 +198,8 @@ class SizeResponsive {
         case .Watch38mm:
             return 90
         case .Watch40mm :
+            return 110
+        case .Watch41mm :
             return 110
         case .Watch42mm:
             return 110
