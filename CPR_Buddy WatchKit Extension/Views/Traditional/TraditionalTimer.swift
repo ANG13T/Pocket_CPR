@@ -164,6 +164,7 @@ struct TraditionalTimerView: View {
                     Button("Start Cycles") {
                         selection = Tab.tabTwo
                         compressions = true
+                        timeInterval = Double(60 / userSettings.compressionRate)
                         cycles = initialCycles
                         startTimer()
                         loop = false
@@ -203,6 +204,7 @@ struct TraditionalTimerView: View {
                     Button("Loop Timer") {
                         selection = Tab.tabTwo
                         loop = true
+                        timeInterval = Double(60 / userSettings.compressionRate)
                         count = compressionCount
                         cycles = 1
                         clickTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
@@ -259,9 +261,9 @@ struct TraditionalTimerView: View {
         progressTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
                 if !pauseStatus {
-                    let pulseAmount = initialCycles * 30 //TODO
-                    let cycleTime = CGFloat(pulseAmount * initialCycles)
-                    self.circleProgress += (1 / cycleTime)
+                    let pulseAmount = CGFloat(initialCycles * 40)
+                    // 10 (compressions for 2 breaths) (t = timeInterval) + 30 compressions (t = timeInterval) = 40 compressions * # of cycles (initial Cycles)
+                    self.circleProgress += (1 / pulseAmount)
                     if self.circleProgress >= 1.0 {
                         timer.invalidate()
                     }

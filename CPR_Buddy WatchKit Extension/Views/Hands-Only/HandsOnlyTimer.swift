@@ -128,8 +128,8 @@ struct HandsOnlyTimerView: View {
                     Button("Start Cycles") {
                         selection = Tab.tabTwo
                         cycles = initialCycles
-                        startTimer()
                         timeInterval = Double(60 / userSettings.compressionRate)
+                        startTimer()
                         loop = false
                         count = Int(userSettings.compressionRate)
                         clickTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {time in
