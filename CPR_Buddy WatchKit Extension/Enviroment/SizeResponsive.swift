@@ -155,9 +155,9 @@ class SizeResponsive {
     func getTimerCircleSize() -> CGFloat {
         switch resol {
         case .Watch38mm:
-            return 60
+            return 70
         case .Watch40mm :
-            return 60
+            return 70
         case .Watch42mm:
             return 80
         case .Watch44mm:
@@ -170,26 +170,26 @@ class SizeResponsive {
     func getTimerFontSize() -> CGFloat {
         switch resol {
         case .Watch38mm:
-            return 30
+            return 15
         case .Watch40mm :
-            return 30
+            return 15
         case .Watch42mm:
-            return 30
+            return 15
         case .Watch44mm:
-            return 40
+            return 20
         default:
-            return 40
+            return 20
         }
     }
     
     func getTimerBottomButtonPaddingNotLoop() -> CGFloat {
         switch resol {
         case .Watch38mm:
-            return 0
+            return 5
         case .Watch40mm :
-            return 0
+            return 5
         case .Watch42mm:
-            return 0
+            return 5
         case .Watch44mm:
             return 20
         default:

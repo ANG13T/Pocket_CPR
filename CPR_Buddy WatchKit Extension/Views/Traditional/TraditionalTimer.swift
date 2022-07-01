@@ -37,7 +37,7 @@ struct TraditionalTimerView: View {
             cycleCount = cycles
         }
         
-        return Text("**Cycle \(cycleCount)**").font(.system(size: 20)).foregroundColor(.white)
+        return Text("**Cycle \(cycleCount)**").font(.system(size: SizeResponsive().getTimerFontSize())).foregroundColor(.white)
     }
     
     private var loopTimerView: some View {
@@ -50,19 +50,19 @@ struct TraditionalTimerView: View {
     
     private var compressionsAnimationView: some View {
         ZStack {
-            Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(userSettings.color).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
+            Circle().stroke(lineWidth: 20).frame(width: SizeResponsive().getTimerCircleSize() - 50, height: SizeResponsive().getTimerCircleSize() - 50).foregroundColor(userSettings.color).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
             self.wave.toggle()
         }
-            Circle().frame(width: 80, height: 80).foregroundColor(userSettings.color).shadow(radius: 25)
+            Circle().frame(width: SizeResponsive().getTimerCircleSize(), height: SizeResponsive().getTimerCircleSize() ).foregroundColor(userSettings.color).shadow(radius: 25)
         }
     }
     
     private var breathsAnimationView: some View {
         ZStack {
-            Circle().stroke(lineWidth: 20).frame(width: 60, height: 60).foregroundColor(userSettings.breathsColor).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval * 5).repeatForever(autoreverses: false).speed(1)).onAppear() {
+            Circle().stroke(lineWidth: 20).frame(width: SizeResponsive().getTimerCircleSize() - 50, height: SizeResponsive().getTimerCircleSize() - 50).foregroundColor(userSettings.breathsColor).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval * 5).repeatForever(autoreverses: false).speed(1)).onAppear() {
             self.wave.toggle()
         }
-            Circle().frame(width: 80, height: 80).foregroundColor(userSettings.breathsColor).shadow(radius: 25)
+            Circle().frame(width: SizeResponsive().getTimerCircleSize(), height: SizeResponsive().getTimerCircleSize()).foregroundColor(userSettings.breathsColor).shadow(radius: 25)
         }
     }
     
@@ -235,7 +235,7 @@ struct TraditionalTimerView: View {
             }.gesture(DragGesture()).tag(Tab.tabOne)
             
             VStack {
-                Spacer().frame(height: loop ? 70 : 60)
+                Spacer().frame(height: loop ? SizeResponsive().getTimerTopButtonPaddingLoop() : SizeResponsive().getTimerTopButtonPaddingNotLoop())
                 ZStack {
                     if compressions {
                         compressionsAnimationView
@@ -248,7 +248,7 @@ struct TraditionalTimerView: View {
                     }
                     Text("\(getTimerCount(count: count))").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
-                Spacer().frame(height: loop ? 30 : 10)
+                Spacer().frame(height: loop ? SizeResponsive().getTimerBottomButtonPaddingLoop() : SizeResponsive().getTimerBottomButtonPaddingNotLoop())
                 buttonDisplayView
             }.gesture(DragGesture()).tag(Tab.tabTwo)
             

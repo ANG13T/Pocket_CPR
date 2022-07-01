@@ -105,7 +105,7 @@ struct HandsOnlyTimerView: View {
             cycleCount = cycles
         }
         
-        return Text("**Cycle \(cycleCount)**").font(.system(size: 20)).foregroundColor(.white)
+        return Text("**Cycle \(cycleCount)**").font(.system(size: SizeResponsive().getTimerFontSize())).foregroundColor(.white)
     }
     
     var body: some View {
@@ -197,7 +197,7 @@ struct HandsOnlyTimerView: View {
                     if !loop {
                         loopTimerView
                     }
-                    Text("\(count)").font(.system(size: SizeResponsive().getTimerFontSize())).foregroundColor(.white).shadow(radius: 25)
+                    Text("\(count)").font(.system(size: 40)).foregroundColor(.white).shadow(radius: 25)
                 }
                 Spacer().frame(height: loop ? SizeResponsive().getTimerBottomButtonPaddingLoop() : SizeResponsive().getTimerBottomButtonPaddingNotLoop())
                 buttonDisplayView
