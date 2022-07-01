@@ -142,9 +142,9 @@ class SizeResponsive {
         case .Watch38mm:
             return 30
         case .Watch40mm :
-            return 30
+            return 35
         case .Watch42mm:
-            return 30
+            return 35
         case .Watch44mm:
             return 40
         default:
@@ -187,9 +187,9 @@ class SizeResponsive {
         case .Watch38mm:
             return 90
         case .Watch40mm :
-            return 100
+            return 110
         case .Watch42mm:
-            return 100
+            return 110
         case .Watch44mm:
             return 120
         default:
@@ -202,9 +202,9 @@ class SizeResponsive {
         case .Watch38mm:
             return 15
         case .Watch40mm :
-            return 15
+            return 17
         case .Watch42mm:
-            return 15
+            return 17
         case .Watch44mm:
             return 20
         default:
