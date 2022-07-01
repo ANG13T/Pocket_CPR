@@ -58,7 +58,7 @@ struct HandsOnlyTimerView: View {
         Circle()
             .trim(from: 0.0, to: circleProgress)
             .stroke(userSettings.color, lineWidth: 10)
-            .frame(width: 120, height: 120)
+            .frame(width: SizeResponsive().getTimerProgressRingSize(), height: SizeResponsive().getTimerProgressRingSize())
             .rotationEffect(Angle(degrees: -90))
     }
     

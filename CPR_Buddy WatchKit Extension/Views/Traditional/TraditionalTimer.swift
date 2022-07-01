@@ -44,13 +44,13 @@ struct TraditionalTimerView: View {
         Circle()
             .trim(from: 0.0, to: circleProgress)
             .stroke(compressions ? userSettings.color : userSettings.breathsColor, lineWidth: 10)
-            .frame(width: 120, height: 120)
+            .frame(width: SizeResponsive().getTimerProgressRingSize(), height: SizeResponsive().getTimerProgressRingSize())
             .rotationEffect(Angle(degrees: -90))
     }
     
     private var compressionsAnimationView: some View {
         ZStack {
-            Circle().stroke(lineWidth: 20).frame(width: SizeResponsive().getTimerCircleSize() - 50, height: SizeResponsive().getTimerCircleSize() - 50).foregroundColor(userSettings.color).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
+            Circle().stroke(lineWidth: 20).frame(width: SizeResponsive().getTimerCircleSize() - 20, height: SizeResponsive().getTimerCircleSize() - 20).foregroundColor(userSettings.color).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval).repeatForever(autoreverses: false).speed(1)).onAppear() {
             self.wave.toggle()
         }
             Circle().frame(width: SizeResponsive().getTimerCircleSize(), height: SizeResponsive().getTimerCircleSize() ).foregroundColor(userSettings.color).shadow(radius: 25)
@@ -59,7 +59,7 @@ struct TraditionalTimerView: View {
     
     private var breathsAnimationView: some View {
         ZStack {
-            Circle().stroke(lineWidth: 20).frame(width: SizeResponsive().getTimerCircleSize() - 50, height: SizeResponsive().getTimerCircleSize() - 50).foregroundColor(userSettings.breathsColor).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval * 5).repeatForever(autoreverses: false).speed(1)).onAppear() {
+            Circle().stroke(lineWidth: 20).frame(width: SizeResponsive().getTimerCircleSize() - 20, height: SizeResponsive().getTimerCircleSize() - 20).foregroundColor(userSettings.breathsColor).scaleEffect(wave ? 2 : 1).opacity(wave ? 0 : 1).animation(pauseStatus ? nil : Animation.easeInOut(duration: timeInterval * 5).repeatForever(autoreverses: false).speed(1)).onAppear() {
             self.wave.toggle()
         }
             Circle().frame(width: SizeResponsive().getTimerCircleSize(), height: SizeResponsive().getTimerCircleSize()).foregroundColor(userSettings.breathsColor).shadow(radius: 25)

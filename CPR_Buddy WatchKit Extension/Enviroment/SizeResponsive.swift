@@ -167,6 +167,21 @@ class SizeResponsive {
         }
     }
     
+    func getTimerProgressRingSize() -> CGFloat {
+        switch resol {
+        case .Watch38mm:
+            return 90
+        case .Watch40mm :
+            return 100
+        case .Watch42mm:
+            return 100
+        case .Watch44mm:
+            return 120
+        default:
+            return 120
+        }
+    }
+    
     func getTimerFontSize() -> CGFloat {
         switch resol {
         case .Watch38mm:
@@ -185,11 +200,11 @@ class SizeResponsive {
     func getTimerBottomButtonPaddingNotLoop() -> CGFloat {
         switch resol {
         case .Watch38mm:
-            return 5
+            return 10
         case .Watch40mm :
-            return 5
+            return 10
         case .Watch42mm:
-            return 5
+            return 10
         case .Watch44mm:
             return 20
         default:
