@@ -56,6 +56,38 @@ class SizeResponsive {
         }
     }
     
+    func getTimerCyclePickerHeight() -> CGFloat {
+        switch resol {
+        case .Watch38mm:
+            return 60
+        case .Watch40mm :
+            return 60
+        case .Watch42mm:
+            return 60
+        case .Watch44mm:
+            return 70
+        default:
+            return 70
+        }
+    }
+
+    
+    func getTimerCyclePickerPadding() -> CGFloat {
+        switch resol {
+        case .Watch38mm:
+            return 20
+        case .Watch40mm :
+            return 20
+        case .Watch42mm:
+            return 20
+        case .Watch44mm:
+            return 40
+        default:
+            return 40
+        }
+    }
+    
+    
     func getSettingsCompressionRateFont() -> Font {
         switch resol {
         case .Watch38mm:

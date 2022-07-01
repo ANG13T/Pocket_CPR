@@ -159,7 +159,7 @@ struct TraditionalTimerView: View {
                         ForEach((1...20), id: \.self) {
                             Text("\($0)").tag($0).font(.title2)
                         }
-                    }.frame(height: 70).padding(.top, 40).padding(.bottom, 5)
+                    }.frame(height: SizeResponsive().getTimerCyclePickerHeight()).padding(.top, SizeResponsive().getTimerCyclePickerPadding()).padding(.bottom, 5)
                     
                     Button("Start Cycles") {
                         selection = Tab.tabTwo
