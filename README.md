@@ -47,11 +47,11 @@ It is estimated that more than 659,000 deaths a year occur within the United Sta
 
 ## Screenshots
 <p float="left">
-  <img src="https://github.com/angelina-tsuboi/Pocket_CPR/blob/main/Image_1.png" width="500" />
-  <img src="https://github.com/angelina-tsuboi/Pocket_CPR/blob/main/Image_2.png" width="500" /> 
-  <img src="https://github.com/angelina-tsuboi/Pocket_CPR/blob/main/Image_3.png" width="500" />
-  <img src="https://github.com/angelina-tsuboi/Pocket_CPR/blob/main/Image_4.png" width="500" />
-  <img src="https://github.com/angelina-tsuboi/Pocket_CPR/blob/main/Image_5.png" width="500" />
+  <img src="https://github.com/angelina-tsuboi/Pocket_CPR/blob/main/Image_1.png" width="400" />
+  <img src="https://github.com/angelina-tsuboi/Pocket_CPR/blob/main/Image_2.png" width="400" /> 
+  <img src="https://github.com/angelina-tsuboi/Pocket_CPR/blob/main/Image_3.png" width="400" />
+  <img src="https://github.com/angelina-tsuboi/Pocket_CPR/blob/main/Image_4.png" width="400" />
+  <img src="https://github.com/angelina-tsuboi/Pocket_CPR/blob/main/Image_5.png" width="400" />
 </p>
 
 ## Download Pocket CPR
