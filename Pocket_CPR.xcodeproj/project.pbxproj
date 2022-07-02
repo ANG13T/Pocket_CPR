@@ -503,6 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CPR_Buddy WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 4H873K2XUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CPR_Buddy WatchKit Extension/Info.plist";
@@ -534,6 +535,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CPR_Buddy WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 4H873K2XUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CPR_Buddy WatchKit Extension/Info.plist";
@@ -566,6 +568,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4H873K2XUM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = CPR_Buddy_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit App";
@@ -590,6 +593,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4H873K2XUM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = CPR_Buddy_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit App";
@@ -611,6 +615,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4H873K2XUM;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "angelinatsuboi.Pocket-CPR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -623,6 +628,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4H873K2XUM;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "angelinatsuboi.Pocket-CPR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
