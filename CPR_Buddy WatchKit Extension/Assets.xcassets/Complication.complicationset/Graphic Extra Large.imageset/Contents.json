@@ -1,15 +1,18 @@
 {
   "images" : [
     {
+      "filename" : "Icon-240@2x.png",
       "idiom" : "watch",
       "scale" : "2x"
     },
     {
+      "filename" : "Icon-206@2x.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : "<=145"
     },
     {
+      "filename" : "Icon-264@2x.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"
