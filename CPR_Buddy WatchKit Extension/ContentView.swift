@@ -135,7 +135,7 @@ struct SourcesOptionCard : View {
                 print(WKInterfaceDevice.currentResolution())
             }.foregroundColor(.purple).padding(.bottom, 5)
                 .fullScreenCover(isPresented: $presentSourcesView) {
-                    SettingsView(isPresented: $presentSourcesView).toolbar {
+                    SourcesView(isPresented: $presentSourcesView).toolbar {
                         
                         ToolbarItem(placement: .cancellationAction) {
                             
