@@ -124,12 +124,42 @@ struct SettingsOptionCard : View {
     }
 }
 
+struct SourcesOptionCard : View {
+    @Binding public var presentSourcesView : Bool
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Image(systemName: "doc.text").foregroundColor(.green).font(.system(size: 30)).padding(.top, 5)
+            Text("Sources").bold().padding(.top, 5)
+            Button("**ENTER**") {
+                presentSettingsView.toggle()
+                print(WKInterfaceDevice.currentResolution())
+            }.foregroundColor(.green).padding(.bottom, 5)
+                .fullScreenCover(isPresented: $presentSettingsView) {
+                    SettingsView(isPresented: $presentSettingsView).toolbar {
+                        
+                        ToolbarItem(placement: .cancellationAction) {
+                            
+                            Button(action: {
+                                presentSettingsView.toggle()
+                            }) {
+                                Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                            }
+                            
+                        }
+                        
+                    }
+                }
+        }.padding()
+    }
+}
+
 
 struct ContentView: View {
     @State private var presentAboutView = false
     @State private var presentTraditionalView = false
     @State private var presentSettingsView = false
     @State private var presentHandsOnlyView = false
+    @State private var presentSourcesView = false
     
     var body: some View {
         NavigationView {
@@ -141,6 +171,8 @@ struct ContentView: View {
                 AboutOptionCard(presentAboutView: $presentAboutView)
                 
                 SettingsOptionCard(presentSettingsView: $presentSettingsView)
+                
+                SourcesOptionCard(presentSourcesView: $presentSourcesView)
                 
             }.listStyle(CarouselListStyle()).environment(\.defaultMinListRowHeight, 50)
         }
