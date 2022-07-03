@@ -17,67 +17,36 @@ struct SourcesView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 15) {
-                Text("Settings").bold().font(.system(size: 20))
-                Slider(
-                    value: $userSettings.compressionRate,
-                    in: 100...120,
-                    step: 1
-                )
-                
-                Text("Compressions Per Minute: \(String(format: "%.0f", userSettings.compressionRate))")
-                    .foregroundColor(.blue).font(SizeResponsive().getSettingsCompressionRateFont())
-                
-                
-                HStack {
-                    Text("Pulse Color")
-                    Spacer()
-                    Image(systemName: "circle.fill").foregroundColor(userSettings.color)
+                Text("Sources").bold().font(.system(size: 20))
+                Text("All information on this app was retrieved from the following sources").font(.system(size: 10))
+                VStack {
+                    Text("1. CPR Steps").bold()
+                    Text("American Red Cross Organization").bold()
+                    Text("https://www.redcross.org/take-a-class/cpr/performing-cpr/cpr-steps")
                 }
-                .foregroundColor(Color.white).onTapGesture {
-                    presentColorPicker = true
-                }.fullScreenCover(isPresented: $presentColorPicker) {
-                    ColorPickerView(isPresented: $presentColorPicker, selection: $userSettings.color).toolbar {
-                        
-                        ToolbarItem(placement: .cancellationAction) {
-                            
-                            Button(action: {
-                                presentColorPicker.toggle()
-                            }) {
-                                Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
-                            }
-                            
-                        }
-                        
-                    }
-                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                 
-                HStack {
-                    Text("Breaths Color")
-                    Spacer()
-                    Image(systemName: "circle.fill").foregroundColor(userSettings.breathsColor)
+                VStack {
+                    Text("2. Child & Baby CPR").bold()
+                    Text("American Red Cross Organization").bold()
+                    Text("https://www.redcross.org/take-a-class/cpr/performing-cpr/child-baby-cpr")
                 }
-                .foregroundColor(Color.white).onTapGesture {
-                    presentBreathsColorPicker = true
-                }.fullScreenCover(isPresented: $presentBreathsColorPicker) {
-                    ColorPickerView(isPresented: $presentBreathsColorPicker, selection: $userSettings.breathsColor).toolbar {
-                        
-                        ToolbarItem(placement: .cancellationAction) {
-                            
-                            Button(action: {
-                                presentBreathsColorPicker.toggle()
-                            }) {
-                                Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
-                            }
-                            
-                        }
-                        
-                    }
-                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
                 
+                VStack {
+                    Text("3. Hands-Only CPR").bold()
+                    Text("Tarrant County College").bold()
+                    Text("https://www.tccd.edu/about/emergency-information/know-what-to-do/medical-emergencies/cpr/#:~:text=Give%20compressions%20by%20using%202,cause%20the%20chest%20to%20rise.")
+                }
                 
-                Toggle(isOn: $userSettings.vibration) {
-                    Text("Vibrations")
-                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                VStack {
+                    Text("4. What is CPR?").bold()
+                    Text("American Heart Association").bold()
+                    Text("https://cpr.heart.org/en/resources/what-is-cpr")
+                }
+                
+                VStack {
+                    Text("1. ").bold()
+                    Text("")
+                }
                 
             }
         }
