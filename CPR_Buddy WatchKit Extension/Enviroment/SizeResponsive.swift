@@ -59,6 +59,23 @@ class SizeResponsive {
         }
     }
     
+    func getSourcesFont() -> Font {
+        switch resol {
+        case .Watch38mm:
+            return .system(size: 8)
+        case .Watch40mm :
+            return .system(size: 8)
+        case .Watch41mm:
+            return .system(size: 8)
+        case .Watch42mm:
+            return .system(size: 8)
+        case .Watch44mm:
+            return .system(size: 8)
+        default:
+            return .footnote
+        }
+    }
+    
     func getTimerCyclePickerHeight() -> CGFloat {
         switch resol {
         case .Watch38mm:
