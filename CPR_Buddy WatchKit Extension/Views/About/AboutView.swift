@@ -9,10 +9,54 @@ import SwiftUI
 
 struct AboutView: View {
     @Binding var isPresented: Bool
+    @State private var presentSourcesView: Bool = false
     
     var body: some View {
         TabView {
             // PAGE 1
+            VStack {
+                VStack {
+                    Text("**Traditional CPR**")
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+                    .padding(.vertical, 5)
+                
+                    
+                    Button("Start Tutorial") {
+                        
+                    }.buttonStyle(BorderedButtonStyle(tint: .blue))
+                        
+                    
+                    
+                    Button("View Sources") {
+                        presentSourcesView.toggle()
+                    }.buttonStyle(BorderedButtonStyle(tint: .pink))
+                        .fullScreenCover(isPresented: $presentSourcesView) {
+                            TraditionalTutorialView(isPresented: $presentSourcesView).toolbar {
+                                
+                                ToolbarItem(placement: .cancellationAction) {
+                                    
+                                    Button(action: {
+                                        presentSourcesView.toggle()
+                                    }) {
+                                        Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                    }
+                                    
+                                }
+                                
+                            }
+                        }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    
+                    
+                }
+                .opacity(0.8)
+                .padding(1)
+
+                Spacer()
+            }.padding(.top, 15)
+            
+            
+            
             VStack {
                 VStack {
                     Image(systemName: "heart")
