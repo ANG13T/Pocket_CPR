@@ -62,17 +62,17 @@ class SizeResponsive {
     func getSourcesFont() -> Font {
         switch resol {
         case .Watch38mm:
-            return .system(size: 8)
+            return .system(size: 9)
         case .Watch40mm :
-            return .system(size: 8)
+            return .system(size: 9)
         case .Watch41mm:
-            return .system(size: 8)
+            return .system(size: 9)
         case .Watch42mm:
-            return .system(size: 8)
+            return .system(size: 10)
         case .Watch44mm:
-            return .system(size: 8)
+            return .system(size: 11)
         default:
-            return .footnote
+            return .system(size: 11)
         }
     }
     

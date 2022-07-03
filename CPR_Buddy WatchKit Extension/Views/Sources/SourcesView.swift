@@ -17,7 +17,7 @@ struct SourcesView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 15) {
-                Text("Sources").bold().font(.system(size: 20))
+                Text("Sources").bold().font(.system(size: 20)).foregroundColor(.purple)
                 VStack {
                     Text("1. CPR Steps").bold().font(SizeResponsive().getSubtextFont())
                     Text("American Red Cross Organization").font(SizeResponsive().getSourcesFont())
