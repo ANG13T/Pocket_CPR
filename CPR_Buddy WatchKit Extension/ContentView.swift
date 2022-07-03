@@ -128,19 +128,19 @@ struct SourcesOptionCard : View {
     @Binding public var presentSourcesView : Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Image(systemName: "doc.text").foregroundColor(.green).font(.system(size: 30)).padding(.top, 5)
+            Image(systemName: "doc.text").foregroundColor(.purple).font(.system(size: 30)).padding(.top, 5)
             Text("Sources").bold().padding(.top, 5)
             Button("**ENTER**") {
-                presentSettingsView.toggle()
+                presentSourcesView.toggle()
                 print(WKInterfaceDevice.currentResolution())
-            }.foregroundColor(.green).padding(.bottom, 5)
-                .fullScreenCover(isPresented: $presentSettingsView) {
-                    SettingsView(isPresented: $presentSettingsView).toolbar {
+            }.foregroundColor(.purple).padding(.bottom, 5)
+                .fullScreenCover(isPresented: $presentSourcesView) {
+                    SettingsView(isPresented: $presentSourcesView).toolbar {
                         
                         ToolbarItem(placement: .cancellationAction) {
                             
                             Button(action: {
-                                presentSettingsView.toggle()
+                                presentSourcesView.toggle()
                             }) {
                                 Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
                             }

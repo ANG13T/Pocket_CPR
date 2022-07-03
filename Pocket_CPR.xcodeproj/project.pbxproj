@@ -28,6 +28,7 @@
 		29E71553285B0FC6009C0D07 /* TraditionalTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E71552285B0FC6009C0D07 /* TraditionalTutorial.swift */; };
 		29E71555285B109C009C0D07 /* HandsOnlyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E71554285B109C009C0D07 /* HandsOnlyTimer.swift */; };
 		29E71557285B110D009C0D07 /* HandsOnlyTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E71556285B110D009C0D07 /* HandsOnlyTutorial.swift */; };
+		29F4F18728725316001B8C35 /* SourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4F18628725316001B8C35 /* SourcesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		29E71552285B0FC6009C0D07 /* TraditionalTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalTutorial.swift; sourceTree = "<group>"; };
 		29E71554285B109C009C0D07 /* HandsOnlyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandsOnlyTimer.swift; sourceTree = "<group>"; };
 		29E71556285B110D009C0D07 /* HandsOnlyTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandsOnlyTutorial.swift; sourceTree = "<group>"; };
+		29F4F18628725316001B8C35 /* SourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,12 +214,21 @@
 		2951CCFE28551071002C1577 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29F4F18528725304001B8C35 /* Sources */,
 				2946FB5D286CD8C800C47FC7 /* Settings */,
 				2946FB5C286CCFA100C47FC7 /* Traditional */,
 				2946FB5B286CCF9400C47FC7 /* Hands-Only */,
 				2946FB5A286CCF8C00C47FC7 /* About */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		29F4F18528725304001B8C35 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				29F4F18628725316001B8C35 /* SourcesView.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +371,7 @@
 				2951CD0428551B1B002C1577 /* TraditionalView.swift in Sources */,
 				2946FB61286D133600C47FC7 /* ColorPickerView.swift in Sources */,
 				2951CCE72852F82A002C1577 /* NotificationView.swift in Sources */,
+				29F4F18728725316001B8C35 /* SourcesView.swift in Sources */,
 				29E71553285B0FC6009C0D07 /* TraditionalTutorial.swift in Sources */,
 				2946FB65286E1DDF00C47FC7 /* UserSettings.swift in Sources */,
 				2946FB5F286CDC8600C47FC7 /* SettingsView.swift in Sources */,
