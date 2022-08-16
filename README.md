@@ -55,3 +55,6 @@ It is estimated that more than 659,000 deaths a year occur within the United Sta
 </p>
 
 ## Download Pocket CPR
+**⌚️ App Store:** [https://apps.apple.com/us/app/pocket-cpr-learn-cpr/id1632751633](https://apps.apple.com/us/app/pocket-cpr-learn-cpr/id1632751633)
+
+**😸 Product Hunt:** [https://www.producthunt.com/posts/pocket-cpr](https://www.producthunt.com/posts/pocket-cpr)
