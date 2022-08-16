@@ -126,6 +126,7 @@ struct TraditionalTimerView: View {
                         isPresented = false
                         pauseStatus = false
                         progressTimer?.invalidate()
+                        coordinator.invalidate()
                         clickTimer?.invalidate()
                     }, label: {
                         Text("Close")
@@ -259,6 +260,7 @@ struct TraditionalTimerView: View {
     }
     
     func startTimer() {
+        coordinator.start()
         progressTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
                 if !pauseStatus {
@@ -267,6 +269,7 @@ struct TraditionalTimerView: View {
                     self.circleProgress += (1 / pulseAmount)
                     if self.circleProgress >= 1.0 {
                         timer.invalidate()
+                        coordinator.invalidate()
                     }
                 }
             }
