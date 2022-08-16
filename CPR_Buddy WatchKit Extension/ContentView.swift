@@ -165,15 +165,15 @@ struct ContentView: View {
         NavigationView {
             List {
                 HandsOnlyOptionCard(presentHandsOnlyView: $presentHandsOnlyView)
-                
+
                 TraditionalOptionCard(presentTraditionalView: $presentTraditionalView)
-                
+
                 AboutOptionCard(presentAboutView: $presentAboutView)
-                
+
                 SettingsOptionCard(presentSettingsView: $presentSettingsView)
-                
+
                 SourcesOptionCard(presentSourcesView: $presentSourcesView)
-                
+
             }.listStyle(CarouselListStyle()).environment(\.defaultMinListRowHeight, 50)
         }
     }
