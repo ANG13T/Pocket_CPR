@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HandsOnlyTimerView: View {
+    let coordinator = SessionCoordinator()
     @Binding var isPresented: Bool
     @EnvironmentObject private var userSettings: UserSettings
     @State private var chosenProfile: String = "Adult"
@@ -46,6 +47,7 @@ struct HandsOnlyTimerView: View {
                         isPresented = false
                         pauseStatus = false
                         progressTimer?.invalidate()
+                        coordinator.invalidate()
                         clickTimer?.invalidate()
                     }, label: {
                         Text("Close")
@@ -68,6 +70,7 @@ struct HandsOnlyTimerView: View {
                 isPresented = false
                 pauseStatus = false
                 progressTimer?.invalidate()
+                coordinator.invalidate()
                 clickTimer?.invalidate()
             }) {
                 ZStack {
@@ -209,6 +212,7 @@ struct HandsOnlyTimerView: View {
     }
     
     func startTimer() {
+        coordinator.start()
         progressTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { timer in
             withAnimation() {
                 if !pauseStatus {
@@ -216,6 +220,7 @@ struct HandsOnlyTimerView: View {
                     self.circleProgress += (1 / cycleTime)
                     if self.circleProgress >= 1.0 {
                         timer.invalidate()
+                        coordinator.invalidate()
                     }
                 }
                 

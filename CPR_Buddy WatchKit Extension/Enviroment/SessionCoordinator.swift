@@ -5,7 +5,7 @@
 //  Created by Angelina Tsuboi on 8/16/22.
 //
 
-import Foundation
+import SwiftUI
 
 class SessionCoordinator {
     private var session: WKExtendedRuntimeSession?
