@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TraditionalTimerView: View {
-    let coordinator = SessionCoordinator()
+    @StateObject var coordinator = SessionCoordinator()
     @EnvironmentObject private var userSettings: UserSettings
     @Binding var isPresented: Bool
     @State private var cycles: Int = 5

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class SessionCoordinator {
+class SessionCoordinator : ObservableObject{
     private var session: WKExtendedRuntimeSession?
 
     func start() {
@@ -23,4 +23,14 @@ class SessionCoordinator {
     func invalidate() {
         session?.invalidate()
     }
+    
+    func extendedRuntimeSession(_ extendedRuntimeSession: WKExtendedRuntimeSession, didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason, error: Error?) {
+           print("Session stopped: \(Date())")
+       }
+       func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+           print("Session started: \(Date())")
+       }
+       func extendedRuntimeSessionWillExpire(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+           print("Session expired: \(Date())")
+       }
 }

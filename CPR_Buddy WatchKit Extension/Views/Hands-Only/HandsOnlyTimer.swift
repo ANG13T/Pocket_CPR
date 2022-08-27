@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HandsOnlyTimerView: View {
-    let coordinator = SessionCoordinator()
+    @StateObject var coordinator = SessionCoordinator()
     @Binding var isPresented: Bool
     @EnvironmentObject private var userSettings: UserSettings
     @State private var chosenProfile: String = "Adult"
