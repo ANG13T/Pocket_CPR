@@ -11,7 +11,7 @@
 		2946FB61286D133600C47FC7 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946FB60286D133600C47FC7 /* ColorPickerView.swift */; };
 		2946FB65286E1DDF00C47FC7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946FB64286E1DDF00C47FC7 /* UserSettings.swift */; };
 		2946FB67286E8B3600C47FC7 /* SizeResponsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2946FB66286E8B3600C47FC7 /* SizeResponsive.swift */; };
-		2951CCD12852F822002C1577 /* Pocket_CPR WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2951CCD12852F822002C1577 /* Pocket CPR.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2951CCD02852F822002C1577 /* Pocket CPR.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2951CCD62852F82A002C1577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2951CCD52852F82A002C1577 /* Assets.xcassets */; };
 		2951CCDC2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2951CCDB2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2951CCE12852F82A002C1577 /* PocketCPR_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CCE02852F82A002C1577 /* PocketCPR_App.swift */; };
@@ -67,7 +67,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				2951CCD12852F822002C1577 /* Pocket_CPR WatchKit App.app in Embed Watch Content */,
+				2951CCD12852F822002C1577 /* Pocket CPR.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +80,7 @@
 		2946FB64286E1DDF00C47FC7 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2946FB66286E8B3600C47FC7 /* SizeResponsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeResponsive.swift; sourceTree = "<group>"; };
 		2951CCCC2852F822002C1577 /* Pocket_CPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocket_CPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket_CPR WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2951CCD02852F822002C1577 /* Pocket CPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket CPR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2951CCD52852F82A002C1577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2951CCDB2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Pocket_CPR WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2951CCE02852F82A002C1577 /* PocketCPR_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketCPR_App.swift; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 		2951CCC52852F821002C1577 = {
 			isa = PBXGroup;
 			children = (
-				2951CCD42852F822002C1577 /* CPR_Buddy WatchKit App */,
-				2951CCDF2852F82A002C1577 /* CPR_Buddy WatchKit Extension */,
+				2951CCD42852F822002C1577 /* Pocket CPR */,
+				2951CCDF2852F82A002C1577 /* Pocket CPR WatchKit Extension */,
 				2951CCCD2852F822002C1577 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,21 +174,21 @@
 			isa = PBXGroup;
 			children = (
 				2951CCCC2852F822002C1577 /* Pocket_CPR.app */,
-				2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */,
+				2951CCD02852F822002C1577 /* Pocket CPR.app */,
 				2951CCDB2852F82A002C1577 /* Pocket_CPR WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2951CCD42852F822002C1577 /* CPR_Buddy WatchKit App */ = {
+		2951CCD42852F822002C1577 /* Pocket CPR */ = {
 			isa = PBXGroup;
 			children = (
 				2951CCD52852F82A002C1577 /* Assets.xcassets */,
 			);
-			path = "CPR_Buddy WatchKit App";
+			path = "Pocket CPR";
 			sourceTree = "<group>";
 		};
-		2951CCDF2852F82A002C1577 /* CPR_Buddy WatchKit Extension */ = {
+		2951CCDF2852F82A002C1577 /* Pocket CPR WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
 				2946FB62286E1D9900C47FC7 /* Enviroment */,
@@ -203,7 +203,7 @@
 				2951CCF02852F82B002C1577 /* PushNotificationPayload.apns */,
 				2951CCEC2852F82B002C1577 /* Preview Content */,
 			);
-			path = "CPR_Buddy WatchKit Extension";
+			path = "Pocket CPR WatchKit Extension";
 			sourceTree = "<group>";
 		};
 		2951CCEC2852F82B002C1577 /* Preview Content */ = {
@@ -268,7 +268,7 @@
 			);
 			name = "Pocket_CPR WatchKit App";
 			productName = "CPR_Buddy WatchKit App";
-			productReference = 2951CCD02852F822002C1577 /* Pocket_CPR WatchKit App.app */;
+			productReference = 2951CCD02852F822002C1577 /* Pocket CPR.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		2951CCDA2852F82A002C1577 /* Pocket_CPR WatchKit Extension */ = {
@@ -518,12 +518,12 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"CPR_Buddy WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Pocket CPR WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 4H873K2XUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "CPR_Buddy WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit Extension";
+				INFOPLIST_FILE = "Pocket CPR WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Pocket CPR WatchKit Extension";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = Pocket_CPR_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -550,12 +550,12 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"CPR_Buddy WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Pocket CPR WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 4H873K2XUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "CPR_Buddy WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit Extension";
+				INFOPLIST_FILE = "Pocket CPR WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Pocket CPR WatchKit Extension";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = Pocket_CPR_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -587,11 +587,10 @@
 				DEVELOPMENT_TEAM = 4H873K2XUM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = CPR_Buddy_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "angelinatsuboi.Pocket-CPR.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pocket CPR";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -612,11 +611,10 @@
 				DEVELOPMENT_TEAM = 4H873K2XUM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = CPR_Buddy_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "CPR_Buddy WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "angelinatsuboi.Pocket-CPR.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pocket CPR";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
