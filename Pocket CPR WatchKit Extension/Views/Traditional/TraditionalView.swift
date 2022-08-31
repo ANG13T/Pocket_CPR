@@ -14,6 +14,7 @@ struct TraditionalView: View {
     @State private var clickTimer : Timer?
     @State private var progressTimer : Timer?
     @State private var presentTutorialView = false
+    @State private var presentDisplay = false
     @State private var presentSettingsWarningView = false
 
     private var WarningSettingsView: some View {
@@ -64,11 +65,12 @@ struct TraditionalView: View {
                         presentSettingsWarningView.toggle()
                     }else{
                         presentTimerView.toggle()
-                        clickTimer?.invalidate()
-                        progressTimer?.invalidate()
                     }
+                    presentDisplay.toggle()
+                    clickTimer?.invalidate()
+                    progressTimer?.invalidate()
                 }.buttonStyle(BorderedButtonStyle(tint: .blue))
-                    .fullScreenCover(isPresented: $presentTimerView) {
+                    .fullScreenCover(isPresented: $presentDisplay) {
                         TraditionalSettingsWarningView(isPresented: $presentSettingsWarningView)
                         TraditionalTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
                             
