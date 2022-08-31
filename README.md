@@ -6,6 +6,8 @@ A CPR trainer right around your wrist!
 ## About Pocket CPR 
 Pocket CPR is an Apple Watch app that teaches the basics of **Hands-Only** and **Traditional** CPR methods through tutorials and interactive cadence timers.
 
+🧡 **For best experience, Settings > Display & Brightness to Wake for 70** 🧡
+
 ⌚️ **Interactive Learning**
 
 The  timers on Pocket CPR include vibrations, pulse animations, and colors to guide you through adminstrating safe, effective CPR. 
