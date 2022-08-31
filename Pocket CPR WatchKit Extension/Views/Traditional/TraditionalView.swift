@@ -61,7 +61,7 @@ struct TraditionalView: View {
             
                 
                 Button("Start Timer") {
-                    if(userSettings.showSettingsWarning) {
+                    if(userSettings.showSettingsWarning == true) {
                         presentSettingsWarningView.toggle()
                     }else{
                         presentTimerView.toggle()
@@ -71,23 +71,43 @@ struct TraditionalView: View {
                     progressTimer?.invalidate()
                 }.buttonStyle(BorderedButtonStyle(tint: .blue))
                     .fullScreenCover(isPresented: $presentDisplay) {
-                        TraditionalSettingsWarningView(isPresented: $presentSettingsWarningView)
-                        TraditionalTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
-                            
-                            ToolbarItem(placement: .cancellationAction) {
+                        if (presentSettingsWarningView) {
+                            TraditionalSettingsWarningView(isPresented: $presentSettingsWarningView).toolbar {
                                 
-                                
-                                Button(action: {
-                                    presentTimerView.toggle()
-                                    clickTimer?.invalidate()
-                                    progressTimer?.invalidate()
-                                }) {
-                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                ToolbarItem(placement: .cancellationAction) {
+                                    
+                                    
+                                    Button(action: {
+                                        presentDisplay.toggle()
+                                        presentSettingsWarningView.toggle()
+                                        userSettings.setDisplaySettings(value: false)
+                                    }) {
+                                        Image(systemName: "xmark.circle.fill").foregroundColor(.gray)
+                                    }
+                                    
                                 }
                                 
                             }
-                            
+                        }else {
+                            TraditionalTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
+                                
+                                ToolbarItem(placement: .cancellationAction) {
+                                    
+                                    
+                                    Button(action: {
+                                        presentDisplay.toggle()
+                                        presentTimerView.toggle()
+                                        clickTimer?.invalidate()
+                                        progressTimer?.invalidate()
+                                    }) {
+                                        Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                    }
+                                    
+                                }
+                                
+                            }
                         }
+                        
                     }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
                     .padding(.bottom, 10)
                 

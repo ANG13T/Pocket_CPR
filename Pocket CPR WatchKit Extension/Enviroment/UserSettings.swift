@@ -22,4 +22,8 @@ class UserSettings: ObservableObject {
         self.breathsColor = breathsColor
         self.showSettingsWarning = showSettingsWarning
     }
+    
+    public func setDisplaySettings(value: Bool) {
+        self.showSettingsWarning = value
+    }
 }
