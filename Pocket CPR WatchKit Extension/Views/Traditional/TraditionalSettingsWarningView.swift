@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TraditionalSettingsWarningView: View {
-    @Binding var isPresented: Bool
     
     var body: some View {
         VStack {
