@@ -9,10 +9,24 @@ import SwiftUI
 
 struct TraditionalView: View {
     @Binding var isPresented: Bool
+    @EnvironmentObject private var userSettings: UserSettings
     @State private var presentTimerView = false
     @State private var clickTimer : Timer?
     @State private var progressTimer : Timer?
     @State private var presentTutorialView = false
+    @State private var presentSettingsWarningView = false
+
+    private var WarningSettingsView: some View {
+        VStack {
+            Text("**Settings Tip**")
+            .font(.headline)
+            .multilineTextAlignment(.center)
+            .padding(.vertical, 5)
+            Text("For best performance, go to **Settings > Display & Brightness > Wake Duration > 70 seconds**").font(SizeResponsive().getSubtextFont())
+                .multilineTextAlignment(.center)
+                .padding(.top, 10)
+        }
+    }
     
     private var completedTimer: some View {
         RoundedRectangle(cornerRadius: 10)
@@ -46,11 +60,16 @@ struct TraditionalView: View {
             
                 
                 Button("Start Timer") {
-                    presentTimerView.toggle()
-                    clickTimer?.invalidate()
-                    progressTimer?.invalidate()
+                    if(userSettings.showSettingsWarning) {
+                        presentSettingsWarningView.toggle()
+                    }else{
+                        presentTimerView.toggle()
+                        clickTimer?.invalidate()
+                        progressTimer?.invalidate()
+                    }
                 }.buttonStyle(BorderedButtonStyle(tint: .blue))
                     .fullScreenCover(isPresented: $presentTimerView) {
+                        TraditionalSettingsWarningView(isPresented: $presentSettingsWarningView)
                         TraditionalTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
                             
                             ToolbarItem(placement: .cancellationAction) {

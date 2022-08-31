@@ -25,6 +25,7 @@
 		2951CD0228551B11002C1577 /* HandsOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CD0128551B11002C1577 /* HandsOnlyView.swift */; };
 		2951CD0428551B1B002C1577 /* TraditionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CD0328551B1B002C1577 /* TraditionalView.swift */; };
 		29CA468928AC2C9A006F7CD4 /* SessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CA468828AC2C9A006F7CD4 /* SessionCoordinator.swift */; };
+		29D383A728BF162D0062FD56 /* TraditionalSettingsWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D383A628BF162D0062FD56 /* TraditionalSettingsWarningView.swift */; };
 		29E71551285B072E009C0D07 /* TraditionalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E71550285B072E009C0D07 /* TraditionalTimer.swift */; };
 		29E71553285B0FC6009C0D07 /* TraditionalTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E71552285B0FC6009C0D07 /* TraditionalTutorial.swift */; };
 		29E71555285B109C009C0D07 /* HandsOnlyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E71554285B109C009C0D07 /* HandsOnlyTimer.swift */; };
@@ -96,6 +97,7 @@
 		2951CD0128551B11002C1577 /* HandsOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandsOnlyView.swift; sourceTree = "<group>"; };
 		2951CD0328551B1B002C1577 /* TraditionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalView.swift; sourceTree = "<group>"; };
 		29CA468828AC2C9A006F7CD4 /* SessionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCoordinator.swift; sourceTree = "<group>"; };
+		29D383A628BF162D0062FD56 /* TraditionalSettingsWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalSettingsWarningView.swift; sourceTree = "<group>"; };
 		29E71550285B072E009C0D07 /* TraditionalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalTimer.swift; sourceTree = "<group>"; };
 		29E71552285B0FC6009C0D07 /* TraditionalTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalTutorial.swift; sourceTree = "<group>"; };
 		29E71554285B109C009C0D07 /* HandsOnlyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandsOnlyTimer.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				2951CD0328551B1B002C1577 /* TraditionalView.swift */,
 				29E71550285B072E009C0D07 /* TraditionalTimer.swift */,
 				29E71552285B0FC6009C0D07 /* TraditionalTutorial.swift */,
+				29D383A628BF162D0062FD56 /* TraditionalSettingsWarningView.swift */,
 			);
 			path = Traditional;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				2951CCE92852F82A002C1577 /* ComplicationController.swift in Sources */,
 				2951CCE12852F82A002C1577 /* PocketCPR_App.swift in Sources */,
 				2946FB67286E8B3600C47FC7 /* SizeResponsive.swift in Sources */,
+				29D383A728BF162D0062FD56 /* TraditionalSettingsWarningView.swift in Sources */,
 				2951CD002855108F002C1577 /* AboutView.swift in Sources */,
 				2951CD0428551B1B002C1577 /* TraditionalView.swift in Sources */,
 				2946FB61286D133600C47FC7 /* ColorPickerView.swift in Sources */,
