@@ -11,7 +11,7 @@ struct TraditionalTimerView: View {
     @StateObject var coordinator = SessionCoordinator()
     @EnvironmentObject private var userSettings: UserSettings
     @Binding var isPresented: Bool
-    @State private var cycles: Int = 5
+    @State private var cycles: Int = 1
     @State private var pauseStatus : Bool = false
     @State private var loop: Bool = false
     @State private var compressions: Bool = true
@@ -21,7 +21,7 @@ struct TraditionalTimerView: View {
     @Binding public var clickTimer: Timer?
     @Binding public var progressTimer: Timer?
     @State var circleProgress: CGFloat = 0.0
-    @State private var initialCycles = 5
+    @State private var initialCycles = 1
     @State public var count = 0
     @State private var wave: Bool = false
     @State private var wave1: Bool = false
@@ -158,7 +158,7 @@ struct TraditionalTimerView: View {
                 VStack {
                     
                     Picker(selection: self.$initialCycles, label: Text("Set Timer Cycles").font(SizeResponsive().getTimerSetTimerCyclesFont().bold())) {
-                        ForEach((1...20), id: \.self) {
+                        ForEach((1...5), id: \.self) {
                             Text("\($0)").tag($0).font(.title2)
                         }
                     }.frame(height: SizeResponsive().getTimerCyclePickerHeight()).padding(.top, SizeResponsive().getTimerCyclePickerPadding()).padding(.bottom, 5)

@@ -12,10 +12,10 @@ struct HandsOnlyTimerView: View {
     @Binding var isPresented: Bool
     @EnvironmentObject private var userSettings: UserSettings
     @State private var chosenProfile: String = "Adult"
-    @State private var cycles = 5
+    @State private var cycles = 1
     @State private var pauseStatus : Bool = false
     @State private var timeInterval = 0.6
-    @State private var initialCycles = 5
+    @State private var initialCycles = 1
     @State private var loop: Bool = false
     @State private var selection: Tab = .tabOne
     @State var circleProgress: CGFloat = 0.0
@@ -123,7 +123,7 @@ struct HandsOnlyTimerView: View {
                 VStack {
                     
                     Picker(selection: self.$initialCycles, label: Text("Set Timer Cycles").font(SizeResponsive().getTimerSetTimerCyclesFont()).bold()) {
-                        ForEach((1...20), id: \.self) {
+                        ForEach((1...5), id: \.self) {
                             Text("\($0)").tag($0).font(.title2)
                         }
                     }.frame(height: SizeResponsive().getTimerCyclePickerHeight()).padding(.top, SizeResponsive().getTimerCyclePickerPadding()).padding(.bottom, 5)
