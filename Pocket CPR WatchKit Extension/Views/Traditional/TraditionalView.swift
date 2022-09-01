@@ -15,7 +15,12 @@ struct TraditionalView: View {
     @State private var progressTimer : Timer?
     @State private var presentTutorialView = false
     @State private var presentDisplay = false
-    @State private var presentSettingsWarningView = false
+    @State private var selection: Tab = .tabTwo
+    
+    enum Tab {
+        case tabOne
+        case tabTwo
+    }
     
     private var WarningSettingsView: some View {
         VStack {
@@ -52,65 +57,74 @@ struct TraditionalView: View {
     }
     
     var body: some View {
-        VStack {
+        TabView(selection: $selection) {
             VStack {
-                Text("**Traditional CPR**")
-                    .font(.headline)
-                    .multilineTextAlignment(.center)
-                    .padding(.vertical, 5)
-                
-                
-                Button("Start Timer") {
-                    presentTimerView.toggle()
-                    clickTimer?.invalidate()
-                    progressTimer?.invalidate()
-                }.buttonStyle(BorderedButtonStyle(tint: .blue))
-                    .fullScreenCover(isPresented: $presentTimerView) {
-                        TraditionalTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
-                            
-                            ToolbarItem(placement: .cancellationAction) {
+            VStack {
+                VStack {
+                    Text("**Traditional CPR**")
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .padding(.vertical, 5)
+                    
+                    
+                    Button("Start Timer") {
+                        presentTimerView.toggle()
+                        clickTimer?.invalidate()
+                        progressTimer?.invalidate()
+                    }.buttonStyle(BorderedButtonStyle(tint: .blue))
+                        .fullScreenCover(isPresented: $presentTimerView) {
+                            TraditionalTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
                                 
-                                
-                                Button(action: {
-                                    presentTimerView.toggle()
-                                    clickTimer?.invalidate()
-                                    progressTimer?.invalidate()
-                                }) {
-                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                ToolbarItem(placement: .cancellationAction) {
+                                    
+                                    
+                                    Button(action: {
+                                        presentTimerView.toggle()
+                                        clickTimer?.invalidate()
+                                        progressTimer?.invalidate()
+                                    }) {
+                                        Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                    }
+                                    
                                 }
                                 
                             }
-                            
-                        }
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
-                    .padding(.bottom, 10)
-                
-                Button("Tutorial") {
-                    presentTutorialView.toggle()
-                }.buttonStyle(BorderedButtonStyle(tint: .pink))
-                    .fullScreenCover(isPresented: $presentTutorialView) {
-                        TraditionalTutorialView(isPresented: $presentTutorialView).toolbar {
-                            
-                            ToolbarItem(placement: .cancellationAction) {
+                        }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
+                        .padding(.bottom, 10)
+                    
+                    Button("Tutorial") {
+                        presentTutorialView.toggle()
+                    }.buttonStyle(BorderedButtonStyle(tint: .pink))
+                        .fullScreenCover(isPresented: $presentTutorialView) {
+                            TraditionalTutorialView(isPresented: $presentTutorialView).toolbar {
                                 
-                                Button(action: {
-                                    presentTutorialView.toggle()
-                                }) {
-                                    Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                ToolbarItem(placement: .cancellationAction) {
+                                    
+                                    Button(action: {
+                                        presentTutorialView.toggle()
+                                    }) {
+                                        Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                    }
+                                    
                                 }
                                 
                             }
-                            
-                        }
-                    }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
-                
-                
+                        }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                    
+                    
+                }
+                .opacity(0.8)
+                .padding(1)
             }
-            .opacity(0.8)
-            .padding(1)
-        }
-        
-        Spacer()
+            
+            Spacer()
+            }
+            
+            VStack {
+                Text("hey")
+            }
+            
+        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
 

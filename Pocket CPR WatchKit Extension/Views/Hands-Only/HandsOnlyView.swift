@@ -14,7 +14,6 @@ struct HandsOnlyView: View {
     @State private var progressTimer : Timer?
     @State private var presentTutorialView = false
     @EnvironmentObject private var userSettings: UserSettings
-    @State private var presentSettingsWarningView = false
     @State private var selection: Tab = .tabTwo
     
     enum Tab {
