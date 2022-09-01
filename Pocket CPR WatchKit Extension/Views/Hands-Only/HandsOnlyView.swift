@@ -14,85 +14,88 @@ struct HandsOnlyView: View {
     @State private var progressTimer : Timer?
     @State private var presentTutorialView = false
     @EnvironmentObject private var userSettings: UserSettings
-    @State private var selection: Tab = .tabTwo
     
     
     
     var body: some View {
-        TabView(selection: $selection) {
-            VStack {
+        TabView(selection: $userSettings.settingsTab) {
+            NavigationView {
                 VStack {
                     VStack {
-                        Text("**Hands-Only CPR**")
-                            .font(.headline)
-                            .multilineTextAlignment(.center)
-                            .padding(.vertical, 5)
-                        
-                        Button("Start Timer") {
-                            presentTimerView.toggle()
-                        }.buttonStyle(BorderedButtonStyle(tint: .blue))
-                            .fullScreenCover(isPresented: $presentTimerView) {
-                                HandsOnlyTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
-                                    
-                                    ToolbarItem(placement: .cancellationAction) {
+                        VStack {
+                            Text("**Hands-Only CPR**")
+                                .font(.headline)
+                                .multilineTextAlignment(.center)
+                                .padding(.vertical, 5)
+                            
+                            Button("Start Timer") {
+                                presentTimerView.toggle()
+                            }.buttonStyle(BorderedButtonStyle(tint: .blue))
+                                .fullScreenCover(isPresented: $presentTimerView) {
+                                    HandsOnlyTimerView(isPresented: $presentTimerView, clickTimer: $clickTimer, progressTimer: $progressTimer).toolbar {
                                         
-                                        
-                                        Button(action: {
-                                            presentTimerView.toggle()
-                                            progressTimer?.invalidate()
-                                            clickTimer?.invalidate()
-                                        }) {
-                                            Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                        ToolbarItem(placement: .cancellationAction) {
+                                            
+                                            
+                                            Button(action: {
+                                                presentTimerView.toggle()
+                                                progressTimer?.invalidate()
+                                                clickTimer?.invalidate()
+                                            }) {
+                                                Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                            }
+                                            
                                         }
                                         
                                     }
-                                    
-                                }
-                            }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
-                            .padding(.bottom, 10)
-                        
-                        Button("Tutorial") {
-                            presentTutorialView.toggle()
-                        }.buttonStyle(BorderedButtonStyle(tint: .pink))
-                            .fullScreenCover(isPresented: $presentTutorialView) {
-                                HandsOnlyTutorialView(isPresented: $presentTutorialView).toolbar {
-                                    
-                                    ToolbarItem(placement: .cancellationAction) {
+                                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .blue)).padding(.top, 5)
+                                .padding(.bottom, 10)
+                            
+                            Button("Tutorial") {
+                                presentTutorialView.toggle()
+                            }.buttonStyle(BorderedButtonStyle(tint: .pink))
+                                .fullScreenCover(isPresented: $presentTutorialView) {
+                                    HandsOnlyTutorialView(isPresented: $presentTutorialView).toolbar {
                                         
-                                        Button(action: {
-                                            presentTutorialView.toggle()
-                                        }) {
-                                            Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                        ToolbarItem(placement: .cancellationAction) {
+                                            
+                                            Button(action: {
+                                                presentTutorialView.toggle()
+                                            }) {
+                                                Image(systemName: "arrow.left.circle.fill").foregroundColor(.gray)
+                                            }
+                                            
                                         }
                                         
                                     }
-                                    
-                                }
-                            }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
-                        
+                                }.padding(.horizontal).buttonStyle(BorderedButtonStyle(tint: .pink)).padding(.top, 5)
+                            
+                        }
+                        .opacity(0.8)
+                        .padding(1)
                     }
-                    .opacity(0.8)
-                    .padding(1)
+                    
+                    Spacer()
                 }
-                
-                Spacer()
             }.tag(Tab.tabOne)
             
-            VStack {
-                Text("**Settings Tip**")
-                .font(.headline)
-                .multilineTextAlignment(.center)
-                .padding(.vertical, 5)
-                Text("For best performance, go to **Settings > Display & Brightness > Wake Duration > 70 seconds**").font(SizeResponsive().getSubtextFont()).frame(height: 80)
-                    .multilineTextAlignment(.center)
-                    .padding(.top, 10)
-                Button("Got it") {
-                    selection = .tabOne
-                }.buttonStyle(BorderedButtonStyle(tint: .orange))
+            NavigationView {
+                VStack {
+                    Text("**Settings Tip**")
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .padding(.vertical, 5)
+                    Text("For best performance, go to **Settings > Display & Brightness > Wake Duration > 70 seconds**").font(SizeResponsive().getSubtextFont()).frame(height: 80)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 10)
+                    Button("Got it") {
+                        userSettings.showedSettings()
+                    }.buttonStyle(BorderedButtonStyle(tint: .orange))
+                }
             }.tag(Tab.tabTwo)
             
         }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-
+        
     }
 }
 

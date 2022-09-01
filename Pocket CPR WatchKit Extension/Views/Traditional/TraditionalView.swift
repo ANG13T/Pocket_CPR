@@ -15,12 +15,6 @@ struct TraditionalView: View {
     @State private var progressTimer : Timer?
     @State private var presentTutorialView = false
     @State private var presentDisplay = false
-    @State private var selection: Tab = self.userSettings.showSettingsWarning ? .tabTwo : .tabOne
-    
-    enum Tab {
-        case tabOne
-        case tabTwo
-    }
     
     private var WarningSettingsView: some View {
         VStack {
@@ -57,7 +51,7 @@ struct TraditionalView: View {
     }
     
     var body: some View {
-        TabView(selection: $selection) {
+        TabView(selection: $userSettings.settingsTab) {
             VStack {
                 VStack {
                     VStack {
@@ -129,7 +123,7 @@ struct TraditionalView: View {
                     .multilineTextAlignment(.center)
                     .padding(.top, 10)
                 Button("Got it") {
-                    selection = .tabOne
+                    userSettings.showedSettings()
                 }.buttonStyle(BorderedButtonStyle(tint: .orange))
             }.tag(Tab.tabTwo)
             
