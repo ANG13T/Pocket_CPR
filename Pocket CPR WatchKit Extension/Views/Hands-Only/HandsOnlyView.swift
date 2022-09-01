@@ -16,7 +16,6 @@ struct HandsOnlyView: View {
     @EnvironmentObject private var userSettings: UserSettings
     
     
-    
     var body: some View {
         TabView(selection: $userSettings.settingsTab) {
             NavigationView {
