@@ -8,22 +8,27 @@
 import Foundation
 import SwiftUI
 
+enum Tab {
+    case tabOne
+    case tabTwo
+}
+
 class UserSettings: ObservableObject {
     @Published var vibration: Bool
-    @Published var showSettingsWarning: Bool
+    @Published var settingsTab: Tab
     @Published var color: Color
     @Published var breathsColor: Color
     @Published var compressionRate: Float
 
-    init(vibration: Bool, color: Color, compressionRate: Float, breathsColor: Color, showSettingsWarning: Bool) {
+    init(vibration: Bool, color: Color, compressionRate: Float, breathsColor: Color) {
         self.vibration = vibration
         self.color = color
         self.compressionRate = compressionRate
         self.breathsColor = breathsColor
-        self.showSettingsWarning = showSettingsWarning
+        self.settingsTab = .tabTwo
     }
     
-    public func setDisplaySettings(value: Bool) {
-        self.showSettingsWarning = value
+    public func showedSettings() {
+        self.settingsTab = .tabOne
     }
 }

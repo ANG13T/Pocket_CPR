@@ -16,10 +16,7 @@ struct HandsOnlyView: View {
     @EnvironmentObject private var userSettings: UserSettings
     @State private var selection: Tab = .tabTwo
     
-    enum Tab {
-        case tabOne
-        case tabTwo
-    }
+    
     
     var body: some View {
         TabView(selection: $selection) {

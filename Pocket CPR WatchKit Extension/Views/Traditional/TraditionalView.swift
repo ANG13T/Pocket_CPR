@@ -15,7 +15,7 @@ struct TraditionalView: View {
     @State private var progressTimer : Timer?
     @State private var presentTutorialView = false
     @State private var presentDisplay = false
-    @State private var selection: Tab = .tabTwo
+    @State private var selection: Tab = self.userSettings.showSettingsWarning ? .tabTwo : .tabOne
     
     enum Tab {
         case tabOne
