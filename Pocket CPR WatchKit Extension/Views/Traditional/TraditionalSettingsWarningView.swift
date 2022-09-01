@@ -11,13 +11,7 @@ struct TraditionalSettingsWarningView: View {
     
     var body: some View {
         VStack {
-            Text("**Settings Tip**")
-            .font(.headline)
-            .multilineTextAlignment(.center)
-            .padding(.vertical, 5)
-            Text("For best performance, go to **Settings > Display & Brightness > Wake Duration > 70 seconds**").font(SizeResponsive().getSubtextFont())
-                .multilineTextAlignment(.center)
-                .padding(.top, 10)
+            
         }
     }
     
