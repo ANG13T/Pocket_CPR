@@ -86,7 +86,7 @@ struct HandsOnlyView: View {
                 .font(.headline)
                 .multilineTextAlignment(.center)
                 .padding(.vertical, 5)
-                Text("For best performance, go to **Settings > Display & Brightness > Wake Duration > 70 seconds**").font(SizeResponsive().getSubtextFont())
+                Text("For best performance, go to **Settings > Display & Brightness > Wake Duration > 70 seconds**").font(SizeResponsive().getSubtextFont()).frame(height: 80)
                     .multilineTextAlignment(.center)
                     .padding(.top, 10)
                 Button("Got it") {
